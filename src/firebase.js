@@ -3,7 +3,7 @@ import 'firebase/auth'
 import { firebaseApi } from './ignore/firebaseAPI'
 
 const firebaseApp = firebase.initializeApp(
-  firebaseApi
+  firebaseApi //indywidual Firebase api
 )
 
 export const auth = firebaseApp.auth()
