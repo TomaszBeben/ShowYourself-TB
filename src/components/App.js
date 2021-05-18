@@ -1,7 +1,9 @@
 import React from 'react'
 import Signup from './Signup'
 import Login from './Login'
+import ForgotPassword from './ForgotPassword'
 import Dashboard from './Dashboard'
+import UpdateProfile from './UpdateProfile'
 import Test from './Test'
 import PrivateRoute from './PrivateRoute'
 import { Container } from 'react-bootstrap'
@@ -16,9 +18,11 @@ const App = () => {
           <AuthProvider>
             <Switch>
               <PrivateRoute exact path='/' component={Dashboard}/>
-              <PrivateRoute exact path='/test' component={Test}/>
+              <PrivateRoute path='/test' component={Test}/>
+              <PrivateRoute path='/update-profile' component={UpdateProfile} />
               <Route path='/signup' component={Signup} />
               <Route path='/login' component={Login} />
+              <Route path='/forgot-password' component={ForgotPassword} />
             </Switch>
           </AuthProvider>
         </Router>
