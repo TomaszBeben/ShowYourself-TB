@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { Card, Button, Alert } from 'react-bootstrap'
 import { useAuth } from '../context/AuthContext'
-import { Link , useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 const Dashboard = () => {
     const [error, setError] = useState('')
     const { currentUser, logout } = useAuth()
+
+    const[user, setUser] = useState('')
+    const[inOrOut, setINOrOut] = useState('Log In')
     const history  = useHistory()
 
     async function handleLogout() {
@@ -17,28 +19,36 @@ const Dashboard = () => {
         }catch{
             setError('Filed to log out')
         }
-
     }
 
+    function loginVerify (){
+        if(currentUser !== null){
+            setUser(currentUser.email)
+            setINOrOut('Log Out')
+        }else{
+            setUser('test')
+            setINOrOut('Log In')
+        }
+    }
+    setInterval(loginVerify, 500) //do poprawki !!!!!!!!!
     return (
         <>
-            <Card>
-                <Card.Body>
-                    <h2 className='text-center mb-4'>
+            <div>
+                <div>
+                    <h2>
                         Profile
                     </h2>
-                    {error && <Alert variant='danger'>{error}</Alert>}
-                    <strong>Email: </strong>{currentUser.email}
-                    <Link to='/update-profile' className='btn btn-primary w-100 mt-3'>
-                        Update Profile
-                    </Link>
-                </Card.Body>
-            </Card>
-            <div className='w-100 text-center mt-2'>
-                <Button variant='link' onClick={handleLogout}>
-                    Log Out
-                </Button>
+                    {error && <div>{error}</div>}
+                    <strong>Email: </strong>
+                    {user}
+                </div>
             </div>
+            <div>
+                <button onClick={handleLogout}>
+                    {inOrOut}
+                </button>
+            </div>
+            <Link to='/test'>Test Component</Link>
         </>
     )
 }
