@@ -22,7 +22,7 @@ const Login = () => {
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
             history.push('/')
-        } catch{
+        } catch {
             setError('Failed to sign in')
         }
         setLoading(false)
@@ -30,27 +30,25 @@ const Login = () => {
 
     return (
         <>
-            <Card>
-                <Card.Body>
-                    <h2 className='text-center mb-4'>Log In</h2>
-                    {error && <Alert variant='danger'>{error}</Alert>}
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group id='email'>
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type='email' ref={emailRef} required></Form.Control>
-                        </Form.Group>
-                        <Form.Group id='password'>
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type='password' ref={passwordRef} required></Form.Control>
-                        </Form.Group>
-                        <Button disabled={loading} className='w-100 mt-4' type='submit'>Log In</Button>
-                    </Form>
-                    <div className='w-100 text-center mt-2'>
-                        <Link to='/forgot-password'>Forgot Password?</Link>
+            <div>
+                <h2>Log In</h2>
+                {error && <div>{error}</div>}
+                <form onSubmit={handleSubmit}>
+                    <div id='email'>
+                        <label>Email</label>
+                        <input type='email' ref={emailRef} required></input>
                     </div>
-                </Card.Body>
-            </Card>
-            <div className='w-100 text-center mt-2'>
+                    <div id='password'>
+                        <label>Password</label>
+                        <input type='password' ref={passwordRef} required></input>
+                    </div>
+                    <button disabled={loading} type='submit'>Log In</button>
+                </form>
+                <div>
+                    <Link to='/forgot-password'>Forgot Password?</Link>
+                </div>
+            </div>
+            <div>
                 Potrzebujesz konta? <Link to='/signup'>Sign Up</Link>
             </div>
         </>

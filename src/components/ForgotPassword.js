@@ -19,7 +19,7 @@ const ForgotPassword = () => {
             setLoading(true)
             await resetPassword(emailRef.current.value)
             setMessage('Check your inbox')
-        } catch{
+        } catch {
             setError('Failed to reset password')
         }
         setLoading(false)
@@ -28,20 +28,18 @@ const ForgotPassword = () => {
     return (
         <>
             <div>
-                <div>
-                    <h2>Password Reset</h2>
-                    {error && <div>{error}</div>}
-                    {message && <div>{message}</div>}
-                    <form onSubmit={handleSubmit}>
-                        <div>
-                            <label>Email</label>
-                            <input type='email' ref={emailRef} required></input>
-                        </div>
-                        <button disabled={loading} type='submit'>Reset Password</button>
-                    </form>
+                <h2>Password Reset</h2>
+                {error && <div>{error}</div>}
+                {message && <div>{message}</div>}
+                <form onSubmit={handleSubmit}>
                     <div>
-                        <Link to='/login'>Login</Link>
+                        <label>Email</label>
+                        <input type='email' ref={emailRef} required></input>
                     </div>
+                    <button disabled={loading} type='submit'>Reset Password</button>
+                </form>
+                <div>
+                    <Link to='/login'>Login</Link>
                 </div>
             </div>
             <div>

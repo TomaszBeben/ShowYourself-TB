@@ -8,6 +8,7 @@ const Dashboard = () => {
 
     const[user, setUser] = useState('')
     const[inOrOut, setINOrOut] = useState('Log In')
+
     const history  = useHistory()
 
     async function handleLogout() {
