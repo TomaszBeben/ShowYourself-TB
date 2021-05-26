@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react'
-import { Card, Form, Button, Alert } from 'react-bootstrap'
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
@@ -30,26 +29,28 @@ const Login = () => {
 
     return (
         <>
-            <div>
-                <h2>Log In</h2>
-                {error && <div>{error}</div>}
+        <div className='auth__page'>
+        <div className='auth__container'>
+            <div className='auth__main'>
+                <h2 className='auth__main--name'>Log In</h2>
+                {error && <div className='auth__main--error'>{error}</div>}
                 <form onSubmit={handleSubmit}>
                     <div id='email'>
-                        <label>Email</label>
-                        <input type='email' ref={emailRef} required></input>
+                        <input className='auth__main--input' placeholder='EMAIL' type='email' ref={emailRef} required></input>
                     </div>
                     <div id='password'>
-                        <label>Password</label>
-                        <input type='password' ref={passwordRef} required></input>
+                        <input className='auth__main--input' placeholder='PASSWORD' type='password' ref={passwordRef} required></input>
                     </div>
-                    <button disabled={loading} type='submit'>Log In</button>
+                    <input className='auth__main--button' value='Log In' disabled={loading} type='submit' ></input>
                 </form>
                 <div>
                     <Link to='/forgot-password'>Forgot Password?</Link>
                 </div>
             </div>
-            <div>
+            <div className='auth__bottom'>
                 Potrzebujesz konta? <Link to='/signup'>Sign Up</Link>
+            </div>
+            </div>
             </div>
         </>
     )

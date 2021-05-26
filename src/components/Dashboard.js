@@ -27,7 +27,6 @@ const Dashboard = () => {
             setUser(currentUser.email)
             setINOrOut('Log Out')
         }else{
-            setUser('test')
             setINOrOut('Log In')
         }
     }

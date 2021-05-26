@@ -33,27 +33,28 @@ const Signup = () => {
 
     return (
         <>
+        <div className='auth__page'>
+        <div className='auth__container'>
             <div>
-                <h2>Sign Up</h2>
-                {error && <div>{error}</div>}
+                <h2 className='auth__main--name'>Sign Up</h2>
+                {error && <div className='auth__main--error'>{error}</div>}
                 <form onSubmit={handleSubmit}>
                     <div id='email'>
-                        <label>Email</label>
-                        <input type='email' ref={emailRef} required></input>
+                        <input className='auth__main--input' placeholder='EMAIL' type='email' ref={emailRef} required></input>
                     </div>
                     <div id='password'>
-                        <div>Password</div>
-                        <input type='password' ref={passwordRef} required></input>
+                        <input className='auth__main--input' placeholder='PASSWORD' type='password' ref={passwordRef} required></input>
                     </div>
                     <div id='password-confirm'>
-                        <label>Password Confirmation</label>
-                        <input type='password' ref={passwordConfirmRef} required></input>
+                        <input className='auth__main--input' placeholder='PASSWORD-Confirmation' type='password' ref={passwordConfirmRef} required></input>
                     </div>
-                    <button disabled={loading} type='submit'>Sign Up</button>
+                    <input className='auth__main--button' value='Sign Up' disabled={loading} type='submit'></input>
                 </form>
             </div>
-            <div>
+            <div className='auth__bottom'>
                 Mosz juz konto? <Link to='/login'>Log in</Link>
+            </div>
+            </div>
             </div>
         </>
     )
