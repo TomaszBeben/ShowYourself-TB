@@ -7,6 +7,7 @@ import Test from './Test'
 import PrivateRoute from './PrivateRoute'
 import { AuthProvider } from '../context/AuthContext'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Creator from './creator/cvCreator/CreatorMain'
 
 
 
@@ -21,6 +22,7 @@ const App = () => {
               <Route path='/login' component={Login} />
               <Route path='/forgot-password' component={ForgotPassword} />
               <PrivateRoute path='/test' component={Test}/>
+              <PrivateRoute path='/cvcreator' component={Creator}/>
             </Switch>
           </AuthProvider>
         </Router>

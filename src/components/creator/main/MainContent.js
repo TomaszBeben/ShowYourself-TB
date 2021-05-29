@@ -1,18 +1,27 @@
 import React from 'react'
-// import image from '../../../images/github.jpg'
+import { Link } from 'react-router-dom'
 
 
 const MainContent = () => {
     return (
         <div className='main-page__content--container'>
             <div className='main-page__content--shape main-page__content--shape-first'>
-                <a href="/"><div className='main-page__content--image main-page__content--image-github'></div></a>
+                <a href="https://github.com/TomaszBeben/ShowYourself-TB">
+                    <div className='main-page__content--image main-page__content--image-github'>
+                    </div>
+                </a>
             </div>
             <div className='main-page__content--shape main-page__content--shape-second'>
-                <a href="/"><div className='main-page__content--image main-page__content--image-creator'></div></a>
+                <Link to="/cvcreator">
+                    <div className='main-page__content--image main-page__content--image-creator'>
+                    </div>
+                </Link>
             </div>
             <div className='main-page__content--shape main-page__content--shape-third'>
-                <a href="/"><div className='main-page__content--image main-page__content--image-unidentify'></div></a>
+                <a href="/">
+                    <div className='main-page__content--image main-page__content--image-unidentify'>
+                    </div>
+                </a>
             </div>
         </div>
     )
