@@ -1,0 +1,58 @@
+$imageWidth: 40%;
+$imageHeight: 75%;
+.main-page__content--container {
+    height: $imageHeight;
+}
+
+.main-page__content--shape {
+    width: $imageWidth;
+    height: $imageHeight;
+    clip-path: polygon(30% 0, 100% 0, 70% 100%, 0% 100%);
+    filter: grayscale(0.8) blur(4px);
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.03);
+        filter: grayscale(0) blur(0);
+        z-index: 10;
+    }
+}
+
+.main-page__content--shape-first {
+    position: absolute;
+    left: 15px;
+}
+
+.main-page__content--shape-second {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+.main-page__content--shape-third {
+    position: absolute;
+    right: 20px;
+}
+
+.main-page__content--image {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    // transition: 0.3s;
+    // &:hover {
+    //     transform: scale(1.03);
+    // }
+}
+
+.main-page__content--image-github {
+    background-image: url(../images/github.jpg);
+}
+
+.main-page__content--image-creator {
+    background-image: url(../images/cvcreator.jpg);
+    background-position: center;
+}
+
+.main-page__content--image-unidentify {
+    background-image: url(../images/questionmark.jpg);
+}
