@@ -7,3 +7,20 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.main-page__logo--container {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-page__logo {
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+    margin-left: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}

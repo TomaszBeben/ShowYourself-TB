@@ -16,7 +16,7 @@ const Footer = () => {
                         </a>
                 </div>
                 <div className='main-page__footer__container--right'>
-                    <div className='main-page__footer--elem'></div>
+                    <div className='main-page__footer--elem footer-mailing'></div>
                 </div>
             </div>
         </div>

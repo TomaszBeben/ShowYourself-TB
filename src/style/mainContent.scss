@@ -1,7 +1,15 @@
 $imageWidth: 40%;
 $imageHeight: 75%;
+$imageWidthMobile: 80%;
+$imageHeightMobile: 30%;
 .main-page__content--container {
     height: $imageHeight;
+    @media(max-width: 1000px) {
+        height: 95%;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .main-page__content--shape {
@@ -14,23 +22,54 @@ $imageHeight: 75%;
         filter: grayscale(0) blur(0);
         z-index: 10;
     }
+    @media(max-width: 1000px) {
+        height: $imageHeightMobile;
+        width: $imageWidthMobile;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        margin: 5px;
+        filter: grayscale(0) blur(0);
+    }
 }
 
 .main-page__content--shape-first {
     position: absolute;
     left: 15px;
+    @media(max-width: 1000px) {
+        height: $imageHeightMobile;
+        width: $imageWidthMobile;
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
 }
 
 .main-page__content--shape-second {
     position: absolute;
     left: 0;
     right: 0;
-    margin: auto
+    margin: auto;
+    @media(max-width: 1000px) {
+        height: $imageHeightMobile;
+        width: $imageWidthMobile;
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
 }
 
 .main-page__content--shape-third {
     position: absolute;
     right: 20px;
+    @media(max-width: 1000px) {
+        height: $imageHeightMobile;
+        width: $imageWidthMobile;
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
 }
 
 .main-page__content--image {
@@ -38,6 +77,7 @@ $imageHeight: 75%;
     width: 100%;
     height: 100%;
     transition: 0.3s;
+    margin: 5px 5px;
     &:hover {
         transform: scale(1.06);
     }
@@ -49,9 +89,12 @@ $imageHeight: 75%;
 
 .main-page__content--image-creator {
     background-image: url(../images/cvcreator.jpg);
-    background-position: center;
+    background-position: 65% 0;
 }
 
 .main-page__content--image-unidentify {
     background-image: url(../images/questionmark.jpg);
+    @media(max-width: 1000px) {
+        background-position: 0 40%;
+    }
 }

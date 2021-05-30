@@ -29,4 +29,21 @@
     height: 50px;
     border: 1px solid black;
     border-radius: 50%;
+    background-size: contain;
+}
+
+.footer-portfolio {
+    background-image: url(../images/logo.jpg);
+}
+
+.footer-github {
+    background-image: url(../images/github-logo.png);
+}
+
+.footer-linkedin {
+    background-image: url(../images/linkedin.png);
+}
+
+.footer-mailing {
+    background-image: url(../images/mailing.jpg);
 }
