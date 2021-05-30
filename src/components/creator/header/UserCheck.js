@@ -38,7 +38,6 @@ const UserCheck = () => {
         <>
             <div classname='main-page__header--user-container'>
                 <div className='main-page__header--user'>
-                    {error && <div>{error}</div>}
                     {user}
                     <strong>  {`<<EMAIL`}</strong>
                 </div>
