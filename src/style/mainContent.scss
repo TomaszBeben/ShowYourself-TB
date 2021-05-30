@@ -11,7 +11,6 @@ $imageHeight: 75%;
     filter: grayscale(0.4) blur(2px);
     transition: 0.3s;
     &:hover {
-        transform: scale(1.03);
         filter: grayscale(0) blur(0);
         z-index: 10;
     }
@@ -40,7 +39,7 @@ $imageHeight: 75%;
     height: 100%;
     transition: 0.3s;
     &:hover {
-        transform: scale(1.03);
+        transform: scale(1.06);
     }
 }
 

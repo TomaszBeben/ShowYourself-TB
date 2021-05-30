@@ -1,4 +1,4 @@
-.main-page__footer-container {
+.main-page__footer--container {
     min-height: 80px;
     border: 1px solid black;
     width: calc(100vw - 2px);
@@ -6,4 +6,27 @@
     flex-direction: row;
     justify-content: space-between;
     align-self: flex-end;
+}
+
+.main-page__footer__container--left {
+    min-width: 20vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main-page__footer__container--right {
+    min-width: 20vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-page__footer--elem {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
 }
