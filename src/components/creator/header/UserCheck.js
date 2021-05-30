@@ -36,11 +36,11 @@ const UserCheck = () => {
 
     return (
         <>
-            <div >
-                <div>
+            <div classname='main-page__header--user-container'>
+                <div className='main-page__header--user'>
                     {error && <div>{error}</div>}
-                    <strong>Email: </strong>
                     {user}
+                    <strong>  {`<<EMAIL`}</strong>
                 </div>
                 <div>
                     <button onClick={handleLogout}>
