@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import Logo from './creator/header/Logo'
 
 const Signup = () => {
     const emailRef = useRef()
@@ -34,6 +35,7 @@ const Signup = () => {
     return (
         <>
         <div className='auth__page'>
+            <Logo/>
         <div className='auth__container'>
             <div>
                 <h2 className='auth__main--name'>Sign Up</h2>

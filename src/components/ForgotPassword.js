@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import Logo from './creator/header/Logo'
 
 
 const ForgotPassword = () => {
@@ -28,6 +29,7 @@ const ForgotPassword = () => {
     return (
         <>
         <div className='auth__page'>
+        <Logo/>
         <div className='auth__container'>
             <div className='auth__main'>
                 <h2 className='auth__main--name'>Password Reset</h2>

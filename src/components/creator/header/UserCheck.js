@@ -6,7 +6,7 @@ const UserCheck = () => {
     const [error, setError] = useState('')
     const { currentUser, logout } = useAuth()
 
-    const [user, setUser] = useState('')
+    const [user, setUser] = useState('No User')
     const [inOrOut, setINOrOut] = useState('Log In')
 
     const history = useHistory()
@@ -28,7 +28,7 @@ const UserCheck = () => {
             setUser(currentUser.email)
             setINOrOut('Log Out')
         } else {
-            setUser('')
+            setUser('No User')
             setINOrOut('Log In')
         }
     }, [currentUser])
@@ -36,13 +36,13 @@ const UserCheck = () => {
 
     return (
         <>
-            <div classname='main-page__header--user-container'>
+            <div className='main-page__header--user-container'>
                 <div className='main-page__header--user'>
                     {user}
-                    <strong>  {`<<EMAIL`}</strong>
+                    {error !== '' ? window.alert(error) : null}
                 </div>
                 <div>
-                    <button onClick={handleLogout}>
+                    <button className='main-page__header--user--auth-button' onClick={handleLogout}>
                         {inOrOut}
                     </button>
                 </div>

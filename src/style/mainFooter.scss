@@ -1,5 +1,6 @@
+//////////// Footer.js Component
 .main-page__footer--container {
-    min-height: 80px;
+    min-height: 10vh;
     border: 1px solid black;
     width: calc(100vw - 2px);
     display: flex;
@@ -47,4 +48,22 @@
 
 .footer-mailing {
     background-image: url(../images/mailing.jpg);
+    cursor: pointer;
+}
+
+//////////// Mailing.js Component
+.main-page__footer__mailing {
+    position: absolute;
+    height: 50vh;
+    width: 20vw;
+    background-color: white;
+    border: 1px solid black;
+    right: 15%;
+    bottom: 0;
+    z-index: 100 !important;
+    border-radius: 5px 5px 0 0;
+}
+
+.mail-box-hide {
+    display: none;
 }

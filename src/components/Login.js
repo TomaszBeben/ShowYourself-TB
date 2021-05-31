@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import Logo from './creator/header/Logo'
 
 
 const Login = () => {
@@ -30,6 +31,7 @@ const Login = () => {
     return (
         <>
         <div className='auth__page'>
+            <Logo/>
         <div className='auth__container'>
             <div className='auth__main'>
                 <h2 className='auth__main--name'>Log In</h2>

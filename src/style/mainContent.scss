@@ -1,5 +1,5 @@
 $imageWidth: 40%;
-$imageHeight: 75%;
+$imageHeight: 70%;
 $imageWidthMobile: 80%;
 $imageHeightMobile: 30%;
 .main-page__content--container {
@@ -79,7 +79,7 @@ $imageHeightMobile: 30%;
     transition: 0.3s;
     margin: 5px 5px;
     &:hover {
-        transform: scale(1.06);
+        transform: scale(1.05);
     }
 }
 
