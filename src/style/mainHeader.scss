@@ -7,6 +7,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: aliceblue;
 }
 
 /////////////// Logo.js Component
@@ -53,6 +54,7 @@
     border-radius: 5px;
     font-size: 1rem;
     margin-bottom: 0.6rem;
+    background-color: aliceblue;
     &:hover {
         transition: 0.3s;
         background-color: yellowgreen;

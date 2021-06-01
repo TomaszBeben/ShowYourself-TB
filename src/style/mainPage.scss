@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background: rgb(6, 10, 6);
+    background: linear-gradient(0deg, rgba(6, 10, 6, 1) 0%, rgba(40, 79, 62, 1) 49%, rgba(27, 75, 12, 1) 95%);
     @media(max-width: 1000px) {
         height: 130vh;
     }
