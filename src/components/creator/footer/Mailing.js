@@ -39,9 +39,10 @@ const Mailing = (props) => {
 
     return (
         <div className={props.visibility}>
+            <div onClick={props.exitButton} className='main-page__footer__mailing--exit-button'></div>
             {currentUser !== null ?
                 <>
-                    <div onClick={props.exitButton} className='main-page__footer__mailing--exit-button'></div>
+                    {/* <div onClick={props.exitButton} className='main-page__footer__mailing--exit-button'></div> */}
                     <form className='main-page__footer__mailing' onSubmit={sendEmail}>
                         <input type='hidden' name='contact_number' />
                         <input type='hidden' value={currentUser.email} name='user_name' />
@@ -51,7 +52,7 @@ const Mailing = (props) => {
                         <h1 className='main-page__footer__mailing--for-user'>{messageForUser}</h1>
                     </form>
                 </>
-                : <h2 className=''>{notLogIn}</h2>
+                : <h2 className='main-page__footer__mailing--for-user'>{notLogIn}</h2>
             }
         </div>
     )
