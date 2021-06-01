@@ -52,18 +52,82 @@
 }
 
 //////////// Mailing.js Component
-.main-page__footer__mailing {
+.main-page__footer__mailing--container {
     position: absolute;
     height: 50vh;
-    width: 20vw;
+    width: 29vw;
     background-color: white;
     border: 1px solid black;
     right: 15%;
     bottom: 0;
     z-index: 100 !important;
     border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media(max-width: 1000px) {
+        width: 65vw;
+        position: fixed;
+        right: 0;
+    }
+}
+
+.main-page__footer__mailing--exit-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    min-height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-image: url(../images/exit.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(133, 133, 133);
+    transition: 0.3s;
+    &:hover {
+        background-color: rgb(177, 27, 0);
+    }
 }
 
 .mail-box-hide {
     display: none;
 }
+
+.main-page__footer__mailing {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100% !important;
+}
+
+.main-page__footer__mailing--current-user {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    @media(max-width: 1000px) {
+        font-size: 1rem;
+    }
+}
+
+.main-page__footer__mailing--textarea {
+    width: 88%;
+    height: 7rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.main-page__footer__mailing--button {
+    width: 90%;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    background-color: rgb(133, 133, 133);
+    &:hover {
+        transition: 0.3s;
+        background-color: yellowgreen;
+    }
+}
+
+.main-page__footer__mailing--for-user {}

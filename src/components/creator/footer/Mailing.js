@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useAuth } from '../../../context/AuthContext'
 import emailjs from 'emailjs-com';
-import { emailAPI } from '../../../ignore/emailAPI.js'
+import { mailJsService, mailJsTemplate, mailJsUser } from '../../../ignore/emailAPI.js'
 
 const Mailing = (props) => {
     const notLogIn = 'Want to send me a message? Please Log In :)'
     const { currentUser } = useAuth()
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
     const [messageForUser, setMessageForUser] = useState('')
 
@@ -15,17 +13,21 @@ const Mailing = (props) => {
         e.preventDefault()
         let err = ''
 
-        // if (name.length < 3 || email.length < 3 || email.indexOf('@') === -1 || email.indexOf('.') === -1) {
-        //     err = ('ERROR')
-        //   }
+        if (message.length < 5) {
+            err = ('Your message is to short')
+        } else if (currentUser.email === -1) {
+            err = ('You have to logged in to write me a message !')
+        }
 
         if (err === '') {
-            setEmail('')
             setMessage('')
-            // setMessageForUser('Thanks for your message, i will respond as soon as possible')
+            setMessageForUser('Thanks for your message, i will respond as soon as possible')
             console.log(err)
             emailjs.sendForm(
-                emailAPI(e)// this is data from emailJS service
+                mailJsService,
+                mailJsTemplate,
+                e.target,
+                mailJsUser
             )
                 .then((result) => {
                     console.log(result.text)
@@ -35,35 +37,22 @@ const Mailing = (props) => {
         } else { alert(err) }
     };
 
-    // const [user, setUser] = useState(notLogIn)
-
-    // useEffect(() => {
-    //     if (currentUser !== null) {
-    //         setUser(currentUser.email)
-    //     } else {
-    //         setUser(notLogIn)
-    //     }
-    // }, [currentUser])
-
     return (
         <div className={props.visibility}>
-            not working for now
-            {/* {currentUser !== null ?
-                <div>
-                    <div className=''>
-                        <form className="" onSubmit={sendEmail}>
-                            <input type="hidden" name="contact_number" />
-                            <input className='' type='hidden' value={currentUser.email} name="user_name"/>
-                            <h2>{currentUser.email}</h2>
-                            <textarea className='' placeholder={'message'} value={message} name="message" onChange={e => setMessage(e.target.value)} />
-                            <input className='main-page__header--user--auth-button' type="submit" value={'SEND'} />
-                            <h1 className=''>{messageForUser}</h1>
-                        </form>
-                    </div>
-
-                </div>
-                : notLogIn
-            } */}
+            {currentUser !== null ?
+                <>
+                    <div onClick={props.exitButton} className='main-page__footer__mailing--exit-button'></div>
+                    <form className='main-page__footer__mailing' onSubmit={sendEmail}>
+                        <input type='hidden' name='contact_number' />
+                        <input type='hidden' value={currentUser.email} name='user_name' />
+                        <h2 className='main-page__footer__mailing--current-user'>{currentUser.email}</h2>
+                        <textarea className='main-page__footer__mailing--textarea' placeholder={'message'} value={message} name='message' onChange={e => setMessage(e.target.value)} />
+                        <input className='main-page__footer__mailing--button' type="submit" value={'SEND'} />
+                        <h1 className='main-page__footer__mailing--for-user'>{messageForUser}</h1>
+                    </form>
+                </>
+                : <h2 className=''>{notLogIn}</h2>
+            }
         </div>
     )
 }
