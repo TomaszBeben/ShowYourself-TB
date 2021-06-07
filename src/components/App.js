@@ -7,7 +7,8 @@ import Test from './Test'
 import PrivateRoute from './PrivateRoute'
 import { AuthProvider } from '../context/AuthContext'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Creator from './creator/cvCreator/CreatorMain'
+import Creator from './creator/cvCreator/Creator'
+
 
 
 
