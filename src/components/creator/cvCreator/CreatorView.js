@@ -1,26 +1,30 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
+import { CircularProgress } from '@material-ui/core'
+import { useAuth } from '../../../context/AuthContext'
 import { useSelector } from 'react-redux'
 
 const CreatorView = () => {
-    const style = {
-        height: '100vh',
-        width: '35vw',
-        border: '1px solid black'
+    const posts = useSelector((state) => state.posts)
+    const { currentUser } = useAuth()
+
+    const cvcontainer = {
+        width: '200px',
+        height: '200px'
     }
 
-    const view = useSelector((state)=> state.posts)
-    console.log(view);
-
     return (
-        <div style={style}>
-            {view.map((post)=>(
-                <div key={post.id}>
-                    <h1>{post.name}</h1>
-                    <h1>{post.surname}</h1>
-                    <img style={{width:'100px', height:'100px'}} src={post.file} />
-                </div>
-            ))}
-        </div>
+        !posts.length ? <CircularProgress /> : (
+            <div>
+                {posts.map((post) => (
+                    <div key={post._id} style={cvcontainer} >
+                        <p>{post.name}</p>
+                        <p>{post.surname}</p>
+                        <img src={post.file} alt={currentUser.mail} style={{ width: '100px', height: '100px' }} />
+                    </div>
+                ))}
+            </div>
+        )
     )
 }
 

@@ -10,7 +10,6 @@ const CreatorMenu = () => {
 
     return (
         <div style={style}>
-            
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React,{ useState } from 'react'
 import FileBase from 'react-file-base64'
 import { useDispatch } from 'react-redux'
 import { createPost } from '../../../api/index'
+import { useAuth } from '../../../context/AuthContext'
 
 const CreatorForm = () => {
     const style = {
@@ -15,8 +16,10 @@ const CreatorForm = () => {
         flexDirection: 'column'
     }
 
+    const {currentUser} = useAuth()
+
     const [postData, setPostData] =useState({
-        name: '', surname: '', file: ''
+        currentUser: currentUser.email , name: '', surname: '', file: ''
     })
 
     const dispatch = useDispatch()
@@ -26,10 +29,10 @@ const CreatorForm = () => {
         dispatch(createPost(postData))
         setPostData({name: '', surname: '', file: ''})
     }
-
     return (
         <div style={style}>
             <form style={formStyle} onSubmit={handleSubmit}>
+                <input type="hidden" value={postData.currentUser}/>
                 <input type="text" placeholder='name' value={postData.name} onChange={(e)=>setPostData({...postData, name: e.target.value})}/>
                 <input type="text" placeholder='surname' value={postData.surname} onChange={(e)=>setPostData({...postData, surname: e.target.value})}/>
                 <FileBase type='file' multiple={false} onDone={({base64}) => setPostData({...postData, file: base64})} />

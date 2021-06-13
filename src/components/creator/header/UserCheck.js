@@ -33,7 +33,6 @@ const UserCheck = () => {
         }
     }, [currentUser])
 
-
     return (
         <>
             <div className='main-page__header--user-container'>
