@@ -2,9 +2,10 @@
 import React from 'react'
 import { CircularProgress } from '@material-ui/core'
 import { useAuth } from '../../../context/AuthContext'
-import { useSelector } from 'react-redux'
+import { useSelector} from 'react-redux'
 
-const CreatorView = () => {
+const CreatorView = ({setCurrentId}) => {
+
     const posts = useSelector((state) => state.posts)
     const { currentUser } = useAuth()
 
@@ -21,6 +22,7 @@ const CreatorView = () => {
                         <p>{post.name}</p>
                         <p>{post.surname}</p>
                         <img src={post.file} alt={currentUser.mail} style={{ width: '100px', height: '100px' }} />
+                        <button onClick={()=> setCurrentId(post._id)} >EDIT</button>
                     </div>
                 ))}
             </div>

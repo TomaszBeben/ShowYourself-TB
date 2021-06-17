@@ -1,4 +1,4 @@
-import React,{ useEffect } from 'react'
+import React from 'react'
 import Main from './Main'
 import Signup from './Signup'
 import Login from './Login'
@@ -8,20 +8,8 @@ import PrivateRoute from './PrivateRoute'
 import { AuthProvider } from '../context/AuthContext'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Creator from './creator/cvCreator/Creator'
-import { useDispatch } from 'react-redux'
-import {getPost} from '../api/index'
-import {useAuth} from '../context/AuthContext'
-
-
 
 const App = () => {
-  const dispatch = useDispatch()
-
-  useEffect(()=>{
-    dispatch(getPost())
-},[dispatch])
-
-
   return (
       <div>
         <Router>

@@ -1,16 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import CreatorForm from './CreatorForm'
 import CreatorMenu from './CreatorMenu'
 import CreatorView from './CreatorView'
-import {useAuth} from '../../../context/AuthContext'
+import { useDispatch } from 'react-redux'
+import { getPost } from '../../../api/index'
 
 const Creator = () => {
+    const [currentId, setCurrentId] = useState(null)
+    const dispatch = useDispatch()
 
-    const { currentUser } = useAuth()
     useEffect(()=>{
-        localStorage.setItem('currentUser', currentUser.email)
-    },[currentUser])
-
+        dispatch(getPost())
+    },[currentId, dispatch])
+    console.log(currentId);
     const style= {
         width: '100vw',
         heigth: '100vh',
@@ -21,8 +23,8 @@ const Creator = () => {
     return (
         <div style={style}>
             <CreatorMenu/>
-            <CreatorForm/>
-            <CreatorView/>
+            <CreatorForm setCurrentId={setCurrentId} currentId={currentId} />
+            <CreatorView setCurrentId={setCurrentId}/>
         </div>
     )
 }
