@@ -12,7 +12,7 @@ const Creator = () => {
     useEffect(()=>{
         dispatch(getPost())
     },[currentId, dispatch])
-    console.log(currentId);
+
     const style= {
         width: '100vw',
         heigth: '100vh',

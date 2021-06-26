@@ -30,11 +30,11 @@ const CreatorForm = ({ currentId, setCurrentId }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (currentId) {
-            dispatch(updatePost(postData))
+            dispatch(updatePost(currentId, postData))
         } else {
             dispatch(createPost(postData))
         }
-        // setPostData({ currentUser: currentUser.email, name: '', surname: '', file: '' })
+        setPostData({ currentUser: currentUser.email, name: '', surname: '', file: '' })
         setCurrentId(null)
     }
 

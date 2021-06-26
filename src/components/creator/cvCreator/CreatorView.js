@@ -2,11 +2,15 @@
 import React from 'react'
 import { CircularProgress } from '@material-ui/core'
 import { useAuth } from '../../../context/AuthContext'
-import { useSelector} from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
-const CreatorView = ({setCurrentId}) => {
+import { deletePost } from '../../../api'
 
+const CreatorView = ({ setCurrentId }) => {
+
+    const dispatch = useDispatch()
     const posts = useSelector((state) => state.posts)
+
     const { currentUser } = useAuth()
 
     const cvcontainer = {
@@ -14,6 +18,10 @@ const CreatorView = ({setCurrentId}) => {
         height: '200px'
     }
 
+
+    //confirmation window test
+    //'Are you sure you want to delete this post?'
+    //dispatch(deletePost(post._id))
     return (
         !posts.length ? <CircularProgress /> : (
             <div>
@@ -22,7 +30,13 @@ const CreatorView = ({setCurrentId}) => {
                         <p>{post.name}</p>
                         <p>{post.surname}</p>
                         <img src={post.file} alt={currentUser.mail} style={{ width: '100px', height: '100px' }} />
-                        <button onClick={()=> setCurrentId(post._id)} >EDIT</button>
+                        <button onClick={() => setCurrentId(post._id)} >EDIT</button>
+                        <button onClick={() => {
+                            if(window.confirm('Are you sure you want to delete this post?')){
+                                dispatch(deletePost(post._id))
+                                console.log('Post Deleted!');
+                            }
+                        }}>DELETE</button>
                     </div>
                 ))}
             </div>
