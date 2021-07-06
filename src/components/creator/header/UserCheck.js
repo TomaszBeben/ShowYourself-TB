@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useAuth } from '../../../context/AuthContext'
 import { useHistory } from 'react-router-dom'
 
+
 const UserCheck = () => {
+
     const [error, setError] = useState('')
     const { currentUser, logout } = useAuth()
 
@@ -17,7 +19,7 @@ const UserCheck = () => {
         setError('')
         try {
             await logout()
-            check()
+            await check()
         } catch {
             setError('Filed to log out')
         }

@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, } from 'react'
 import CreatorForm from './CreatorForm'
 import CreatorMenu from './CreatorMenu'
 import CreatorView from './CreatorView'
 import { useDispatch } from 'react-redux'
 import { getPost } from '../../../api/index'
+import { useAuth } from '../../../context/AuthContext'
+// import { useClearCache } from 'react-clear-cache';
 
 const Creator = () => {
+    // const { emptyCacheStorage } = useClearCache();
+    const { currentUser } = useAuth()
+    localStorage.setItem('currentUser', currentUser.email)
+
     const [currentId, setCurrentId] = useState(null)
     const dispatch = useDispatch()
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getPost())
-    },[currentId, dispatch])
+    }, [currentId, dispatch])
 
-    const style= {
+    const style = {
         width: '100vw',
         heigth: '100vh',
         display: 'flex',
@@ -21,10 +27,11 @@ const Creator = () => {
     }
 
     return (
+
         <div style={style}>
-            <CreatorMenu/>
+            <CreatorMenu  />
             <CreatorForm setCurrentId={setCurrentId} currentId={currentId} />
-            <CreatorView setCurrentId={setCurrentId}/>
+            <CreatorView setCurrentId={setCurrentId} />
         </div>
     )
 }

@@ -1,7 +1,9 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { FETCH_ALL, CREATE, UPDATE, DELETE} from '../constants/actionTypes'
+import { FETCH_ALL, CREATE, UPDATE, DELETE, RESET} from '../constants/actionTypes'
 
-export default (posts = [], action) =>{
+
+export default (posts = [], action) => {
+
     switch(action.type) {
         case FETCH_ALL:
             return action.payloads
@@ -9,8 +11,10 @@ export default (posts = [], action) =>{
             return [...posts, action.payloads]
         case UPDATE:
             return posts.map((post) => post._id === action.payloads._id ? action.payloads : post)
-            case DELETE:
+        case DELETE:
                 return posts.filter((post) => post._id !== action.payloads)
+        case RESET:
+            return [posts = [], action.payloads];
         default:
             return posts
     }

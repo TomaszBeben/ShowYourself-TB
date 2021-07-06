@@ -10,7 +10,6 @@ const CreatorView = ({ setCurrentId }) => {
 
     const dispatch = useDispatch()
     const posts = useSelector((state) => state.posts)
-
     const { currentUser } = useAuth()
 
     const cvcontainer = {
@@ -18,10 +17,6 @@ const CreatorView = ({ setCurrentId }) => {
         height: '200px'
     }
 
-
-    //confirmation window test
-    //'Are you sure you want to delete this post?'
-    //dispatch(deletePost(post._id))
     return (
         !posts.length ? <CircularProgress /> : (
             <div>
@@ -29,6 +24,7 @@ const CreatorView = ({ setCurrentId }) => {
                     <div key={post._id} style={cvcontainer} >
                         <p>{post.name}</p>
                         <p>{post.surname}</p>
+                        <p>{post.currentUser}</p>
                         <img src={post.file} alt={currentUser.mail} style={{ width: '100px', height: '100px' }} />
                         <button onClick={() => setCurrentId(post._id)} >EDIT</button>
                         <button onClick={() => {
