@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import FileBase from 'react-file-base64'
 import { useDispatch, useSelector } from 'react-redux'
 import { createPost, updatePost } from '../../../api/index'
@@ -17,7 +17,7 @@ const formStyle = {
 }
 
 const CreatorForm = ({ currentId, setCurrentId }) => {
-    
+
     const { currentUser } = useAuth()
     const initialState = {
         currentUser: currentUser.email,
@@ -28,7 +28,6 @@ const CreatorForm = ({ currentId, setCurrentId }) => {
     const [postData, setPostData] = useState(initialState)
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
     const dispatch = useDispatch()
-    const userRef = useRef()
 
     useEffect(() => {
         if (post) setPostData(post)
@@ -47,7 +46,7 @@ const CreatorForm = ({ currentId, setCurrentId }) => {
 
     return (
         <div style={style}>
-            <h1 ref={userRef} >{currentUser.email}</h1>
+            <h1>{currentUser.email}</h1>
             <form style={formStyle} onSubmit={handleSubmit}>
                 <input type="hidden" value={postData.currentUser} />
                 <input type="text" placeholder='name' value={postData.name} onChange={(e) => setPostData({ ...postData, name: e.target.value })} />

@@ -5,10 +5,8 @@ import CreatorView from './CreatorView'
 import { useDispatch } from 'react-redux'
 import { getPost } from '../../../api/index'
 import { useAuth } from '../../../context/AuthContext'
-// import { useClearCache } from 'react-clear-cache';
 
 const Creator = () => {
-    // const { emptyCacheStorage } = useClearCache();
     const { currentUser } = useAuth()
     localStorage.setItem('currentUser', currentUser.email)
 

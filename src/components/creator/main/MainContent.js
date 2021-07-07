@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useClearCache } from 'react-clear-cache';
 
 
 const MainContent = () => {
+    const { emptyCacheStorage } = useClearCache();
     return (
         <div className='main-page__content--container'>
             <div className='main-page__content--shape main-page__content--shape-first'>
@@ -13,7 +15,7 @@ const MainContent = () => {
             </div>
             <div className='main-page__content--shape main-page__content--shape-second'>
                 <Link  to="/cvcreator">
-                    <div className='main-page__content--image main-page__content--image-creator'>
+                    <div onClick={()=>{emptyCacheStorage()}} className='main-page__content--image main-page__content--image-creator'>
                     </div>
                 </Link>
             </div>
