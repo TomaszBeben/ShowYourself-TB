@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { CircularProgress } from '@material-ui/core'
 import { useAuth } from '../../../context/AuthContext'
@@ -22,17 +21,24 @@ const CreatorView = ({ setCurrentId }) => {
             <div>
                 {posts.map((post) => (
                     <div key={post._id} style={cvcontainer} >
+                        <div>
+                            <button onClick={() => setCurrentId(post._id)} >EDIT</button>
+                            <button onClick={() => {
+                                if (window.confirm('Are you sure you want to delete this post?')) {
+                                    dispatch(deletePost(post._id))
+                                    console.log('Post Deleted!');
+                                }
+                            }}>DELETE</button>
+                        </div>
+                        <img src={post.file} alt={currentUser.mail} style={{ width: '100px', height: '100px' }} />
+                        <p>{post.currentUser}</p>
                         <p>{post.name}</p>
                         <p>{post.surname}</p>
-                        <p>{post.currentUser}</p>
-                        <img src={post.file} alt={currentUser.mail} style={{ width: '100px', height: '100px' }} />
-                        <button onClick={() => setCurrentId(post._id)} >EDIT</button>
-                        <button onClick={() => {
-                            if(window.confirm('Are you sure you want to delete this post?')){
-                                dispatch(deletePost(post._id))
-                                console.log('Post Deleted!');
-                            }
-                        }}>DELETE</button>
+                        <p>{post.country}</p>
+                        <p>{post.city}</p>
+                        <p>{post.phone}</p>
+                        <p>{post.email}</p>
+                        <p>{post.zipCode}</p>
                     </div>
                 ))}
             </div>

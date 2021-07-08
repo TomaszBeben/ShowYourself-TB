@@ -14,7 +14,7 @@ export default (posts = [], action) => {
         case DELETE:
                 return posts.filter((post) => post._id !== action.payloads)
         case RESET:
-            return [posts = [], action.payloads];
+            return [posts = []];
         default:
             return posts
     }
