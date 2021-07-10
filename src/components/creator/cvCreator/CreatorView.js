@@ -34,6 +34,7 @@ const CreatorView = ({ setCurrentId }) => {
                         <p>{post.currentUser}</p>
                         <p>{post.name}</p>
                         <p>{post.surname}</p>
+                        <p>{post.dateOfBirth}</p>
                         <p>{post.country}</p>
                         <p>{post.city}</p>
                         <p>{post.phone}</p>

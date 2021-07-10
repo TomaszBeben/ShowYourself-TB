@@ -23,6 +23,7 @@ const CreatorForm = ({ currentId, setCurrentId }) => {
         currentUser: currentUser.email,
         name: '',
         surname: '',
+        dateOfBirth: '',
         file: '',
         country: '',
         city: '',
@@ -56,6 +57,7 @@ const CreatorForm = ({ currentId, setCurrentId }) => {
                 <input type="hidden" value={postData.currentUser} />
                 <input type="text" placeholder='name' value={postData.name} onChange={(e) => setPostData({ ...postData, name: e.target.value })} />
                 <input type="text" placeholder='surname' value={postData.surname} onChange={(e) => setPostData({ ...postData, surname: e.target.value })} />
+                <input type="date" placeholder='dateOfBirth' value={postData.dateOfBirth} onChange={(e) => setPostData({ ...postData, dateOfBirth: e.target.value })} />
                 <input type="text" placeholder='country' value={postData.country} onChange={(e) => setPostData({ ...postData, country: e.target.value })} />
                 <input type="text" placeholder='city' value={postData.city} onChange={(e) => setPostData({ ...postData, city: e.target.value })} />
                 <input type="number" placeholder='phone' value={postData.phone} onChange={(e) => setPostData({ ...postData, phone: e.target.value })} />
