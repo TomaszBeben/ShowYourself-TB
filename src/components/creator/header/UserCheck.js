@@ -19,7 +19,7 @@ const UserCheck = () => {
         setError('')
         try {
             await logout()
-            await check()
+            check()
         } catch {
             setError('Filed to log out')
         }

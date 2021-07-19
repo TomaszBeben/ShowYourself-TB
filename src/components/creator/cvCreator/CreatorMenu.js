@@ -7,7 +7,7 @@ const CreatorMenu = () => {
     const dispatch = useDispatch()
     const style = {
         height: '100vh',
-        width: '20vw',
+        width: '10vw',
         border: '1px solid black'
     }
 

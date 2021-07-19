@@ -12,15 +12,16 @@ const CreatorView = ({ setCurrentId }) => {
     const { currentUser } = useAuth()
 
     const cvcontainer = {
-        width: '200px',
-        height: '200px'
+        width: '45vw',
+        height: '80vh',
+        border: '1px solid black'
     }
-
     return (
         !posts.length ? <CircularProgress /> : (
             <div>
                 {posts.map((post) => (
                     <div key={post._id} style={cvcontainer} >
+                        {console.log(posts)}
                         <div>
                             <button onClick={() => setCurrentId(post._id)} >EDIT</button>
                             <button onClick={() => {
@@ -40,6 +41,12 @@ const CreatorView = ({ setCurrentId }) => {
                         <p>{post.phone}</p>
                         <p>{post.email}</p>
                         <p>{post.zipCode}</p>
+                        <p>{post.education.first.degree}</p>
+                        <p>{post.education.first.school}</p>
+                        <p>{post.education.first.city}</p>
+                        <p>{post.education.first.start}</p>
+                        <p>{post.education.first.end}</p>
+                        <p>{post.education.first.description}</p>
                     </div>
                 ))}
             </div>
