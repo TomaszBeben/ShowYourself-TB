@@ -1,4 +1,4 @@
-$imageWidth: 40%;
+$imageWidth: 39%;
 $imageHeight: 70%;
 $imageWidthMobile: 80%;
 $imageHeightMobile: 30%;
@@ -15,7 +15,7 @@ $imageHeightMobile: 30%;
 .main-page__content--shape {
     width: $imageWidth;
     height: $imageHeight;
-    clip-path: polygon(30% 0, 100% 0, 70% 100%, 0% 100%);
+    clip-path: polygon(28% 0, 98% 0, 70% 100%, 0% 100%);
     filter: grayscale(0.4) blur(2px);
     transition: 0.3s;
     &:hover {
@@ -74,8 +74,8 @@ $imageHeightMobile: 30%;
 
 .main-page__content--image {
     background-size: cover;
-    width: 100%;
-    height: 100%;
+    width: 98%;
+    height: 98%;
     transition: 0.3s;
     margin: 5px 5px;
     &:hover {

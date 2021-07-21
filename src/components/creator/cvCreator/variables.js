@@ -36,6 +36,7 @@ export const initialState = (currentUser) => {
                 end: '',
                 description: ''
             }
-        }
+        },
+        skills: []
     }
 }

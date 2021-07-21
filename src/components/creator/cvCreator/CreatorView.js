@@ -21,7 +21,6 @@ const CreatorView = ({ setCurrentId }) => {
             <div>
                 {posts.map((post) => (
                     <div key={post._id} style={cvcontainer} >
-                        {console.log(posts)}
                         <div>
                             <button onClick={() => setCurrentId(post._id)} >EDIT</button>
                             <button onClick={() => {
@@ -47,6 +46,7 @@ const CreatorView = ({ setCurrentId }) => {
                         <p>{post.education.first.start}</p>
                         <p>{post.education.first.end}</p>
                         <p>{post.education.first.description}</p>
+                        {/* <p>{post.skills}</p> */}
                     </div>
                 ))}
             </div>
