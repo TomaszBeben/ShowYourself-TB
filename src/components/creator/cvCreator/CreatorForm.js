@@ -40,21 +40,17 @@ const CreatorForm = ({ currentId, setCurrentId }) => {
     }
 
 
-    const [skill, setSkill] = useState([])
+    const [singleSkill, setSingleSkill] = useState('')
+    const [skills, setSkills] = useState([])
+
     const addSkill = (e) => {
-        let skills = []
         e.preventDefault()
-        skills.push(skill)
-        setSkill([])
-        console.log(skills);
-
+        setSkills(skills => [...skills, singleSkill])
+        setSingleSkill('')
     }
+    console.log(skills);
 
-    const [myArray, updateMyArray] = useState([]);
-
-    const onClick = () => {
-        updateMyArray(arr => [...arr, `${arr.length}`]);
-    };
+    //edit skills still not working
 
     return (
         <div style={style}>
@@ -78,21 +74,22 @@ const CreatorForm = ({ currentId, setCurrentId }) => {
                 <input type="date" placeholder='start' value={postData.education.first.start} onChange={(e) => setPostData({ ...postData, education: { ...postData.education, first: { ...postData.education.first, start: e.target.value } } })} />
                 <input type="date" placeholder='end' value={postData.education.first.end} onChange={(e) => setPostData({ ...postData, education: { ...postData.education, first: { ...postData.education.first, end: e.target.value } } })} />
                 <input type="text" placeholder='description' value={postData.education.first.description} onChange={(e) => setPostData({ ...postData, education: { ...postData.education, first: { ...postData.education.first, description: e.target.value } } })} />
-                {/* experience */}
-                <input type="submit" />
-            </form>
-            {/* <form onSubmit={addSkill}>
-                <input type="text" placeholder='test' value={skill} onChange={(e) => setSkill([e.target.value])} />
-                <input type="submit" />
-            </form>
-            <form>
-                <input type="button" onClick={onClick} value="Update" />,
+                {/* test */}
+                <input type="text" placeholder='skill' value={singleSkill} onChange={(e) => setSingleSkill(e.target.value)} />
+                <input type="submit" value='dodaj' onClick={addSkill} />
+                
+                {currentId ?
+                    skills.map((el, index) => (
+                        <li key={index}>{el}</li>
+                    )) :
+                    postData.skills.map((el, index) => (
+                        <li key={index}>{el}</li>
+                    ))
+                }
 
-                <div>{myArray.map(e =>
-                    <div>{e}</div>
-                )}
-                </div>
-            </form> */}
+                {/* submit */}
+                <input type="submit" onClick={() => setPostData({ ...postData, skills: skills })} />
+            </form>
         </div>
     )
 }

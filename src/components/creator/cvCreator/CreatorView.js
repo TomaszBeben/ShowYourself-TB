@@ -46,7 +46,9 @@ const CreatorView = ({ setCurrentId }) => {
                         <p>{post.education.first.start}</p>
                         <p>{post.education.first.end}</p>
                         <p>{post.education.first.description}</p>
-                        {/* <p>{post.skills}</p> */}
+                        {post.skills.map((el, index)=>(
+                            <li key={index} >{`_${el}`}</li>
+                        ))}
                     </div>
                 ))}
             </div>
