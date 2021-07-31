@@ -11,20 +11,20 @@ import Creator from './creator/cvCreator/Creator'
 
 const App = () => {
   return (
-      <div>
-        <Router>
-          <AuthProvider>
-            <Switch>
-              <Route exact path='/' component={Main}/>
-              <Route path='/signup' component={Signup} />
-              <Route path='/login' component={Login} />
-              <Route path='/forgot-password' component={ForgotPassword} />
-              <PrivateRoute path='/test' component={Test}/>
-              <PrivateRoute path='/cvcreator' component={Creator}/>
-            </Switch>
-          </AuthProvider>
-        </Router>
-      </div>
+    <div>
+      <Router>
+        <AuthProvider>
+          <Switch>
+            <Route exact path='/' component={Main} />
+            <Route path='/signup' component={Signup} />
+            <Route path='/login' component={Login} />
+            <Route path='/forgot-password' component={ForgotPassword} />
+            <Route path='/test' component={Test} />
+            <PrivateRoute path='/cvcreator' component={Creator} />
+          </Switch>
+        </AuthProvider>
+      </Router>
+    </div>
   )
 }
 

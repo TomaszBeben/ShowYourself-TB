@@ -10,7 +10,6 @@ export const initialState = (currentUser) => {
         phone: '',
         email: currentUser.email,
         zipCode: '',
-        test: '',
         education: {
             first: {
                 degree: '',

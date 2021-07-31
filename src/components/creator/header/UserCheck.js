@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useAuth } from '../../../context/AuthContext'
 import { useHistory } from 'react-router-dom'
 
+import { Link } from 'react-router-dom'
+
 
 const UserCheck = () => {
 
@@ -46,6 +48,9 @@ const UserCheck = () => {
                     <button className='main-page__header--user--auth-button' onClick={handleLogout}>
                         {inOrOut}
                     </button>
+                    <Link to="/test" >
+                    <button>TEST</button>
+                    </Link>
                 </div>
             </div>
         </>
