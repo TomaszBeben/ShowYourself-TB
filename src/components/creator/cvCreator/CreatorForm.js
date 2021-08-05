@@ -7,17 +7,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { createPost, updatePost } from '../../../api/index'
 import { useAuth } from '../../../context/AuthContext'
 import { initialState } from './variables'
-
-const style = {
-    height: '100vh',
-    width: '45vw',
-    border: '1px solid black',
-    fontSize: '1rem',
-}
-const formStyle = {
-    display: 'flex',
-    flexDirection: 'column'
-}
+import  useStyles  from './creatorForms/styles'
+import { TextField, Button, Typography, Paper } from '@material-ui/core';
 
 const CreatorForm = ({ currentId, setCurrentId }) => {
 
@@ -26,6 +17,7 @@ const CreatorForm = ({ currentId, setCurrentId }) => {
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
     const [skills, setSkills] = useState([])
     const dispatch = useDispatch()
+    const classes = useStyles()
 
     useEffect(() => {
         if (post) {
@@ -48,25 +40,26 @@ const CreatorForm = ({ currentId, setCurrentId }) => {
     }
 
     return (
-        <div style={style}>
-            {/* <h1>{currentUser.email}</h1> */}
-            <form style={formStyle} onSubmit={handleSubmit}>
+        <Paper className={classes.paper}>
+            <form className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 {/* photo */}
-                <FileBase type='file' multiple={false} onDone={({ base64 }) => setPostData({ ...postData, file: base64 })} />
-
+                <div className={classes.fileInput}>
+                    <FileBase type='file' multiple={false} onDone={({ base64 }) => setPostData({ ...postData, file: base64 })} />
+                </div>
                 {/* basics info */}
                 <Basics postData={postData} setPostData={setPostData} />
 
                 {/* education */}
-                <Education postData={postData} setPostData={setPostData} />
+                {/* <Education postData={postData} setPostData={setPostData} /> */}
 
                 {/* skills */}
-                <Skills skills={skills} setSkills={setSkills} postData={postData} setPostData={setPostData} />
+                {/* <Skills skills={skills} setSkills={setSkills} postData={postData} setPostData={setPostData} /> */}
 
                 {/* submit */}
-                <input type="submit" onClick={() => { setPostData({ ...postData, skills: skills }) }} />
+                <Button type="submit"  />
+                <Button className={classes.buttonSubmit} variant="contained" size="large" type="submit" fullWidth onClick={() => { setPostData({ ...postData, skills: skills }) }}>Submit</Button>
             </form>
-        </div>
+            </Paper>
     )
 }
 
