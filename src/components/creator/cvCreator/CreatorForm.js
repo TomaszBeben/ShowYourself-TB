@@ -9,6 +9,7 @@ import { useAuth } from '../../../context/AuthContext'
 import { initialState } from './variables'
 import  useStyles  from './creatorForms/styles'
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import WorkExperience from './creatorForms/WorkExperience'
 
 const CreatorForm = ({ currentId, setCurrentId }) => {
 
@@ -44,22 +45,25 @@ const CreatorForm = ({ currentId, setCurrentId }) => {
             <form className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 {/* photo */}
                 <div className={classes.fileInput}>
-                    <FileBase type='file' multiple={false} onDone={({ base64 }) => setPostData({ ...postData, file: base64 })} />
+                    <h1>Upload your photo:</h1>
+                    <h1><FileBase type='file' multiple={false} onDone={({ base64 }) => setPostData({ ...postData, file: base64 })} /></h1>
                 </div>
                 {/* basics info */}
                 <Basics postData={postData} setPostData={setPostData} />
 
                 {/* education */}
-                {/* <Education postData={postData} setPostData={setPostData} /> */}
+                <Education postData={postData} setPostData={setPostData} />
+
+                {/* experience */}
+                <WorkExperience postData={postData} setPostData={setPostData}/>
 
                 {/* skills */}
-                {/* <Skills skills={skills} setSkills={setSkills} postData={postData} setPostData={setPostData} /> */}
+                <Skills skills={skills} setSkills={setSkills} postData={postData} setPostData={setPostData} />
 
                 {/* submit */}
-                <Button type="submit"  />
                 <Button className={classes.buttonSubmit} variant="contained" size="large" type="submit" fullWidth onClick={() => { setPostData({ ...postData, skills: skills }) }}>Submit</Button>
             </form>
-            </Paper>
+        </Paper>
     )
 }
 

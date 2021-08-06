@@ -36,6 +36,32 @@ export const initialState = (currentUser) => {
                 description: ''
             }
         },
+        experience:{
+            first:{
+                position: '',
+                company: '',
+                location: '',
+                start: '',
+                end: '',
+                description: '',
+            },
+            second:{
+                position: '',
+                company: '',
+                location: '',
+                start: '',
+                end: '',
+                description: '',
+            },
+            third:{
+                position: '',
+                company: '',
+                location: '',
+                start: '',
+                end: '',
+                description: '',
+            },
+        },
         skills: []
     }
 }
