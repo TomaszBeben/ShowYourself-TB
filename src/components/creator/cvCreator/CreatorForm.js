@@ -7,14 +7,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { createPost, updatePost } from '../../../api/index'
 import { useAuth } from '../../../context/AuthContext'
 import { initialState } from './variables'
-import  useStyles  from './creatorForms/styles'
+import  useStyles  from './styles'
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import WorkExperience from './creatorForms/WorkExperience'
 
-const CreatorForm = ({ currentId, setCurrentId }) => {
+const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
 
     const { currentUser } = useAuth()
-    const [postData, setPostData] = useState(initialState(currentUser))
+    // const [postData, setPostData] = useState(initialState(currentUser))
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
     const [skills, setSkills] = useState([])
     const dispatch = useDispatch()
