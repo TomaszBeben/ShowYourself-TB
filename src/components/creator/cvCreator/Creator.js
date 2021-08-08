@@ -8,6 +8,7 @@ import { getPost } from '../../../api/index'
 import { useAuth } from '../../../context/AuthContext'
 import { initialState } from './variables'
 
+
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import  useStyles  from './styles'
 
@@ -29,7 +30,7 @@ const Creator = () => {
 
         <Paper className={classes.mainContainer}>
             <CreatorMenu />
-            <div>
+            <div className={classes.mainCreator}>
                 <div className={classes.formAndView}>
                     <CreatorForm postData={postData} setPostData={setPostData} setCurrentId={setCurrentId} currentId={currentId} />
                     <CreatorView postData={postData} setCurrentId={setCurrentId} currentId={currentId}/>

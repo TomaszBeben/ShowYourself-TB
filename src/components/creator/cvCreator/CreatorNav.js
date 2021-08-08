@@ -18,14 +18,13 @@ const CreatorNav = ({ setCurrentId }) => {
 
     const cvcontainer = {
         width: '20vw',
-        height: '20vh',
-        border: '1px solid black',
+        height: '15vh',
         overflow: 'auto'
     }
     return (
-            <Paper className={classes.viewContainer}>
+            <Paper className={classes.navContainer}>
                 {!posts.length ? <CircularProgress /> : (
-                    <div className={classes.viewContainer}>
+                    <div className={classes.navContainer}>
                         {posts.map((post) => (
                             <div key={post._id} style={cvcontainer} >
                                 <div>
@@ -37,7 +36,7 @@ const CreatorNav = ({ setCurrentId }) => {
                                         }
                                     }}>DELETE</button>
                                 </div>
-                                <img src={post.file} alt={currentUser.mail} style={{ width: '100px', height: '100px' }} />
+                                {/* <img src={post.file} alt={currentUser.mail} style={{ width: '100px', height: '100px' }} /> */}
                                 <p>{post.currentUser}</p>
                                 <p>{post.name}</p>
                                 <p>{post.surname}</p>
