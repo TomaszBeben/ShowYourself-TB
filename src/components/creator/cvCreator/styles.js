@@ -9,10 +9,11 @@ export default makeStyles((theme) => ({
   //margin: theme.spacing(1),
 
   mainContainer: {
-    maxWidth: '99vw',
-    maxHeigth: '99vh',
+    maxWidth: '100vw',
+    maxHeigth: '100vh',
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'center',
     backgroundColor: '#bac2cf'
   },
   mainCreator: {},
@@ -25,8 +26,8 @@ export default makeStyles((theme) => ({
   },
 
   viewHeader:{
-    margin: theme.spacing(0.5),
-    minWidth: '21cm',
+    margin: theme.spacing(1),
+    maxWidth: '21cm',
     backgroundColor: 'white',
     display: 'flex',
     flexDirection: 'row',
@@ -58,6 +59,8 @@ export default makeStyles((theme) => ({
     width: '45vw',
     overflow: 'auto',
     maxHeight: '70vh',
+    display: 'flex',
+    flexDirection: 'column'
   },
 
   paper: {
@@ -72,6 +75,10 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
+  },
+
+  select: {
+    margin: '0px 10px'
   },
 
   fileInput: {

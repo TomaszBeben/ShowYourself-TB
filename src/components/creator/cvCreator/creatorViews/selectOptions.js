@@ -14,10 +14,28 @@ export const styleOptions = [
 ]
 
 export const colorOptions = [
-    'grey',
-    'red',
-    'green',
-    'blue',
-    'pink',
-    'yellow',
+    {
+        label: 'grey',
+        value: 'grey',
+    },
+    {
+        label: 'red',
+        value: 'red',
+    },
+    {
+        label: 'green',
+        value: 'green',
+    },
+    {
+        label: 'blue',
+        value: 'blue',
+    },
+    {
+        label: 'pink',
+        value: 'pink',
+    },
+    {
+        label: 'yellow',
+        value: 'yellow',
+    },
 ]
