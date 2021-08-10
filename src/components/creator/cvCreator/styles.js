@@ -16,6 +16,23 @@ export default makeStyles((theme) => ({
     backgroundColor: '#bac2cf'
   },
   mainCreator: {},
+  A4Paper:{
+    padding: theme.spacing(1),
+    margin: theme.spacing(0.5),
+    minWidth: '21cm',
+    minHeight: '29.7cm',
+    backgroundColor: 'white',
+  },
+
+  viewHeader:{
+    margin: theme.spacing(0.5),
+    minWidth: '21cm',
+    backgroundColor: 'white',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
 
   formAndView: {
     display: 'flex',

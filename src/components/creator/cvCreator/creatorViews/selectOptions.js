@@ -1,14 +1,23 @@
-export const optionsVariable = [
+export const styleOptions = [
     {
-        label: 'red',
-        value: 'red'
+        label: 'style 1',
+        value: 'style 1',
     },
     {
-        label: 'blue',
-        value: 'blue'
+        label: 'style 2',
+        value: 'style 2',
     },
     {
-        label: 'green',
-        value: 'green'
+        label: 'style 3',
+        value: 'style 3',
     },
+]
+
+export const colorOptions = [
+    'grey',
+    'red',
+    'green',
+    'blue',
+    'pink',
+    'yellow',
 ]

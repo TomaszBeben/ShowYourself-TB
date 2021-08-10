@@ -1,7 +1,6 @@
 import React from 'react'
 import useStyles from '../styles'
-import { Box } from '@material-ui/core';
-import { optionsVariable } from './selectOptions';
+import { Paper } from '@material-ui/core';
 
 
 
@@ -10,15 +9,7 @@ const A4Size = ({ postData }) => {
 
     return (
         <>
-            <div>
-                <select>
-                    {optionsVariable.map((option) => (
-                        <option value={option.value}>{option.label}</option>
-                    ))}
-                </select>
-                {/* how to select option ? */}
-            </div>
-            <Box className='A4Size' >
+            <Paper className={classes.A4Paper} >
                 <div>
                     <p>{postData.name}</p>
                     <p>{postData.surname}</p>
@@ -35,7 +26,7 @@ const A4Size = ({ postData }) => {
                     <p>{postData.experience.first.position}</p>
                     <p>{postData.education.first.description}</p>
                 </div>
-            </Box>
+            </Paper>
         </>
 
     )
