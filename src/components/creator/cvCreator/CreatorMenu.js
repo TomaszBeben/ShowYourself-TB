@@ -14,26 +14,26 @@ const CreatorMenu = () => {
     return (
         <Paper className={classes.menuContainer}>
             <div>
-                <Link to='/'>
+                <Link to='/' style={{ textDecoration: 'none' }}>
                     <Button className={classes.buttonSubmit} variant="contained" size="large" fullWidth>home</Button>
                 </Link>
             </div>
             <div>
-                <Link to='/cvcreator/basics'>
+                <Link to='/cvcreator/basics' style={{ textDecoration: 'none' }}>
                     <Button className={classes.buttonSubmit} variant="contained" size="large" fullWidth>Basics</Button>
                 </Link>
-                <Link to='/cvcreator/edu'>
+                <Link to='/cvcreator/edu' style={{ textDecoration: 'none' }}>
                     <Button className={classes.buttonSubmit} variant="contained" size="large" fullWidth>education</Button>
                 </Link>
-                <Link to='/cvcreator/work'>
+                <Link to='/cvcreator/work' style={{ textDecoration: 'none' }}>
                     <Button className={classes.buttonSubmit} variant="contained" size="large" fullWidth>work experience</Button>
                 </Link>
-                <Link to='/cvcreator/skills'>
+                <Link to='/cvcreator/skills' style={{ textDecoration: 'none' }}>
                     <Button className={classes.buttonSubmit} variant="contained" size="large" fullWidth>skills</Button>
                 </Link>
             </div>
             <div>
-                <Link to='/cvcreator/end'>
+                <Link to='/cvcreator/end' style={{ textDecoration: 'none' }}>
                     <Button className={classes.buttonSubmit} variant="contained" size="large" fullWidth>end</Button>
                 </Link>
             </div>

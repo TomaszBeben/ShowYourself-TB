@@ -92,15 +92,14 @@ export default makeStyles((theme) => ({
   },
 
   buttonSubmit: {
-    marginBottom: 10,
-    // textDecoration: 'overline',
+    marginBottom: theme.spacing(1),
+    marginTop: theme.spacing(1),
+    textDecoration: 'none',
     '&:hover': {
-      backgroundColor: 'yellowgreen',
+      backgroundColor: '#228B22',
     }
   },
   buttonDelete: {
-    marginBottom: 10,
-    // textDecoration: 'overline',
     '&:hover': {
       backgroundColor: 'yellowgreen',
     }
