@@ -44,12 +44,17 @@ export default makeStyles((theme) => ({
     margin: theme.spacing(1),
     height: '95vh',
     width: '10vw',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around'
   },
   navContainer: {
     padding: theme.spacing(1),
     margin: theme.spacing(1),
+    maxWidth: '83vw',
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    overflow: 'auto'
   },
 
   formContainer:{},
@@ -88,8 +93,16 @@ export default makeStyles((theme) => ({
 
   buttonSubmit: {
     marginBottom: 10,
+    // textDecoration: 'overline',
     '&:hover': {
       backgroundColor: 'yellowgreen',
     }
   },
+  buttonDelete: {
+    marginBottom: 10,
+    // textDecoration: 'overline',
+    '&:hover': {
+      backgroundColor: 'yellowgreen',
+    }
+  }
 }));

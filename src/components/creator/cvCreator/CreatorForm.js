@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import FileBase from 'react-file-base64'
 import Basics from './creatorForms/Basics'
 import Education from './creatorForms/Education'
 import Skills from './creatorForms/Skills'
@@ -7,14 +6,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { createPost, updatePost } from '../../../api/index'
 import { useAuth } from '../../../context/AuthContext'
 import { initialState } from './variables'
-import  useStyles  from './styles'
-import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import useStyles from './styles'
+import { Button, Paper } from '@material-ui/core';
 import WorkExperience from './creatorForms/WorkExperience'
+import { Switch, Route } from 'react-router-dom'
+
+import Test from '../../../test'
 
 const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
 
     const { currentUser } = useAuth()
-    // const [postData, setPostData] = useState(initialState(currentUser))
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
     const [skills, setSkills] = useState([])
     const dispatch = useDispatch()
@@ -25,7 +26,7 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
             setPostData(post);
             setSkills(post.skills);
         }
-    }, [post])
+    }, [post, setPostData])
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -43,25 +44,24 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
     return (
         <Paper className={classes.paper}>
             <form className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                {/* photo */}
-                <div className={classes.fileInput}>
-                    <h1>Upload your photo:</h1>
-                    <h1><FileBase type='file' multiple={false} onDone={({ base64 }) => setPostData({ ...postData, file: base64 })} /></h1>
-                </div>
-                {/* basics info */}
-                <Basics postData={postData} setPostData={setPostData} />
-
-                {/* education */}
-                <Education postData={postData} setPostData={setPostData} />
-
-                {/* experience */}
-                <WorkExperience postData={postData} setPostData={setPostData}/>
-
-                {/* skills */}
-                <Skills skills={skills} setSkills={setSkills} postData={postData} setPostData={setPostData} />
-
-                {/* submit */}
-                <Button className={classes.buttonSubmit} variant="contained" size="large" type="submit" fullWidth onClick={() => { setPostData({ ...postData, skills: skills }) }}>Submit</Button>
+                <Switch>
+                    <Route exact path='/cvcreator/basics' >
+                        <Basics postData={postData} setPostData={setPostData} />
+                    </Route>
+                    <Route path='/cvcreator/edu' >
+                        <Education postData={postData} setPostData={setPostData} />
+                    </Route>
+                    <Route path='/cvcreator/work' >
+                        <WorkExperience postData={postData} setPostData={setPostData} />
+                    </Route>
+                    <Route path='/cvcreator/skills' >
+                        <Skills skills={skills} setSkills={setSkills} postData={postData} setPostData={setPostData} />
+                    </Route>
+                    <Route path='/cvcreator/end' >
+                        <h2>Click the button to save your CV</h2>
+                        <Button className={classes.buttonSubmit} variant="contained" size="large" type="submit" fullWidth onClick={() => { setPostData({ ...postData, skills: skills }) }}>Submit</Button>
+                    </Route>
+                </Switch>
             </form>
         </Paper>
     )

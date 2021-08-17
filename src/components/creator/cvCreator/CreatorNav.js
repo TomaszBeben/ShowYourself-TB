@@ -17,7 +17,8 @@ const CreatorNav = ({ setCurrentId }) => {
     const classes = useStyles()
 
     const cvcontainer = {
-        width: '20vw',
+        minWidth: '20vw',
+        maxWidth: '20vw',
         height: '15vh',
         overflow: 'auto'
     }

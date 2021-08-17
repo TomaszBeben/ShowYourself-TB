@@ -14,7 +14,7 @@ const MainContent = () => {
                 </a>
             </div>
             <div className='main-page__content--shape main-page__content--shape-second'>
-                <Link  to="/cvcreator">
+                <Link  to="/cvcreator/basics">
                     <div onClick={()=>{emptyCacheStorage()}} className='main-page__content--image main-page__content--image-creator'>
                     </div>
                 </Link>

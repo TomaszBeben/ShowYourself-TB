@@ -9,7 +9,7 @@ import { useAuth } from '../../../context/AuthContext'
 import { initialState } from './variables'
 
 
-import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import { Paper } from '@material-ui/core';
 import  useStyles  from './styles'
 
 const Creator = () => {
