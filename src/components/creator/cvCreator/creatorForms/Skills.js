@@ -1,20 +1,23 @@
+/* eslint-disable no-unused-expressions */
 import React, { useState } from 'react'
-
-const button = {
-    height: '25px',
-    width: '25px',
-    border: '1px solid black',
-    fontSize: '1rem',
-    cursor: 'pointer'
-}
+import { Button, TextField } from '@material-ui/core'
+import useStyles from '../styles'
 
 const Skills = ({ skills, setSkills, postData, setPostData }) => {
     const [singleSkill, setSingleSkill] = useState('')
+    const classes = useStyles()
 
+    const delSkill = (skill, index) =>{
+        skill.splice(index, 1);
+        setSkills(skills => [...skills, singleSkill])
+    } // to check!!!!!!!!!!!!
     const render = skills.map((element, index) => (
         <div key={index}>
-            <li>{element}</li>
-            <button type='button' style={button} onClick={() => { skills.splice(index, 1) }}>x</button>
+            <li style={{ textDecoration: 'none' }}>{element}</li>
+            <Button
+                className={`.buttonDenied ${classes.buttonSubmit}`}
+                variant="contained" size="large" type='button'
+                onClick={() => { delSkill(skills, index) }}>x</Button>
         </div>
     ))
 
@@ -25,11 +28,16 @@ const Skills = ({ skills, setSkills, postData, setPostData }) => {
     }
 
     return (
-        <>
-            <input type="text" placeholder='skill' value={singleSkill} onChange={(e) => setSingleSkill(e.target.value)} />
-            <input type="button" value='dodaj' onClick={addSkill} />
-            {render}
-        </>
+        <div className='skills'>
+            <TextField type="text" label='skill' value={singleSkill} onChange={(e) => setSingleSkill(e.target.value)} />
+            <Button
+                className={`buttonAccept ${classes.buttonSubmit}`}
+                variant="contained" size="large" type='button'
+                onClick={addSkill}>dodaj</Button>
+            <div>
+                {render}
+            </div>
+        </div>
     )
 }
 

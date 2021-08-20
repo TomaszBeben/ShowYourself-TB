@@ -95,13 +95,5 @@ export default makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
     marginTop: theme.spacing(1),
     textDecoration: 'none',
-    '&:hover': {
-      backgroundColor: '#228B22',
-    }
   },
-  buttonDelete: {
-    '&:hover': {
-      backgroundColor: 'yellowgreen',
-    }
-  }
 }));

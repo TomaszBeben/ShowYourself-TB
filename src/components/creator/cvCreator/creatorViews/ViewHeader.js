@@ -20,10 +20,9 @@ const ViewHeader = ({ sheetStyle, setSheetStyle, color, setColor }) => {
                         <Select
                             native
                             value={sheetStyle}
-                            onChange={(e) => setSheetStyle(e.target.value)}
-                        >
+                            onChange={(e) => setSheetStyle(e.target.value)}>
                             <option aria-label="None" value="" />
-                            {styleOptions.map((style, key) => (
+                            {styleOptions.map((style) => (
                                 <option key={style.value} value={style.value}>{style.label}</option>
                             ))}
                         </Select>
@@ -33,20 +32,27 @@ const ViewHeader = ({ sheetStyle, setSheetStyle, color, setColor }) => {
                         <Select
                             native
                             value={color}
-                            onChange={(e) => setColor(e.target.value)}
-                        >
+                            onChange={(e) => setColor(e.target.value)}>
                             <option aria-label="None" value="" />
-                            {colorOptions.map((style, key) => (
+                            {colorOptions.map((style) => (
                                 <option key={style.value} value={style.value}>{style.label}</option>
                             ))}
                         </Select>
                     </FormControl>
                     <div>
-                        <Button onClick={() => { console.log('style: ' + sheetStyle); console.log('color: ' + color); }} className={classes.buttonSubmit}>Check</Button>
+                        <Button
+                            className={classes.buttonSubmit} variant="contained" size="large"
+                            onClick={() => { console.log('style: ' + sheetStyle); console.log('color: ' + color); }}>
+                            Check
+                        </Button>
                     </div>
                 </div>
                 <div>
-                    <Button onClick={() => { console.log('kiedys bedzie pobieranie :)'); }} className={classes.buttonSubmit}>Pobierz</Button>
+                    <Button
+                        className={classes.buttonSubmit} variant="contained" size="large"
+                        onClick={() => { console.log('kiedys bedzie pobieranie :)'); }} >
+                        Pobierz
+                    </Button>
                 </div>
             </Paper>
 
