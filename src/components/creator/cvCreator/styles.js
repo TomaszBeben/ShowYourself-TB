@@ -1,12 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles';
 
+ const margin = '1vh';
+ const padding = '10px';
+
 export default makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
     },
   },
-  //padding: theme.spacing(1),
-  //margin: theme.spacing(1),
 
   mainContainer: {
     maxWidth: '100vw',
@@ -18,15 +19,15 @@ export default makeStyles((theme) => ({
   },
   mainCreator: {},
   A4Paper:{
-    padding: theme.spacing(1),
-    margin: theme.spacing(0.5),
+    padding: padding,
+    margin: margin,
     minWidth: '21cm',
     minHeight: '29.7cm',
     backgroundColor: 'white',
   },
 
   viewHeader:{
-    margin: theme.spacing(1),
+    margin: margin,
     maxWidth: '21cm',
     backgroundColor: 'white',
     display: 'flex',
@@ -40,17 +41,18 @@ export default makeStyles((theme) => ({
     flexDirection: 'row'
   },
   menuContainer: {
-    padding: theme.spacing(1),
-    margin: theme.spacing(1),
+    padding: padding,
+    margin: margin,
     height: '95vh',
-    width: '10vw',
+    width: '13vw',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around'
   },
   navContainer: {
-    padding: theme.spacing(1),
-    margin: theme.spacing(1),
+    padding: padding,
+    margin: margin,
+    height: '25vh' ,
     maxWidth: '83vw',
     display: 'flex',
     flexDirection: 'row',
@@ -59,8 +61,6 @@ export default makeStyles((theme) => ({
 
   formContainer:{},
   viewContainer:{
-    padding: theme.spacing(1),
-    margin: theme.spacing(1),
     width: '45vw',
     overflow: 'auto',
     maxHeight: '70vh',
@@ -69,8 +69,8 @@ export default makeStyles((theme) => ({
   },
 
   paper: {
-    padding: theme.spacing(1),
-    margin: theme.spacing(1),
+    padding: padding,
+    margin: margin,
     width: '35vw',
     overflow: 'auto',
     maxHeight: '70vh',
@@ -92,8 +92,8 @@ export default makeStyles((theme) => ({
   },
 
   buttonSubmit: {
-    marginBottom: theme.spacing(1),
-    marginTop: theme.spacing(1),
+    marginBottom: margin,
+    marginTop: margin,
     textDecoration: 'none',
   },
 }));

@@ -3,22 +3,23 @@ import { Button, TextField } from '@material-ui/core'
 import useStyles from '../styles'
 
 const Skills = ({ skills, setSkills, postData, setPostData }) => {
-    const [singleSkill, setSingleSkill] = useState('')
+    const [singleSkill, setSingleSkill] = useState({})
     const classes = useStyles()
 
-    const delSkill = (skill, index) => {
-        skill.splice(index, 1)
-        ////render component
+    const delSkill = (index) => {
+        const copy = [...skills]
+        copy.splice(index, 1)
+        setSkills(copy)
     }
 
     const addSkill = () => {
         setSkills(skills => [...skills, singleSkill])
         setPostData({ ...postData, skills: skills })
-        setSingleSkill('')
+        setSingleSkill({...singleSkill, skill:''})
     }
-    const render = skills.map((element, index) =>
-        <div>
-            <li style={{ textDecoration: 'none' }}>{element}</li>
+    const render = skills.map((elem, index) =>
+        <div >
+            <p key={index} style={{ textDecoration: 'none' }}>{elem.skill}</p>
             <Button
                 className={`.buttonDenied ${classes.buttonSubmit}`}
                 variant="contained" size="large" type='button'
@@ -27,11 +28,12 @@ const Skills = ({ skills, setSkills, postData, setPostData }) => {
             </Button>
         </div>
     )
+    console.log(skills);
 
     return (
         <>
             <div className='skills'>
-                <TextField type="text" label='skill' value={singleSkill} onChange={(e) => setSingleSkill(e.target.value)} />
+                <TextField type="text" label='skill' value={singleSkill.skill} onChange={(e) => setSingleSkill({...singleSkill, skill:e.target.value })} />
                 <Button
                     className={`buttonAccept ${classes.buttonSubmit}`}
                     variant="contained" size="large" type='button'

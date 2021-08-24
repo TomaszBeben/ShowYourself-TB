@@ -6,9 +6,6 @@ const Education = ({ postData, setPostData }) => {
     return (
         <>
             <Typography>Education</Typography>
-            {/* <TextField fullWidth type="text" label='degree'
-                value={postData.education.first.degree}
-                onChange={(e) => setPostData({ ...postData, education: { ...postData.education, first: { ...postData.education.first, degree: e.target.value } } })} /> */}
             <TextField fullWidth type="text" label='degree'
                 value={postData.education.first.degree}
                 onChange={(e) => setPostData({ ...postData, education: { ...postData.education, first: { ...postData.education.first, degree: e.target.first } } })} />

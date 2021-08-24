@@ -55,7 +55,7 @@ const CreatorNav = ({ setCurrentId }) => {
                                 <p>{post.experience.first.position}</p>
                                 <p>{post.education.first.description}</p>
                                 {post.skills.map((el, index) => (
-                                    <li key={index} >{el}</li>
+                                    <li key={index} >{el.skill}</li>
                                 ))}
                             </div>
                         ))}

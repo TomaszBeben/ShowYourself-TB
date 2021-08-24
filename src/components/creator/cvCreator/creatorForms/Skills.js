@@ -5,7 +5,6 @@ import useStyles from '../styles'
 const Skills = ({ skills, setSkills, postData, setPostData }) => {
     const [singleSkill, setSingleSkill] = useState({})
     const classes = useStyles()
-    const date = () => new Date().getTime()
 
     const delSkill = (index) => {
         const copy = [...skills]
@@ -17,14 +16,15 @@ const Skills = ({ skills, setSkills, postData, setPostData }) => {
         setSkills(skills => [...skills, singleSkill])
         setPostData({ ...postData, skills: skills })
         setSingleSkill({...singleSkill, skill:''})
+        setSingleSkill({})
     }
-    const render = skills.map((elem, index) =>(
+    const render = skills.map((elem, index) => (
         <div >
-            <p key={index} index={index} style={{ textDecoration: 'none' }}>{elem.skill}</p>
+            <p style={{ textDecoration: 'none' }}>{elem.skill}</p>
             <Button
                 className={`.buttonDenied ${classes.buttonSubmit}`}
                 variant="contained" size="large" type='button'
-                onClick={() => { delSkill(skills, index) }}>
+                onClick={() => { delSkill(index) }}>
                 X
             </Button>
         </div>

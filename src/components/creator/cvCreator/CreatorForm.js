@@ -41,6 +41,9 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
         setCurrentId(null)
     }
 
+    console.log(postData);
+    console.log(skills);
+
     return (
         <Paper className={classes.paper}>
             <form className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
