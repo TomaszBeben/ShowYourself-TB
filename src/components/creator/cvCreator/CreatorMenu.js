@@ -34,8 +34,8 @@ const CreatorMenu = () => {
 
             </div>
             <div>
-                {paths.map((p) => (
-                    <Link to={p.path} style={{ textDecoration: 'none' }}>
+                {paths.map((p, index) => (
+                    <Link key={index} to={p.path} style={{ textDecoration: 'none' }}>
                         <Button className={`buttonAccept ${classes.buttonSubmit}`} variant="contained" size="large" fullWidth>{p.label}</Button>
                     </Link>
                 ))}
