@@ -1,9 +1,8 @@
 import React from 'react'
 import { CircularProgress } from '@material-ui/core'
-import { useAuth } from '../../../context/AuthContext'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import { Paper } from '@material-ui/core';
 import  useStyles  from './styles'
 
 
@@ -13,7 +12,6 @@ const CreatorNav = ({ setCurrentId }) => {
 
     const dispatch = useDispatch()
     const posts = useSelector((state) => state.posts)
-    const { currentUser } = useAuth()
     const classes = useStyles()
 
     const cvcontainer = {
@@ -47,13 +45,13 @@ const CreatorNav = ({ setCurrentId }) => {
                                 <p>{post.phone}</p>
                                 <p>{post.email}</p>
                                 <p>{post.zipCode}</p>
-                                <p>{post.education.first.degree}</p>
+                                {/* <p>{post.education.first.degree}</p>
                                 <p>{post.education.first.school}</p>
                                 <p>{post.education.first.city}</p>
                                 <p>{post.education.first.start}</p>
                                 <p>{post.education.first.end}</p>
                                 <p>{post.experience.first.position}</p>
-                                <p>{post.education.first.description}</p>
+                                <p>{post.education.first.description}</p> */}
                                 {post.skills.map((el, index) => (
                                     <li key={index} >{el.skill}</li>
                                 ))}

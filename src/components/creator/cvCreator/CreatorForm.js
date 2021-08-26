@@ -18,19 +18,23 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
     const { currentUser } = useAuth()
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
     const [skills, setSkills] = useState([])
+    const [education, setEducation] = useState([])
+    const [work, setWork] = useState([])
     const dispatch = useDispatch()
     const classes = useStyles()
 
     useEffect(() => {
         if (post) {
-            setPostData(post);
-            setSkills(post.skills);
+            setPostData(post)
+            setSkills(post.skills)
+            setEducation(post.education)
+            setWork(post.work)
         }
     }, [post, setPostData])
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setPostData({ ...postData, skills: skills })
+        setPostData({ ...postData, skills: skills, education: education, work: work })
         if (currentId) {
             dispatch(updatePost(currentId, postData))
         } else {
@@ -38,11 +42,10 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
         }
         setPostData(initialState(currentUser))
         setSkills([])
+        setEducation([])
+        setWork([])
         setCurrentId(null)
     }
-
-    console.log(postData);
-    console.log(skills);
 
     return (
         <Paper className={classes.paper}>
@@ -52,17 +55,21 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
                         <Basics postData={postData} setPostData={setPostData} />
                     </Route>
                     <Route path='/cvcreator/edu' >
-                        <Education postData={postData} setPostData={setPostData} />
+                        <Education education={education} setEducation={setEducation} postData={postData} setPostData={setPostData} />
                     </Route>
                     <Route path='/cvcreator/work' >
-                        <WorkExperience postData={postData} setPostData={setPostData} />
+                        <WorkExperience work={work} setWork={setWork} postData={postData} setPostData={setPostData} />
                     </Route>
                     <Route path='/cvcreator/skills' >
                         <Skills skills={skills} setSkills={setSkills} postData={postData} setPostData={setPostData} />
                     </Route>
                     <Route path='/cvcreator/end' >
                         <h2>Click the button to save your CV</h2>
-                        <Button className={classes.buttonSubmit} variant="contained" size="large" type="submit" fullWidth onClick={() => { setPostData({ ...postData, skills: skills }) }}>Submit</Button>
+                        <Button
+                        className={classes.buttonSubmit} variant="contained" size="large" type="submit" fullWidth
+                        onClick={() => { setPostData({ ...postData, skills: skills, education: education, work: work }) }}>
+                            Submit
+                        </Button>
                     </Route>
                 </Switch>
             </form>
