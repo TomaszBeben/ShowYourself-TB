@@ -1,47 +1,26 @@
 import React, { useState } from 'react'
 import { Button, TextField } from '@material-ui/core'
+import { deleteElement, editElement } from './functions'
 import useStyles from '../styles'
 
 const Skills = ({ skills, setSkills, postData, setPostData }) => {
     const [singleSkill, setSingleSkill] = useState({})
     const classes = useStyles()
 
-    const delElem = (index) => {
-        const copy = [...skills]
-        copy.splice(index, 1)
-        setSkills(copy)
-    }
-    const editElem = (index) => {
-        const copy = [...skills]
-        setSingleSkill(copy[index])
-    }
-
-
-
-
-
     const addSkill = () => {
         setSkills(skills => [...skills, singleSkill])
         setPostData({ ...postData, skills: skills })
         setSingleSkill({ ...singleSkill, skill: '' })
     }
-    const render = skills.map((elem, index) => (
-        <div key={index} >
-            <h1>{elem.skill}</h1>
-            <Button
-                className={`.buttonDenied ${classes.buttonSubmit}`}
-                variant="contained" size="large" type='button'
-                onClick={() => { delElem(index) }}>
-                X
-            </Button>
-            <Button
-                className={`.buttonDenied ${classes.buttonSubmit}`}
-                variant="contained" size="large" type='button'
-                onClick={() => {editElem(index)}}>
-                Edit
-            </Button>
-        </div>
-    ))
+
+    const test = (arr, fromIndex, toIndex) => {
+        const element = arr[fromIndex];
+        arr.splice(fromIndex, 1);
+        arr.splice(toIndex, 0, element);
+    }
+    //test func it's a func which moves elem in array up
+
+    console.log(skills);
 
     return (
         <>
@@ -56,7 +35,29 @@ const Skills = ({ skills, setSkills, postData, setPostData }) => {
                     dodaj
                 </Button>
                 <div>
-                    {render}
+                    {skills.map((elem, index) => (
+                        <div key={index} >
+                            <h1>{elem.skill}</h1>
+                            <Button
+                                className={`.buttonDenied ${classes.buttonSubmit}`}
+                                variant="contained" size="large" type='button'
+                                onClick={() => { deleteElement(skills, setSkills, index) }}>
+                                X
+                            </Button>
+                            <Button
+                                className={`.buttonDenied ${classes.buttonSubmit}`}
+                                variant="contained" size="large" type='button'
+                                onClick={() => { editElement(skills, setSingleSkill, index) }}>
+                                Edit
+                            </Button>
+                            <Button
+                                className={`.buttonDenied ${classes.buttonSubmit}`}
+                                variant="contained" size="large" type='button'
+                                onClick={() => { test(skills, index, index - 1) }}>
+                                up
+                            </Button>
+                        </div>
+                    ))}
                 </div>
             </div>
         </>

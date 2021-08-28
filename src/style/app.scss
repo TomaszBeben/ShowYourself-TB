@@ -7,22 +7,3 @@
 li {
     list-style: none;
 }
-
-.buttonAccept {
-    &:hover {
-        transition: 0.3s;
-        background: linear-gradient(180deg, rgba(5, 99, 8, 1) 0%, rgba(19, 148, 11, 1) 100%);
-    }
-}
-
-.buttonDenied {
-    &:hover {
-        transition: 0.3s;
-        background: linear-gradient(90deg, rgba(253, 29, 29, 1) 6%, rgba(77, 25, 0, 1) 100%);
-    }
-}
-
-.skills {
-    display: flex;
-    flex-direction: column;
-}

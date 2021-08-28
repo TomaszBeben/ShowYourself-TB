@@ -10,8 +10,11 @@ import useStyles from './styles'
 import { Button, Paper } from '@material-ui/core';
 import WorkExperience from './creatorForms/WorkExperience'
 import { Switch, Route } from 'react-router-dom'
-
-// import Test from '../../../test'
+import Languages from './creatorForms/Languages'
+import Courses from './creatorForms/Courses'
+import Hobby from './creatorForms/Hobby'
+import Links from './creatorForms/Links'
+import Consents from './creatorForms/Consents'
 
 const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
 
@@ -62,6 +65,21 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
                     </Route>
                     <Route path='/cvcreator/skills' >
                         <Skills skills={skills} setSkills={setSkills} postData={postData} setPostData={setPostData} />
+                    </Route>
+                    <Route path='/cvcreator/languages' >
+                        <Languages postData={postData} setPostData={setPostData} />
+                    </Route>
+                    <Route path='/cvcreator/courses' >
+                        <Courses postData={postData} setPostData={setPostData} />
+                    </Route>
+                    <Route path='/cvcreator/hobby' >
+                        <Hobby postData={postData} setPostData={setPostData} />
+                    </Route>
+                    <Route path='/cvcreator/links' >
+                        <Links postData={postData} setPostData={setPostData} />
+                    </Route>
+                    <Route path='/cvcreator/consent' >
+                        <Consents postData={postData} setPostData={setPostData} />
                     </Route>
                     <Route path='/cvcreator/end' >
                         <h2>Click the button to save your CV</h2>

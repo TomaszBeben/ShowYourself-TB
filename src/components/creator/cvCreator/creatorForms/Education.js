@@ -6,7 +6,7 @@ const Education = ({ education, setEducation, postData, setPostData }) => {
     const [singleEducation, setSingleEducation] = useState({})
     const classes = useStyles()
 
-    const delEducation = (index) => {
+    const deleteElement = (index) => {
         const copy = [...education]
         copy.splice(index, 1)
         setEducation(copy)
@@ -29,7 +29,7 @@ const Education = ({ education, setEducation, postData, setPostData }) => {
             <Button
                 className={`.buttonDenied ${classes.buttonSubmit}`}
                 variant="contained" size="large" type='button'
-                onClick={() => { delEducation(index) }}>
+                onClick={() => { deleteElement(index) }}>
                 X
             </Button>
         </div>
