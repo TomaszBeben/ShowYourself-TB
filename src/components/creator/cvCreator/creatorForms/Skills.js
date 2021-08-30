@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button, TextField } from '@material-ui/core'
-import { deleteElement, editElement } from './functions'
+import { deleteElement, editElement, moveElement } from './functions'
 import useStyles from '../styles'
 
 const Skills = ({ skills, setSkills, postData, setPostData }) => {
@@ -12,15 +12,6 @@ const Skills = ({ skills, setSkills, postData, setPostData }) => {
         setPostData({ ...postData, skills: skills })
         setSingleSkill({ ...singleSkill, skill: '' })
     }
-
-    const test = (arr, fromIndex, toIndex) => {
-        const element = arr[fromIndex];
-        arr.splice(fromIndex, 1);
-        arr.splice(toIndex, 0, element);
-    }
-    //test func it's a func which moves elem in array up
-
-    console.log(skills);
 
     return (
         <>
@@ -47,14 +38,20 @@ const Skills = ({ skills, setSkills, postData, setPostData }) => {
                             <Button
                                 className={`.buttonDenied ${classes.buttonSubmit}`}
                                 variant="contained" size="large" type='button'
-                                onClick={() => { editElement(skills, setSingleSkill, index) }}>
+                                onClick={() => { editElement(skills, setSingleSkill , index) }}>
                                 Edit
                             </Button>
                             <Button
                                 className={`.buttonDenied ${classes.buttonSubmit}`}
                                 variant="contained" size="large" type='button'
-                                onClick={() => { test(skills, index, index - 1) }}>
+                                onClick={() => { moveElement(skills, setSkills, index, index - 1) }}>
                                 up
+                            </Button>
+                            <Button
+                                className={`.buttonDenied ${classes.buttonSubmit}`}
+                                variant="contained" size="large" type='button'
+                                onClick={() => { moveElement(skills, setSkills, index, index + 1) }}>
+                                down
                             </Button>
                         </div>
                     ))}
