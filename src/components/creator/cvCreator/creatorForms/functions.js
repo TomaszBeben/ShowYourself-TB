@@ -9,7 +9,7 @@ export const editElement = (elem, setState, index) => {
     setState(copy[index])
 }
 
-export const moveElement = (elem, setState, fromIndex, toIndex, ) => {
+export const moveElement = (elem, setState, fromIndex, toIndex ) => {
     const element = elem[fromIndex];
     const copy = [...elem]
     copy.splice(fromIndex, 1);

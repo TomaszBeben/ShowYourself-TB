@@ -1,42 +1,18 @@
 import React, { useState } from 'react'
 import { TextField, Typography, Button } from '@material-ui/core'
 import useStyles from '../styles'
+import Buttons from './Buttons'
+import { deleteElement, editElement, moveElement } from './functions'
 
 const Education = ({ education, setEducation, postData, setPostData }) => {
     const [singleEducation, setSingleEducation] = useState({})
     const classes = useStyles()
-
-    const deleteElement = (index) => {
-        const copy = [...education]
-        copy.splice(index, 1)
-        setEducation(copy)
-    }
 
     const addSkill = () => {
         setEducation(education => [...education, singleEducation])
         setPostData({ ...postData, education: education })
         setSingleEducation({ ...singleEducation, degree: '', school: '', city: '', start: '', end: '', description: '' })
     }
-
-    const render = education.map((elem, index) => (
-        <div key={index} >
-            <h1>{elem.degree}</h1>
-            <h1>{elem.school}</h1>
-            <h1>{elem.city}</h1>
-            <h1>{elem.start}</h1>
-            <h1>{elem.end}</h1>
-            <h1>{elem.description}</h1>
-            <Button
-                className={`.buttonDenied ${classes.buttonSubmit}`}
-                variant="contained" size="large" type='button'
-                onClick={() => { deleteElement(index) }}>
-                X
-            </Button>
-        </div>
-    ))
-
-    // console.log(`singeEdu: ${singleEducation}`)
-    // console.log(`edu: ${education}`)
 
     return (
         <>
@@ -67,7 +43,22 @@ const Education = ({ education, setEducation, postData, setPostData }) => {
                     dodaj
                 </Button>
                 <div>
-                    {render}
+                    {education.map((elem, index) => (
+                        <div key={index} >
+                            <h1>{elem.degree}</h1>
+                            <h1>{elem.school}</h1>
+                            <h1>{elem.city}</h1>
+                            <h1>{elem.start}</h1>
+                            <h1>{elem.end}</h1>
+                            <h1>{elem.description}</h1>
+                            <Buttons
+                                deleteElement={() => { deleteElement(education, setEducation, index) }}
+                                editElement={() => { editElement(education, setSingleEducation, index); deleteElement(education, setEducation, index) }}
+                                moveUp={() => { moveElement(education, setEducation, index, index - 1) }}
+                                moveDown={() => { moveElement(education, setEducation, index, index + 1) }}
+                            />
+                        </div>
+                    ))}
                 </div>
             </div>
         </>

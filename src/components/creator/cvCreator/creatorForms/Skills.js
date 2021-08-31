@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Buttons from './Buttons'
 import { Button, TextField } from '@material-ui/core'
 import { deleteElement, editElement, moveElement } from './functions'
 import useStyles from '../styles'
@@ -29,30 +30,12 @@ const Skills = ({ skills, setSkills, postData, setPostData }) => {
                     {skills.map((elem, index) => (
                         <div key={index} >
                             <h1>{elem.skill}</h1>
-                            <Button
-                                className={`.buttonDenied ${classes.buttonSubmit}`}
-                                variant="contained" size="large" type='button'
-                                onClick={() => { deleteElement(skills, setSkills, index) }}>
-                                X
-                            </Button>
-                            <Button
-                                className={`.buttonDenied ${classes.buttonSubmit}`}
-                                variant="contained" size="large" type='button'
-                                onClick={() => { editElement(skills, setSingleSkill , index) }}>
-                                Edit
-                            </Button>
-                            <Button
-                                className={`.buttonDenied ${classes.buttonSubmit}`}
-                                variant="contained" size="large" type='button'
-                                onClick={() => { moveElement(skills, setSkills, index, index - 1) }}>
-                                up
-                            </Button>
-                            <Button
-                                className={`.buttonDenied ${classes.buttonSubmit}`}
-                                variant="contained" size="large" type='button'
-                                onClick={() => { moveElement(skills, setSkills, index, index + 1) }}>
-                                down
-                            </Button>
+                            <Buttons
+                                deleteElement={() => { deleteElement(skills, setSkills, index) }}
+                                editElement={() => { editElement(skills, setSingleSkill, index); deleteElement(skills, setSkills, index) }}
+                                moveUp={() => { moveElement(skills, setSkills, index, index - 1) }}
+                                moveDown={() => { moveElement(skills, setSkills, index, index + 1) }}
+                            />
                         </div>
                     ))}
                 </div>

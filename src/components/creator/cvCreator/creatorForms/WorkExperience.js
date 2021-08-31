@@ -1,45 +1,18 @@
 import React, { useState } from 'react'
 import { TextField, Typography, Button } from '@material-ui/core'
 import useStyles from '../styles'
+import Buttons from './Buttons'
+import { deleteElement, editElement, moveElement } from './functions'
 
 const WorkExperience = ({ work, setWork, postData, setPostData }) => {
     const [singleWork, setSingleWork] = useState({})
     const classes = useStyles()
 
-    const deleteElement = (index,) => {
-        const copy = [...work]
-        copy.splice(index, 1)
-        setWork(copy)
-    }
-
     const addElement = () => {
         setWork(work => [...work, singleWork])
         setPostData({ ...postData, work: work })
-        setSingleWork({ ...singleWork, position: '', company: '', location: '', start: '', end: '', description: ''  })
+        setSingleWork({ ...singleWork, position: '', company: '', location: '', start: '', end: '', description: '' })
     }
-
-    const render = work.map((elem, index) => (
-        <div key={index} >
-            <h1>{elem.position}</h1>
-            <h1>{elem.company}</h1>
-            <h1>{elem.location}</h1>
-            <h1>{elem.start}</h1>
-            <h1>{elem.end}</h1>
-            <h1>{elem.description}</h1>
-            <Button
-                className={`.buttonDenied ${classes.buttonSubmit}`}
-                variant="contained" size="large" type='button'
-                onClick={() => { deleteElement(index) }}>
-                X
-            </Button>
-            <Button
-                className={`.buttonDenied ${classes.buttonSubmit}`}
-                variant="contained" size="large" type='button'
-                onClick={() => {console.log('edit');}}>
-                Edit
-            </Button>
-        </div>
-    ))
 
     return (
         <>
@@ -70,7 +43,22 @@ const WorkExperience = ({ work, setWork, postData, setPostData }) => {
                     dodaj
                 </Button>
                 <div>
-                    {render}
+                    {work.map((elem, index) => (
+                        <div key={index} >
+                            <h1>{elem.position}</h1>
+                            <h1>{elem.company}</h1>
+                            <h1>{elem.location}</h1>
+                            <h1>{elem.start}</h1>
+                            <h1>{elem.end}</h1>
+                            <h1>{elem.description}</h1>
+                            <Buttons
+                                deleteElement={() => { deleteElement(work, setWork, index) }}
+                                editElement={() => { editElement(work, setSingleWork, index); deleteElement(work, setWork, index) }}
+                                moveUp={() => { moveElement(work, setWork, index, index - 1) }}
+                                moveDown={() => { moveElement(work, setWork, index, index + 1) }}
+                            />
+                        </div>
+                    ))}
                 </div>
             </div>
         </>

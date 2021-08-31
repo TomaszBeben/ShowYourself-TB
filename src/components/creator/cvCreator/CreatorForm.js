@@ -20,9 +20,16 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
 
     const { currentUser } = useAuth()
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
+
     const [skills, setSkills] = useState([])
     const [education, setEducation] = useState([])
     const [work, setWork] = useState([])
+    const [languages, setLanguages] = useState([])
+    const [courses, setCourses] = useState([])
+    const [hobbys, setHobbys] = useState([])
+    const [links, setLinks] = useState([])
+    const [consent, setConsent] = useState([])
+
     const dispatch = useDispatch()
     const classes = useStyles()
 
@@ -32,6 +39,10 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
             setSkills(post.skills)
             setEducation(post.education)
             setWork(post.work)
+            setLanguages(post.languages)
+            setCourses(post.courses)
+            setHobbys(post.hobbys)
+            setLinks(post.links)
         }
     }, [post, setPostData])
 
@@ -47,6 +58,10 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
         setSkills([])
         setEducation([])
         setWork([])
+        setLanguages([])
+        setCourses([])
+        setHobbys([])
+        setLinks([])
         setCurrentId(null)
     }
 
@@ -67,19 +82,19 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
                         <Skills skills={skills} setSkills={setSkills} postData={postData} setPostData={setPostData} />
                     </Route>
                     <Route path='/cvcreator/languages' >
-                        <Languages postData={postData} setPostData={setPostData} />
+                        <Languages languages={languages} setLanguages={setLanguages} postData={postData} setPostData={setPostData} />
                     </Route>
                     <Route path='/cvcreator/courses' >
-                        <Courses postData={postData} setPostData={setPostData} />
+                        <Courses courses={courses} setCourses={setCourses}  postData={postData} setPostData={setPostData} />
                     </Route>
                     <Route path='/cvcreator/hobby' >
-                        <Hobby postData={postData} setPostData={setPostData} />
+                        <Hobby hobbys={hobbys} setHobbys={setHobbys} postData={postData} setPostData={setPostData} />
                     </Route>
                     <Route path='/cvcreator/links' >
-                        <Links postData={postData} setPostData={setPostData} />
+                        <Links links={links} setLinks={setLinks} postData={postData} setPostData={setPostData} />
                     </Route>
                     <Route path='/cvcreator/consent' >
-                        <Consents postData={postData} setPostData={setPostData} />
+                        <Consents consent={consent} setConsent={setConsent} postData={postData} setPostData={setPostData} />
                     </Route>
                     <Route path='/cvcreator/end' >
                         <h2>Click the button to save your CV</h2>

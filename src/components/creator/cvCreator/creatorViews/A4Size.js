@@ -25,6 +25,7 @@ const A4Size = ({ postData }) => {
                     <p>{postData.education.first.end}</p>
                     <p>{postData.experience.first.position}</p>
                     <p>{postData.education.first.description}</p> */}
+                    <p>{postData.consent}</p>
                 </div>
             </Paper>
         </>
