@@ -1,6 +1,7 @@
 import React from 'react'
 import useStyles from '../styles'
 import { Paper } from '@material-ui/core';
+import CvPreview from '../CvPreview';
 
 
 
@@ -10,23 +11,7 @@ const A4Size = ({ postData }) => {
     return (
         <>
             <Paper className={classes.A4Paper} >
-                <div>
-                    <p>{postData.name}</p>
-                    <p>{postData.surname}</p>
-                    <p>{postData.dateOfBirth}</p>
-                    <p>{postData.country}</p>
-                    <p>{postData.city}</p>
-                    <p>{postData.phone}</p>
-                    <p>{postData.zipCode}</p>
-                    {/* <p>{postData.education.first.degree}</p>
-                    <p>{postData.education.first.school}</p>
-                    <p>{postData.education.first.city}</p>
-                    <p>{postData.education.first.start}</p>
-                    <p>{postData.education.first.end}</p>
-                    <p>{postData.experience.first.position}</p>
-                    <p>{postData.education.first.description}</p> */}
-                    <p>{postData.consent}</p>
-                </div>
+                <CvPreview postData={postData}/>
             </Paper>
         </>
 

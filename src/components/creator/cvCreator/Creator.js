@@ -5,17 +5,10 @@ import CreatorView from './CreatorView'
 import CreatorNav from './CreatorNav'
 import { useDispatch } from 'react-redux'
 import { getPost } from '../../../api/index'
-import { useAuth } from '../../../context/AuthContext'
-import { initialState } from './variables'
-
-
 import { Paper } from '@material-ui/core';
 import  useStyles  from './styles'
 
-const Creator = () => {
-
-    const { currentUser } = useAuth()
-    const [postData, setPostData] = useState(initialState(currentUser))
+const Creator = ({ postData, setPostData, currentUser}) => {
     const classes = useStyles()
     localStorage.setItem('currentUser', currentUser.email)
 

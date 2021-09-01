@@ -25,38 +25,38 @@ export const initialState = (currentUser) => {
 export const paths = [
     {
         path: '/cvcreator/basics',
-        label: 'Basics'
+        label: 'Basics',
     },
     {
         path: '/cvcreator/edu',
-        label: 'Education'
+        label: 'Education',
     },
     {
         path: '/cvcreator/work',
-        label: 'Work'
+        label: 'Work',
     },
     {
         path: '/cvcreator/skills',
-        label: 'Skills'
+        label: 'Skills',
     },
     {
         path: '/cvcreator/languages',
-        label: 'Languages'
+        label: 'Languages',
     },
     {
         path: '/cvcreator/courses',
-        label: 'Courses'
+        label: 'Courses',
     },
     {
         path: '/cvcreator/hobby',
-        label: 'Hobby'
+        label: 'Hobby',
     },
     {
         path: '/cvcreator/links',
-        label: 'Links'
+        label: 'Links',
     },
     {
         path: '/cvcreator/consent',
-        label: 'Consent'
+        label: 'Consent',
     },
 ]
