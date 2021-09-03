@@ -43,8 +43,16 @@ export const AuthProvider = ({ children }) => {
         return unsubscribe
     }, [])
 
+    const [sheetStyle, setSheetStyle] = useState('default')
+    const [color, setColor] = useState('default')
+
 
     const value = {
+        sheetStyle,
+        setSheetStyle,
+        color,
+        setColor,
+        /////////////
         currentUser,
         login,
         signup,

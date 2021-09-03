@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import { Button, Paper } from '@material-ui/core';
 import useStyles from '../styles'
 
-const ViewHeader = ({ sheetStyle, setSheetStyle, color, setColor }) => {
+const ViewHeader = ({ color, setColor, sheetStyle, setSheetStyle }) => {
     const classes = useStyles()
 
     return (

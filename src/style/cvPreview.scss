@@ -1,0 +1,21 @@
+.cvPreview-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #bac2cf;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scaling {
+    transform: scale(0.8) translate(0, -10%);
+}
+
+.cvPreview-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.cvPreview-header-element {
+    margin: 10px;
+}

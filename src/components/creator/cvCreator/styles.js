@@ -19,12 +19,15 @@ export default makeStyles((theme) => ({
   },
   mainCreator: {},
   A4Paper:{
-    padding: padding,
     margin: margin,
-    minWidth: '21cm',
+    width: '21cm',
     minHeight: '29.7cm',
     backgroundColor: 'white',
+    boxShadow: '5px 5px 15px 5px #000000',
   },
+
+
+
 
   viewHeader:{
     margin: margin,

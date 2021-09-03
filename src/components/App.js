@@ -13,6 +13,10 @@ import { Route } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { initialState } from './creator/cvCreator/variables'
 
+import Test from './Test'
+
+// npm i react-to-print !!!!!!!!!
+
 const App = () => {
   const { currentUser } = useAuth()
   const [postData, setPostData] = useState(initialState(currentUser))
@@ -28,6 +32,7 @@ const App = () => {
       <PrivateRoute path='/cvpreview'>
         <CvPreview postData={postData} />
       </PrivateRoute>
+      <Route path='/test' component={Test} />
     </>
   )
 }
