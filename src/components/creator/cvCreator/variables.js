@@ -1,6 +1,6 @@
 export const initialState = (currentUser) => {
     return {
-        currentUser: currentUser.email,
+        currentUser: currentUser ? currentUser.email : null ,
         name: '',
         surname: '',
         dateOfBirth: '',
@@ -8,7 +8,7 @@ export const initialState = (currentUser) => {
         country: '',
         city: '',
         phone: '',
-        email: currentUser.email,
+        email: currentUser ? currentUser.email : null,
         zipCode: '',
         education: [],
         work: [],

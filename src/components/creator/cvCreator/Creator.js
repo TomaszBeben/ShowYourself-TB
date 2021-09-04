@@ -7,8 +7,10 @@ import { useDispatch } from 'react-redux'
 import { getPost } from '../../../api/index'
 import { Paper } from '@material-ui/core';
 import  useStyles  from './styles'
+import { useAuth } from '../../../context/AuthContext'
 
-const Creator = ({ postData, setPostData, currentUser}) => {
+const Creator = () => {
+    const { postData, setPostData, currentUser} = useAuth()
     const classes = useStyles()
     localStorage.setItem('currentUser', currentUser.email)
 

@@ -19,11 +19,9 @@ export default makeStyles((theme) => ({
   },
   mainCreator: {},
   A4Paper:{
-    margin: margin,
     width: '21cm',
     minHeight: '29.7cm',
     backgroundColor: 'white',
-    boxShadow: '5px 5px 15px 5px #000000',
   },
 
 

@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom'
 import { Button } from '@material-ui/core'
 import useStyles from './styles'
 import { Paper } from '@material-ui/core';
+import { useAuth } from '../../../context/AuthContext'
 
-const CvPreview = ({ postData }) => {
+const CvPreview = () => {
+    const { postData } = useAuth()
     const classes = useStyles()
     return (
         <div className='cvPreview-container'>

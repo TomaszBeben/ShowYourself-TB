@@ -18,7 +18,7 @@ const Basics = ({ postData, setPostData }) => {
             <TextField fullWidth type="text" label='country' value={postData.country} onChange={(e) => setPostData({ ...postData, country: e.target.value })} />
             <TextField fullWidth type="text" label='city' value={postData.city} onChange={(e) => setPostData({ ...postData, city: e.target.value })} />
             <TextField fullWidth type="number" label='phone' value={postData.phone} onChange={(e) => setPostData({ ...postData, phone: e.target.value })} />
-            <TextField fullWidth type="email" label='email' value={postData.email} onChange={(e) => setPostData({ ...postData, email: e.target.value })} />
+            <TextField fullWidth type="email" label='email' value={postData.email || ''} onChange={(e) => setPostData({ ...postData, email: e.target.value })} />
             <TextField fullWidth type="text" label='post code' value={postData.zipCode} onChange={(e) => setPostData({ ...postData, zipCode: e.target.value })} />
         </>
     )

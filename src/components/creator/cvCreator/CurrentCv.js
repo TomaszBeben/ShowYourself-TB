@@ -1,8 +1,8 @@
 import React from 'react'
-import { useAuth } from '../../../context/AuthContext'
+// import { useAuth } from '../../../context/AuthContext'
 
 const CurrentCv = ({ postData }) => {
-    const { color, setColor, sheetStyle, setSheetStyle } = useAuth()
+    // const { color, setColor, sheetStyle, setSheetStyle } = useAuth()
     return (
         <div>
                     <p>{postData.name}</p>

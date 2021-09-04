@@ -10,28 +10,19 @@ import Signup from './Signup'
 
 import { Route } from 'react-router-dom'
 
-import { useAuth } from '../context/AuthContext'
-import { initialState } from './creator/cvCreator/variables'
-
 import Test from './Test'
 
 // npm i react-to-print !!!!!!!!!
 
 const App = () => {
-  const { currentUser } = useAuth()
-  const [postData, setPostData] = useState(initialState(currentUser))
   return (
     <>
       <Route exact path='/' component={Main} />
       <Route path='/signup' component={Signup} />
       <Route path='/login' component={Login} />
       <Route path='/forgot-password' component={ForgotPassword} />
-      <PrivateRoute path='/cvcreator'>
-        <Creator postData={postData} setPostData={setPostData} currentUser={currentUser} />
-      </PrivateRoute>
-      <PrivateRoute path='/cvpreview'>
-        <CvPreview postData={postData} />
-      </PrivateRoute>
+      <PrivateRoute path='/cvcreator' component={Creator} />
+      <PrivateRoute path='/cvpreview' component={CvPreview} />
       <Route path='/test' component={Test} />
     </>
   )

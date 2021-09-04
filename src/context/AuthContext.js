@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { auth } from '../firebase'
+import { initialState } from '../components/creator/cvCreator/variables'
 
 const AuthContext = React.createContext()
 
@@ -8,7 +9,7 @@ export const useAuth = () => {
 }
 
 export const AuthProvider = ({ children }) => {
-    const [currentUser, setCurrentUser] = useState()
+    const [currentUser, setCurrentUser] = useState('')
     const [loading, setLoading] = useState(true)
 
     const signup = (email, password) => {
@@ -45,9 +46,12 @@ export const AuthProvider = ({ children }) => {
 
     const [sheetStyle, setSheetStyle] = useState('default')
     const [color, setColor] = useState('default')
+    const [postData, setPostData] = useState(initialState(currentUser))
 
 
     const value = {
+        postData,
+        setPostData,
         sheetStyle,
         setSheetStyle,
         color,
