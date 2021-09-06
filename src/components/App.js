@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Creator from './creator/cvCreator/Creator'
 import CvPreview from './creator/cvCreator/CvPreview'
@@ -11,8 +11,6 @@ import Signup from './Signup'
 import { Route } from 'react-router-dom'
 
 import Test from './Test'
-
-// npm i react-to-print !!!!!!!!!
 
 const App = () => {
   return (
