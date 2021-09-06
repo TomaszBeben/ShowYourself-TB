@@ -6,7 +6,7 @@ const Consent = () => {
     const { postData } = useAuth()
     return (
         <>
-          consents
+          <p>{postData.consent}</p>
         </>
     )
 }

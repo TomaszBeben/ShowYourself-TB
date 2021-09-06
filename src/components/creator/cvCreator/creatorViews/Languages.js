@@ -3,12 +3,16 @@ import { useAuth } from '../../../../context/AuthContext'
 //Creator View Folder
 
 const Languages = () => {
-    const { postData } = useAuth()
-    
+    const { languages } = useAuth()
 
     return (
         <>
-            languages
+            {languages.map((elem, index) => (
+                        <div key={index} >
+                            <h1>{elem.language}</h1>
+                            <h1>{elem.degree}</h1>
+                        </div>
+                    ))}
         </>
     )
 }

@@ -12,14 +12,6 @@ import Consent from './creatorViews/Consents';
 const CurrentCv = forwardRef(({ postData }, ref) => {
     return (
         <div ref={ref}>
-            <p>{postData.name}</p>
-            <p>{postData.surname}</p>
-            <p>{postData.dateOfBirth}</p>
-            <p>{postData.country}</p>
-            <p>{postData.city}</p>
-            <p>{postData.phone}</p>
-            <p>{postData.zipCode}</p>
-            <p>{postData.consent}</p>
             <Basics/>
             <Education/>
             <WorkExperience/>

@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
         return auth.createUserWithEmailAndPassword(email, password)
     }
 
-    const login = (email, password) =>{
+    const login = (email, password) => {
         return auth.signInWithEmailAndPassword(email, password)
     }
 
@@ -24,15 +24,15 @@ export const AuthProvider = ({ children }) => {
         return auth.signOut()
     }
 
-    const resetPassword = (email) =>{
+    const resetPassword = (email) => {
         return auth.sendPasswordResetEmail(email)
     }
 
-    const updateEmail = (email) =>{
+    const updateEmail = (email) => {
         return currentUser.updateEmail(email)
     }
 
-    const updatePassword = (password) =>{
+    const updatePassword = (password) => {
         return currentUser.updatePassword(password)
     }
 
@@ -47,15 +47,30 @@ export const AuthProvider = ({ children }) => {
     const [sheetStyle, setSheetStyle] = useState('default')
     const [color, setColor] = useState('default')
     const [postData, setPostData] = useState(initialState(currentUser))
+    const [skills, setSkills] = useState([])
+    const [education, setEducation] = useState([])
+    const [work, setWork] = useState([])
+    const [languages, setLanguages] = useState([])
+    const [courses, setCourses] = useState([])
+    const [hobbys, setHobbys] = useState([])
+    const [links, setLinks] = useState([])
+    const [consent, setConsent] = useState([])
+
+
 
 
     const value = {
-        postData,
-        setPostData,
-        sheetStyle,
-        setSheetStyle,
-        color,
-        setColor,
+        skills, setSkills,
+        education, setEducation,
+        work, setWork,
+        languages, setLanguages,
+        courses, setCourses,
+        hobbys, setHobbys,
+        links, setLinks,
+        consent, setConsent,
+        postData, setPostData,
+        sheetStyle, setSheetStyle,
+        color, setColor,
         /////////////
         currentUser,
         login,
@@ -68,7 +83,7 @@ export const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={value}>
-            { !loading && children}
+            {!loading && children}
         </AuthContext.Provider>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 
 import Basics from './creatorForms/Basics'
@@ -22,18 +22,18 @@ import { initialState } from './variables'
 import useStyles from './styles'
 
 const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
-
-    const { currentUser } = useAuth()
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
 
-    const [skills, setSkills] = useState([])
-    const [education, setEducation] = useState([])
-    const [work, setWork] = useState([])
-    const [languages, setLanguages] = useState([])
-    const [courses, setCourses] = useState([])
-    const [hobbys, setHobbys] = useState([])
-    const [links, setLinks] = useState([])
-    const [consent, setConsent] = useState([])
+    const{
+        skills, setSkills,
+        education, setEducation,
+        work, setWork,
+        languages, setLanguages,
+        courses, setCourses,
+        hobbys, setHobbys,
+        links, setLinks,
+        consent, setConsent,
+        currentUser } = useAuth()
 
     const dispatch = useDispatch()
     const classes = useStyles()
@@ -49,7 +49,7 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
             setHobbys(post.hobbys)
             setLinks(post.links)
         }
-    }, [post, setPostData])
+    }, [post, setPostData, setCourses, setEducation, setHobbys, setLanguages, setLinks, setSkills, setWork])
 
     const handleSubmit = (e) => {
         e.preventDefault()

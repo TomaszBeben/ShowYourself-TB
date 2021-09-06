@@ -3,11 +3,15 @@ import { useAuth } from '../../../../context/AuthContext'
 //Creator View Folder
 
 const Hobby = () => {
-    const { postData } = useAuth()
+    const { hobbys } = useAuth()
 
     return (
         <>
-            hobby
+            {hobbys.map((elem, index) => (
+                        <div key={index} >
+                            <h1>{elem.hobby}</h1>
+                        </div>
+                    ))}
         </>
     )
 }

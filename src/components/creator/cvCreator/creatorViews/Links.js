@@ -3,11 +3,16 @@ import { useAuth } from '../../../../context/AuthContext'
 //Creator View Folder
 
 const Links = () => {
-    const { postData } = useAuth()
+    const { links } = useAuth()
 
     return (
         <>
-            links
+            {links.map((elem, index) => (
+                        <div key={index} >
+                            <h1>{elem.link}</h1>
+                            <h1>{elem.degree}</h1>
+                        </div>
+                    ))}
         </>
     )
 }

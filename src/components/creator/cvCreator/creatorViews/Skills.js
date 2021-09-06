@@ -3,11 +3,15 @@ import { useAuth } from '../../../../context/AuthContext'
 //Creator View Folder
 
 const Skills = () => {
-    const { postData } = useAuth()
+    const { skills } = useAuth()
 
     return (
         <>
-         skills
+         {skills.map((elem, index) => (
+                        <div key={index} >
+                            <h1>{elem.skill}</h1>
+                        </div>
+                    ))}
         </>
     )
 }
