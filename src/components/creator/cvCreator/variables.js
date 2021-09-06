@@ -15,7 +15,7 @@ export const initialState = (currentUser) => {
         skills: [],
         languages: [],
         courses: [],
-        hobby: [],
+        hobbys: [],
         links: [],
         consent: [],
         style:[]
