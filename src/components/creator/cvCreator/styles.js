@@ -28,7 +28,7 @@ export default makeStyles((theme) => ({
 
 
   viewHeader:{
-    margin: margin,
+    margin: `${margin} 0vh`,
     maxWidth: '21cm',
     backgroundColor: 'white',
     display: 'flex',

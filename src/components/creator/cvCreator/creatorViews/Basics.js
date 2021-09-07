@@ -6,6 +6,7 @@ const Basics = () => {
     const { postData } = useAuth()
     return (
         <>
+        {postData.file ? <img alt='' src={postData.file} style={{ width: '50px', height: '50px', borderRadius: '50%' }}/> : null}
             <p>{postData.name}</p>
             <p>{postData.surname}</p>
             <p>{postData.dateOfBirth}</p>

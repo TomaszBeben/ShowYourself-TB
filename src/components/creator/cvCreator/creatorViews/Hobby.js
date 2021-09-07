@@ -15,10 +15,11 @@ const Hobby = () => {
 
     return (
         <>
-            {/* {hobbys.map((elem, index) => (
+        {/* hobbys dont work, need fix */}
+            {hobbys.map((elem, index) => (
                         <div key={index} >
                             <h1>{elem.hobby}</h1>
-                        </div> */}
+                        </div>
                     ))}
         </>
     )

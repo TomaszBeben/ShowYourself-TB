@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 
-
 import Basics from './creatorForms/Basics'
 import Consents from './creatorForms/Consents'
 import Courses from './creatorForms/Courses'
@@ -24,7 +23,7 @@ import useStyles from './styles'
 const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
 
-    const{
+    const {
         skills, setSkills,
         education, setEducation,
         work, setWork,
@@ -69,6 +68,13 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
             dispatch(createPost(postData))
         }
         setPostData(initialState(currentUser))
+        setCourses([])
+        setEducation([])
+        setHobbys([])
+        setLanguages([])
+        setLinks([])
+        setSkills([])
+        setWork([])
         setCurrentId(null)
     }
 
@@ -107,7 +113,18 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
                         <h2>Click the button to save your CV</h2>
                         <Button
                             className={classes.buttonSubmit} variant="contained" size="large" type="submit" fullWidth
-                            onClick={() => { setPostData({ ...postData, skills: skills, education: education, work: work }) }}>
+                            onClick={() => {
+                                setPostData({
+                                    ...postData,
+                                    skills: skills,
+                                    education: education,
+                                    work: work,
+                                    languages: languages,
+                                    courses: courses,
+                                    hobbys: hobbys,
+                                    links: links,
+                                })
+                            }}>
                             Submit
                         </Button>
                     </Route>

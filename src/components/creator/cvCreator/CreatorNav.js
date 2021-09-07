@@ -2,8 +2,10 @@ import React from 'react'
 import { CircularProgress } from '@material-ui/core'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { Paper } from '@material-ui/core';
-import  useStyles  from './styles'
+import { Paper, Button } from '@material-ui/core';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import useStyles from './styles'
 
 
 import { deletePost } from '../../../api'
@@ -15,52 +17,44 @@ const CreatorNav = ({ setCurrentId }) => {
     const classes = useStyles()
 
     const cvcontainer = {
-        minWidth: '20vw',
-        maxWidth: '20vw',
-        height: '15vh',
-        overflow: 'auto'
+        display: 'flex',
+        margin: '1rem'
     }
     return (
-            <Paper className={classes.navContainer}>
-                {!posts.length ? <CircularProgress /> : (
-                    <div className={classes.navContainer}>
-                        {posts.map((post) => (
-                            <div key={post._id} style={cvcontainer} >
-                                <div>
-                                    <button onClick={() => setCurrentId(post._id)} >EDIT</button>
-                                    <button onClick={() => {
-                                        if (window.confirm('Are you sure you want to delete this post?')) {
-                                            dispatch(deletePost(post._id))
-                                            console.log('Post Deleted!');
-                                        }
-                                    }}>DELETE</button>
+        <Paper className={classes.navContainer}>
+            {!posts.length ? <CircularProgress /> : (
+                <div>
+                    {posts.map((post, index) => (
+                        <div key={post._id} style={cvcontainer} >
+                            <div style={{margin: '5px'}}>{index + 1}.</div>
+                            <div>
+                                <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', }}>
+                                    <div>
+                                        {!post.file ? '' : <img src={post.file} alt='' style={{ width: '50px', height: '50px', borderRadius: '50%' }} />}
+                                    </div>
+                                    <div>
+                                        <p>{post.name}</p>
+                                        <p>{post.surname}</p>
+                                    </div>
                                 </div>
-                                {/* <img src={post.file} alt={currentUser.mail} style={{ width: '100px', height: '100px' }} /> */}
-                                <p>{post.currentUser}</p>
-                                <p>{post.name}</p>
-                                <p>{post.surname}</p>
-                                <p>{post.dateOfBirth}</p>
-                                <p>{post.country}</p>
-                                <p>{post.city}</p>
-                                <p>{post.phone}</p>
-                                <p>{post.email}</p>
-                                <p>{post.zipCode}</p>
-                                {/* <p>{post.education.first.degree}</p>
-                                <p>{post.education.first.school}</p>
-                                <p>{post.education.first.city}</p>
-                                <p>{post.education.first.start}</p>
-                                <p>{post.education.first.end}</p>
-                                <p>{post.experience.first.position}</p>
-                                <p>{post.education.first.description}</p> */}
-                                {post.skills.map((el, index) => (
-                                    <li key={index} >{el.skill}</li>
-                                ))}
+                                <Button onClick={() => setCurrentId(post._id)} >
+                                    <EditIcon fontSize="small" />
+                                </Button>
+                                <Button onClick={() => {
+                                    if (window.confirm('Are you sure you want to delete this post?')) {
+                                        dispatch(deletePost(post._id))
+                                        console.log('Post Deleted!');
+                                    }
+                                }}>
+                                    <DeleteForeverIcon fontSize="small" />
+                                </Button>
                             </div>
-                        ))}
-                    </div>
-                )}
-            </Paper>
-        )
+                        </div>
+                    ))}
+                </div>
+            )}
+        </Paper>
+    )
 }
 
 export default CreatorNav
