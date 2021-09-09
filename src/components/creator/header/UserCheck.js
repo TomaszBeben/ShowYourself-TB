@@ -48,9 +48,9 @@ const UserCheck = () => {
                     <button className='main-page__header--user--auth-button' onClick={handleLogout}>
                         {inOrOut}
                     </button>
-                    <Link to="/test" >
+                    {/* <Link to="/test" >
                     <button>TEST</button>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </>
