@@ -1,4 +1,5 @@
 import React from 'react'
+import PictureP1 from './PictureP1'
 import Basics from './BasicsP1'
 import Education from './EducationP1'
 import WorkExperience from './WorkExperienceP1'
@@ -9,10 +10,21 @@ import Hobby from './HobbyP1'
 import Links from './LinksP1'
 import Consent from './ConsentsP1'
 
+import { useAuth } from '../../../../../context/AuthContext'
+
 const Pattern1 = () => {
+    const {color} = useAuth();
+
     return (
-        <div style={{backgroundColor: 'green', width: '100%', height: '100vh'}}>
-            <div className='qwerty' ></div>
+        <div className='pattern1--container_main'>
+            <div style={{backgroundColor: `${color}`}} className='pattern1--container_left'>
+                <Basics/>
+                <Skills/>
+                <Languages/>
+            </div>
+            <div className='pattern1--container_right'>
+
+            </div>
         </div>
     )
 }

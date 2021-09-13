@@ -3,18 +3,31 @@ import { useAuth } from '../../../../../context/AuthContext'
 //Creator View Folder
 
 const Basics = () => {
-    const { postData } = useAuth()
+    const { postData, color } = useAuth()
     return (
         <>
-        {postData.file ? <img alt='' src={postData.file} style={{ width: '50px', height: '50px', borderRadius: '50%' }}/> : null}
-            <p>{postData.name}</p>
-            <p>{postData.surname}</p>
-            <p>{postData.dateOfBirth}</p>
-            <p>{postData.country}</p>
-            <p>{postData.city}</p>
-            <p>{postData.phone}</p>
-            <p>{postData.email}</p>
-            <p>{postData.zipCode}</p>
+            <p className='pattern1--basics_name'>{postData.name} {postData.surname}</p>
+            <div className='pattern1--basics_picture--container'>
+                {postData.file ?
+                    <img alt='' src={postData.file} className='pattern1--basics_picture' style={{ width: '60mm', height: '80mm' }} />
+                    : null}
+            </div>
+            <div style={{backgroundColor: `${color}`}} className='pattern1--basics_birthday--container'>
+                <p className='pattern1--basics_birthday--header'>Birthday: </p>
+                <p className='pattern1--basics_birthday'>{postData.dateOfBirth}</p>
+            </div>
+            <div>
+                <p>{postData.country}</p>
+            </div>
+            <div>
+                <p>{postData.city} {postData.zipCode}</p>
+            </div>
+            <div>
+                <p>{postData.phone}</p>
+            </div>
+            <div>
+                <p>{postData.email}</p>
+            </div>
         </>
     )
 }

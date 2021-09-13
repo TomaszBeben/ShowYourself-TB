@@ -1,0 +1,15 @@
+.pattern1--container_main {
+    display: flex;
+    flex-direction: row;
+}
+
+.pattern1--container_left {
+    width: 70mm;
+    height: 297mm;
+}
+
+.pattern1--container_right {
+    width: 140mm;
+    height: 297mm;
+    background-color: white;
+}
