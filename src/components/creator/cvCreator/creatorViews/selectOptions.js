@@ -16,26 +16,26 @@ export const styleOptions = [
 export const colorOptions = [
     {
         label: 'grey',
-        value: 'grey',
+        value: '#53636e',
     },
     {
         label: 'red',
-        value: 'red',
+        value: '#b30000',
     },
     {
         label: 'green',
-        value: 'green',
+        value: '#3D550C',
     },
     {
         label: 'blue',
-        value: 'blue',
+        value: '#000C66',
     },
     {
         label: 'pink',
-        value: 'pink',
+        value: '#FA26A0',
     },
     {
         label: 'yellow',
-        value: 'yellow',
+        value: '#F8D210',
     },
 ]

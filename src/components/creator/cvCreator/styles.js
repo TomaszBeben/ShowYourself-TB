@@ -20,7 +20,7 @@ export default makeStyles((theme) => ({
   mainCreator: {},
   A4Paper:{
     width: '21cm',
-    minHeight: '29.7cm',
+    // minHeight: '29.7cm',
     backgroundColor: 'white',
   },
 

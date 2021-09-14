@@ -1,0 +1,45 @@
+$imageWidth: 39%;
+$fontFamily: 'Roboto',
+sans-serif;
+$leftSideTextColor: white;
+.pattern1--leftSide_name {
+    color: white;
+    font-family: $fontFamily;
+    font-weight: bold;
+    font-size: 1.7rem;
+    margin-top: 0.8cm;
+    margin-left: 0.5cm;
+}
+
+.pattern1--leftSide_picture--container {
+    width: 70mm;
+    height: 80mm;
+    margin-top: 0.5cm;
+    display: flex;
+    justify-content: center;
+}
+
+.pattern1--leftSide_picture {
+    object-fit: cover;
+}
+
+.pattern1--leftSide_darker--container {
+    filter: brightness(75%);
+}
+
+.pattern1--leftSide_text--header {
+    color: $leftSideTextColor;
+    font-family: $fontFamily;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 0.5cm;
+    margin-bottom: 0.1cm;
+    margin-left: 0.5cm;
+}
+
+.pattern1--leftSide_text {
+    color: $leftSideTextColor;
+    font-family: $fontFamily;
+    font-size: 1.1rem;
+    margin-left: 0.5cm;
+}

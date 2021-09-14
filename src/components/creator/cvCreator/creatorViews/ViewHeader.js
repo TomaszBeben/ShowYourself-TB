@@ -21,7 +21,7 @@ const ViewHeader = ({ color, setColor, sheetStyle, setSheetStyle }) => {
                             native
                             value={sheetStyle}
                             onChange={(e) => setSheetStyle(e.target.value)}>
-                            <option aria-label="None" value="" />
+                            {/* <option aria-label="None" value="" /> */}
                             {styleOptions.map((style) => (
                                 <option key={style.value} value={style.value}>{style.label}</option>
                             ))}
@@ -33,7 +33,7 @@ const ViewHeader = ({ color, setColor, sheetStyle, setSheetStyle }) => {
                             native
                             value={color}
                             onChange={(e) => setColor(e.target.value)}>
-                            <option aria-label="None" value="" />
+                            {/* <option aria-label="None" value="" /> */}
                             {colorOptions.map((style) => (
                                 <option key={style.value} value={style.value}>{style.label}</option>
                             ))}

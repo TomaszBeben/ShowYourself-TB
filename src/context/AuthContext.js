@@ -44,8 +44,8 @@ export const AuthProvider = ({ children }) => {
         return unsubscribe
     }, [])
 
-    const [sheetStyle, setSheetStyle] = useState('default')
-    const [color, setColor] = useState('default')
+    const [sheetStyle, setSheetStyle] = useState('style 1')
+    const [color, setColor] = useState('#000C66')
     const [postData, setPostData] = useState(initialState(currentUser))
     const [skills, setSkills] = useState([])
     const [education, setEducation] = useState([])
