@@ -1,0 +1,21 @@
+$fontFamily: 'Roboto',
+sans-serif;
+.pattern1--rightSide_consent--container--full {
+    // position: relative;
+    // border: 1px solid black;
+    // width: 100%;
+    // height: 100%;
+}
+
+.pattern1--rightSide_consent--container {
+    position: absolute;
+    bottom: 3mm;
+    margin-left: 2mm;
+    margin-right: 2mm;
+}
+
+.pattern1--rightSide_consent {
+    font-size: 0.6rem;
+    font-family: $fontFamily;
+    filter: opacity(0.5);
+}

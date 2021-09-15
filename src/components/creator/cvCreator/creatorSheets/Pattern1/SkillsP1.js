@@ -5,18 +5,18 @@ import { useAuth } from '../../../../../context/AuthContext'
 const Skills = () => {
     const { skills, color } = useAuth()
 
-    console.log(skills);
-
     return (
         <>
-        {/* {skills === [] ? null : <p className='pattern1--leftSide_text--header'>Skills: </p>} */}
-         {skills.map((elem, index) => (
-                        <div key={index} style={{ backgroundColor: `${color}` }} className='pattern1--leftSide_darker--container'>
-                            <p className='pattern1--leftSide_text--header'>{elem.skill}</p>
-                        </div>
-                    ))}
+            <div style={{ backgroundColor: `${color}` }} className='pattern1--leftSide_darker--container'>
+                {skills.length !== 0 ? <p className='pattern1--leftSide_text--header'>Skills: </p> : null}
+                {skills.map((elem, index) => (
+                    <div key={index}>
+                        <p className='pattern1--leftSide_text'>{elem.skill}</p>
+                    </div>
+                ))}
+            </div>
         </>
     )
 }
-
+///
 export default Skills

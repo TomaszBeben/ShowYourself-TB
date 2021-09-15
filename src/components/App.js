@@ -19,9 +19,9 @@ const App = () => {
       <Route path='/signup' component={Signup} />
       <Route path='/login' component={Login} />
       <Route path='/forgot-password' component={ForgotPassword} />
+      <Route path='/test' component={Test} />
       <PrivateRoute path='/cvcreator' component={Creator} />
       <PrivateRoute path='/cvpreview' component={CvPreview} />
-      <Route path='/test' component={Test} />
     </>
   )
 }

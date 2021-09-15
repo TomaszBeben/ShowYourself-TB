@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import PictureP1 from './PictureP1'
+// import PictureP1 from './PictureP1'
 import Basics from './BasicsP1'
 import Education from './EducationP1'
 import WorkExperience from './WorkExperienceP1'
@@ -7,7 +7,7 @@ import Skills from './SkillsP1'
 import Languages from './LanguagesP1'
 import Courses from './CoursesP1'
 import Hobby from './HobbyP1'
-import Links from './LinksP1'
+// import Links from './LinksP1'
 import Consent from './ConsentsP1'
 
 import { useAuth } from '../../../../../context/AuthContext'
@@ -31,7 +31,11 @@ const Pattern1 = () => {
                 <Languages/>
             </div>
             <div className='pattern1--container_right'>
-
+                <WorkExperience/>
+                <Education/>
+                <Courses/>
+                <Hobby/>
+                <Consent/>
             </div>
         </div>
     )

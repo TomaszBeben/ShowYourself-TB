@@ -1,13 +1,13 @@
 import React from 'react'
-import Basics from './BasicsP2'
-import Education from './EducationP2'
-import WorkExperience from './WorkExperienceP2'
-import Skills from './SkillsP2'
-import Languages from './LanguagesP2'
-import Courses from './CoursesP2'
-import Hobby from './HobbyP2'
-import Links from './LinksP2'
-import Consent from './ConsentsP2'
+// import Basics from './BasicsP2'
+// import Education from './EducationP2'
+// import WorkExperience from './WorkExperienceP2'
+// import Skills from './SkillsP2'
+// import Languages from './LanguagesP2'
+// import Courses from './CoursesP2'
+// import Hobby from './HobbyP2'
+// import Links from './LinksP2'
+// import Consent from './ConsentsP2'
 
 const Pattern2 = () => {
     return (

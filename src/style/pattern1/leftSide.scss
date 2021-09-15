@@ -1,4 +1,4 @@
-$imageWidth: 39%;
+// $imageWidth: 39%;
 $fontFamily: 'Roboto',
 sans-serif;
 $leftSideTextColor: white;
@@ -7,14 +7,14 @@ $leftSideTextColor: white;
     font-family: $fontFamily;
     font-weight: bold;
     font-size: 1.7rem;
-    margin-top: 0.8cm;
-    margin-left: 0.5cm;
+    margin-top: 8mm;
+    margin-left: 5mm;
 }
 
 .pattern1--leftSide_picture--container {
     width: 70mm;
-    height: 80mm;
-    margin-top: 0.5cm;
+    height: 70mm;
+    margin-top: 5mm;
     display: flex;
     justify-content: center;
 }
@@ -32,14 +32,27 @@ $leftSideTextColor: white;
     font-family: $fontFamily;
     font-weight: bold;
     font-size: 1.2rem;
-    margin-top: 0.5cm;
-    margin-bottom: 0.1cm;
-    margin-left: 0.5cm;
+    margin-top: 5mm;
+    margin-bottom: 1mm;
+    margin-left: 5mm;
+}
+
+.pattern1--leftSide_text--group {
+    margin-bottom: 2mm;
 }
 
 .pattern1--leftSide_text {
     color: $leftSideTextColor;
     font-family: $fontFamily;
     font-size: 1.1rem;
-    margin-left: 0.5cm;
+    margin-left: 5mm;
+    margin-bottom: 1mm;
+}
+
+.pattern1--leftSide_text-margined {
+    color: $leftSideTextColor;
+    font-family: $fontFamily;
+    font-size: 1.1rem;
+    margin-left: 7mm;
+    margin-bottom: 1mm;
 }

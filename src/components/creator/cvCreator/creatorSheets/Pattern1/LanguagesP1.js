@@ -3,16 +3,19 @@ import { useAuth } from '../../../../../context/AuthContext'
 //Creator View Folder
 
 const Languages = () => {
-    const { languages } = useAuth()
+    const { languages, color } = useAuth()
 
     return (
         <>
-            {languages.map((elem, index) => (
-                        <div key={index} >
-                            <h1>{elem.language}</h1>
-                            <h1>{elem.degree}</h1>
-                        </div>
-                    ))}
+            <div style={{ backgroundColor: `${color}` }} className='pattern1--leftSide_darker--container'>
+            {languages.length !== 0 ? <p className='pattern1--leftSide_text--header'>Languages: </p> : null}
+                {languages.map((elem, index) => (
+                    <div key={index} className='pattern1--leftSide_text--group' >
+                        <p className='pattern1--leftSide_text'>{elem.language}</p>
+                        <p className='pattern1--leftSide_text-margined'>{elem.degree}</p>
+                    </div>
+                ))}
+            </div>
         </>
     )
 }
