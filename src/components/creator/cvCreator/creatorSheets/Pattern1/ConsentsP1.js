@@ -6,11 +6,9 @@ const Consent = () => {
   const { postData } = useAuth()
   return (
     <>
-      {/* <div className='pattern1--rightSide_consent--container--full'> */}
         <div className='pattern1--rightSide_consent--container'>
           <p className='pattern1--rightSide_consent'>{postData.consent}</p>
         </div>
-      {/* </div> */}
     </>
   )
 }

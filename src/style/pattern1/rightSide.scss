@@ -1,10 +1,42 @@
 $fontFamily: 'Roboto',
 sans-serif;
-.pattern1--rightSide_consent--container--full {
-    // position: relative;
+.pattern1--rightSide--container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5mm;
+}
+
+.pattern1--rightSide_text--header {
+    font-family: $fontFamily;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5mm;
+    margin-left: 5mm;
+}
+
+.pattern1--rightSide_text--header_upscore {
+    border-bottom: 1px solid black;
+    width: 136mm;
+    margin-top: 5mm;
+    margin-left: 2mm;
+}
+
+.pattern1--rightSide_text {
+    font-family: $fontFamily;
+    font-size: 1.1rem;
+    margin-left: 5mm;
+    margin-bottom: 2mm;
+}
+
+.pattern1--rightSide_text_bold {
+    font-weight: bold;
+}
+
+.pattern1--rightSide_date {
+    margin-left: 3mm;
+    margin-top: 2mm;
+    width: 35mm;
     // border: 1px solid black;
-    // width: 100%;
-    // height: 100%;
 }
 
 .pattern1--rightSide_consent--container {
