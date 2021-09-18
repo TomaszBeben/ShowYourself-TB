@@ -1,12 +1,13 @@
-// $imageWidth: 39%;
-$fontFamily: 'Roboto',
+$fontFamily: 'Montserrat',
 sans-serif;
 $leftSideTextColor: white;
+$fontHeader: 1.1rem;
+$fontText: 1rem;
 .pattern1--leftSide_name {
     color: white;
     font-family: $fontFamily;
     font-weight: bold;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     margin-top: 8mm;
     margin-left: 5mm;
 }
@@ -15,6 +16,7 @@ $leftSideTextColor: white;
     width: 70mm;
     height: 70mm;
     margin-top: 5mm;
+    margin-bottom: 5mm;
     display: flex;
     justify-content: center;
 }
@@ -28,10 +30,10 @@ $leftSideTextColor: white;
 }
 
 .pattern1--leftSide_text--header {
-    color: $leftSideTextColor;
+    color: $leftSideTextColor !important;
     font-family: $fontFamily;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: $fontHeader;
     margin-top: 5mm;
     margin-bottom: 1mm;
     margin-left: 5mm;
@@ -42,17 +44,17 @@ $leftSideTextColor: white;
 }
 
 .pattern1--leftSide_text {
-    color: $leftSideTextColor;
+    color: $leftSideTextColor !important;
     font-family: $fontFamily;
-    font-size: 1.1rem;
+    font-size: $fontText;
     margin-left: 5mm;
     margin-bottom: 1mm;
 }
 
 .pattern1--leftSide_text-margined {
-    color: $leftSideTextColor;
+    color: $leftSideTextColor !important;
     font-family: $fontFamily;
-    font-size: 1.1rem;
+    font-size: $fontText;
     margin-left: 7mm;
     margin-bottom: 1mm;
 }

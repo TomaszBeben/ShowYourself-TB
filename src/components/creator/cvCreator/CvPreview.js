@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import CurrentCv from './CurrentCv'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import ReactToPrint from 'react-to-print';
 
 
@@ -14,19 +14,20 @@ const CvPreview = () => {
     const classes = useStyles()
 
     const componentRef = useRef()
+    const history = useHistory()
 
     return (
         <div className='cvPreview-container'>
             <div className='cvPreview-header'>
                 <div className='cvPreview-header-element'>
-                    <Link to='/cvcreator/basics' style={{ textDecoration: 'none' }}>
-                        <Button className={classes.buttonSubmit} variant="contained" size="large">Back</Button>
-                    </Link>
+                    <Button onClick={() => { history.goBack() }} className={classes.buttonSubmit} variant="contained" size="large">Back</Button>
                 </div>
-                <ReactToPrint
-                    trigger={() => <Button className={classes.buttonSubmit} variant="contained" size="large">Download</Button>}
-                    content={() => componentRef.current}
-                />
+                <div className='cvPreview-header-element'>
+                    <ReactToPrint
+                        trigger={() => <Button className={classes.buttonSubmit} variant="contained" size="large">Download</Button>}
+                        content={() => componentRef.current}
+                    />
+                </div>
             </div>
             <Paper className={`scaling ${classes.A4Paper}`}>
                 <CurrentCv postData={postData} ref={componentRef} />

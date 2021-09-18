@@ -1,5 +1,7 @@
-$fontFamily: 'Roboto',
+$fontFamily: 'Montserrat',
 sans-serif;
+$fontHeader: 1.1rem;
+$fontText: 1rem;
 .pattern1--rightSide--container {
     display: flex;
     flex-direction: row;
@@ -9,7 +11,8 @@ sans-serif;
 .pattern1--rightSide_text--header {
     font-family: $fontFamily;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: $fontHeader;
+    margin-top: 1mm;
     margin-bottom: 5mm;
     margin-left: 5mm;
 }
@@ -23,7 +26,7 @@ sans-serif;
 
 .pattern1--rightSide_text {
     font-family: $fontFamily;
-    font-size: 1.1rem;
+    font-size: $fontText;
     margin-left: 5mm;
     margin-bottom: 2mm;
 }
