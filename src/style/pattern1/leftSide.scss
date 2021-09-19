@@ -4,7 +4,7 @@ $leftSideTextColor: white;
 $fontHeader: 1.1rem;
 $fontText: 1rem;
 .pattern1--leftSide_name {
-    color: white;
+    color: white !important;
     font-family: $fontFamily;
     font-weight: bold;
     font-size: 1.4rem;

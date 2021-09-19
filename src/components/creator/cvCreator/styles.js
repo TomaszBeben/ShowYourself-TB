@@ -101,4 +101,11 @@ export default makeStyles((theme) => ({
       background: 'linear-gradient(180deg, rgba(5, 99, 8, 1) 0%, rgba(19, 148, 11, 1) 100%)'
     }
   },
+
+  button: {
+    padding: '3px',
+    marginBottom: margin,
+    marginTop: margin,
+    textDecoration: 'none',
+  }
 }));
