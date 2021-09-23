@@ -1,8 +1,14 @@
 export const initialState = (currentUser) => {
+
     return {
-        currentUser: !currentUser ? null : currentUser.email   ,
+        // currentUser: !currentUser ? null : currentUser.email,
+        // currentUser: currentUser ? currentUser.email : null,
+        opt3:[],
+        currentUser: 'currentUser.email',
         name: '',
         surname: '',
+        role: '',
+        description: '',
         dateOfBirth: '',
         file: '',
         country: '',
@@ -18,7 +24,8 @@ export const initialState = (currentUser) => {
         hobbys: [],
         links: [],
         consent: [],
-        style:[]
+        opt1:[],
+        opt2:[],
     }
 }
 

@@ -8,6 +8,12 @@ $fontText: 1rem;
     margin-bottom: 5mm;
 }
 
+.pattern1--rightSide_hobby--container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1mm;
+}
+
 .pattern1--rightSide_text--header {
     font-family: $fontFamily;
     font-weight: bold;

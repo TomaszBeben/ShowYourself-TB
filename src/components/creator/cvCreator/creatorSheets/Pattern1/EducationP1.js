@@ -3,14 +3,14 @@ import { useAuth } from '../../../../../context/AuthContext'
 //Creator View Folder
 
 const Education = () => {
-    const { education } = useAuth()
+    const { education, color } = useAuth()
 
     return (
         <>
             {education.length !== 0 ?
                 <div>
                     <div className='pattern1--rightSide_text--header_upscore'></div>
-                    <p className='pattern1--rightSide_text--header'>Education: </p>
+                    <p style={{color: color}} className='pattern1--rightSide_text--header'>Education: </p>
                 </div>
                 : null}
             {education.map((elem, index) => (

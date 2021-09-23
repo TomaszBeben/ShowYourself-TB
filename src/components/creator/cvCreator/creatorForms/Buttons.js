@@ -6,14 +6,22 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import useStyles from '../styles'
 
-const Buttons = ({ deleteElement , editElement , moveUp, moveDown }) => {
+const Buttons = ({ deleteElement, editElement, moveUp, moveDown }) => {
     const classes = useStyles()
     return (
         <>
-            <EditIcon onClick={editElement} className={classes.button} fontSize='large'/>
-            <DeleteForeverIcon onClick={deleteElement} className={classes.button} fontSize='large'/>
-            <KeyboardArrowUpIcon onClick={moveUp} className={classes.button} fontSize='large' />
-            <KeyboardArrowDownIcon onClick={moveDown} className={classes.button} fontSize='large' />
+            <Button>
+                <EditIcon onClick={editElement} className={`materialUI--edit_button ${classes.button}`} fontSize='medium' />
+            </Button>
+            <Button>
+                <DeleteForeverIcon onClick={deleteElement} className={`materialUI--delete_button ${classes.button}`} fontSize='medium' />
+            </Button>
+            <Button>
+                <KeyboardArrowUpIcon onClick={moveUp} className={`materialUI--up_button ${classes.button}`} fontSize='medium' />
+            </Button>
+            <Button>
+                <KeyboardArrowDownIcon onClick={moveDown} className={`materialUI--down_button ${classes.button}`} fontSize='medium' />
+            </Button>
         </>
     )
 }

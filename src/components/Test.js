@@ -1,27 +1,13 @@
-import React, { useRef } from 'react'
-import useStyles from '../components/creator/cvCreator/styles'
-
-import ReactToPrint from 'react-to-print';
+import React from 'react'
+import { useAuth } from '../context/AuthContext'
 
 const Test = () => {
-    const classes = useStyles()
-
-    const ref = useRef()
+    const {currentUser} = useAuth()
+    console.log(currentUser);
 
     return (
         <>
-            <ReactToPrint
-                trigger={() => <button>Print this out!</button>}
-                content={() => ref.current}
-            />
-            <div className='cvPreview-container'>
-
-                <div>
-                    <div ref={ref} className={classes.A4Paper}>
-                        test
-                    </div>
-                </div>
-            </div>
+            {currentUser.email}
         </>
     )
 }

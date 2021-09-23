@@ -2,25 +2,27 @@ import React from 'react'
 import { useAuth } from '../../../../../context/AuthContext'
 //Creator View Folder
 
-
-
-//////////// DB has to be changed hobby => hobbys 
-////////////   to do tommorow :)
-
-
-
-
 const Hobby = () => {
-    const { hobbys } = useAuth()
+    const { hobbys, color } = useAuth()
 
     return (
         <>
-        {/* hobbys dont work, need fix */}
+            {hobbys.length !== 0 ?
+                <div>
+                    <div className='pattern1--rightSide_text--header_upscore'></div>
+                    <p style={{ color: color }} className='pattern1--rightSide_text--header'>Hobbys: </p>
+                </div>
+                : null}
             {hobbys.map((elem, index) => (
-                        <div key={index} >
-                            <h1>{elem.hobby}</h1>
-                        </div>
-                    ))}
+                <div key={index} className='pattern1--rightSide_hobby--container'>
+                    <div className='pattern1--rightSide_date'>
+                        <p className='pattern1--rightSide_text'></p>
+                    </div>
+                    <div className='pattern1--rightSide_content'>
+                        <p className='pattern1--rightSide_text pattern1--rightSide_text_bold'>{elem.hobby}</p>
+                    </div>
+                </div>
+            ))}
         </>
     )
 }

@@ -6,13 +6,12 @@ import CreatorNav from './CreatorNav'
 import { useDispatch } from 'react-redux'
 import { getPost } from '../../../api/index'
 import { Paper } from '@material-ui/core';
-import  useStyles  from './styles'
+import useStyles from './styles'
 import { useAuth } from '../../../context/AuthContext'
-
+// import hash from 'hash.js'
 const Creator = () => {
-    const { postData, setPostData, currentUser} = useAuth()
+    const { postData, setPostData, currentUser } = useAuth()
     const classes = useStyles()
-    localStorage.setItem('currentUser', currentUser.email)
 
     const [currentId, setCurrentId] = useState(null)
     const dispatch = useDispatch()
@@ -21,6 +20,21 @@ const Creator = () => {
         dispatch(getPost())
     }, [currentId, dispatch])
 
+    useEffect(() => {
+        if (currentUser.email !== null || undefined || '') {
+            localStorage.setItem('currentUser', currentUser.email)
+            setPostData({ ...postData, currentUser: currentUser.email })
+        } else {
+            localStorage.setItem('currentUser', '')
+            setPostData({ ...postData, currentUser: '' })
+        }
+    }, [currentUser, postData.currentUser, setPostData])
+
+
+// import hash from 'hash.js'//console.log(hash.sha256().update('text').digest('hex'));
+//console.log(hash.sha256().update(currentUser.email).digest('hex')) //hash maila
+
+
     return (
 
         <Paper className={classes.mainContainer}>
@@ -28,7 +42,7 @@ const Creator = () => {
             <div className={classes.mainCreator}>
                 <div className={classes.formAndView}>
                     <CreatorForm postData={postData} setPostData={setPostData} setCurrentId={setCurrentId} currentId={currentId} />
-                    <CreatorView postData={postData} setCurrentId={setCurrentId} currentId={currentId}/>
+                    <CreatorView postData={postData} setCurrentId={setCurrentId} currentId={currentId} />
                 </div>
                 <CreatorNav setCurrentId={setCurrentId} />
             </div>

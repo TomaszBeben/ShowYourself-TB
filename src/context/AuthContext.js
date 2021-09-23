@@ -11,6 +11,17 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState('')
     const [loading, setLoading] = useState(true)
+    const [sheetStyle, setSheetStyle] = useState('style 1')
+    const [color, setColor] = useState('#000C66')
+    const [postData, setPostData] = useState(initialState(currentUser))
+    const [skills, setSkills] = useState([])
+    const [education, setEducation] = useState([])
+    const [work, setWork] = useState([])
+    const [languages, setLanguages] = useState([])
+    const [courses, setCourses] = useState([])
+    const [hobbys, setHobbys] = useState([])
+    const [links, setLinks] = useState([])
+    const [consent, setConsent] = useState([])
 
     const signup = (email, password) => {
         return auth.createUserWithEmailAndPassword(email, password)
@@ -44,20 +55,18 @@ export const AuthProvider = ({ children }) => {
         return unsubscribe
     }, [])
 
-    const [sheetStyle, setSheetStyle] = useState('style 1')
-    const [color, setColor] = useState('#000C66')
-    const [postData, setPostData] = useState(initialState(currentUser))
-    const [skills, setSkills] = useState([])
-    const [education, setEducation] = useState([])
-    const [work, setWork] = useState([])
-    const [languages, setLanguages] = useState([])
-    const [courses, setCourses] = useState([])
-    const [hobbys, setHobbys] = useState([])
-    const [links, setLinks] = useState([])
-    const [consent, setConsent] = useState([])
+    useEffect(() => {
+        if (currentUser === null || undefined || '') {
+            localStorage.setItem('currentUser', '')
+        } else {
+            localStorage.setItem('currentUser', currentUser.email)
+            setPostData({ ...postData, currentUser: currentUser })
+        }
+    }, [])
 
-
-
+    // if (currentUser !== null || undefined || '') {
+    //     console.log(currentUser.email);
+    // } else { console.log('currentUser.email- nie istnieje'); }
 
     const value = {
         skills, setSkills,

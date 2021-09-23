@@ -7,7 +7,7 @@ import Skills from './SkillsP1'
 import Languages from './LanguagesP1'
 import Courses from './CoursesP1'
 import Hobby from './HobbyP1'
-// import Links from './LinksP1'
+import Links from './LinksP1'
 import Consent from './ConsentsP1'
 
 import { useAuth } from '../../../../../context/AuthContext'
@@ -29,6 +29,7 @@ const Pattern1 = () => {
                 <Basics/>
                 <Skills/>
                 <Languages/>
+                <Links/>
             </div>
             <div className='pattern1--container_right'>
                 <WorkExperience/>

@@ -32,7 +32,8 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
         hobbys, setHobbys,
         links, setLinks,
         consent, setConsent,
-        currentUser } = useAuth()
+        currentUser
+        } = useAuth()
 
     const dispatch = useDispatch()
     const classes = useStyles()
@@ -49,11 +50,11 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
             setLinks(post.links)
         }
     }, [post, setPostData, setCourses, setEducation, setHobbys, setLanguages, setLinks, setSkills, setWork])
-
     const handleSubmit = (e) => {
         e.preventDefault()
         setPostData({
             ...postData,
+            currentUser: currentUser,
             skills: skills,
             education: education,
             work: work,

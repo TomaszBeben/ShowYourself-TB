@@ -3,13 +3,13 @@ import { useAuth } from '../../../../../context/AuthContext'
 //Creator View Folder
 
 const WorkExperience = () => {
-    const { work } = useAuth()
+    const { work, color } = useAuth()
     return (
         <>
             {work.length !== 0 ?
                 <div>
                     <div className='pattern1--rightSide_text--header_upscore'></div>
-                    <p className='pattern1--rightSide_text--header'>Experience: </p>
+                    <p style={{color: color}}  className='pattern1--rightSide_text--header'>Experience: </p>
                 </div>
                 : null}
             {work.map((elem, index) => (

@@ -3,13 +3,16 @@ import { url } from '../ignore/urlAPI'
 import { FETCH_ALL, CREATE, UPDATE, DELETE, RESET} from '../constants/actionTypes'
 
 //API's
+
 const currentUser = localStorage.getItem('currentUser')
+console.log(currentUser);
 // const fetchPosts = () => axios.get(url)
 // const sendPost = (newPost) => axios.post(url, newPost)
 const fetchPosts = () => axios.get(`${url}/${currentUser}`)
 const sendPost = (newPost) => axios.post(`${url}/${currentUser}`, newPost)
 const updatedPost = (id, updatedPost) => axios.patch(`${url}/${id}`, updatedPost)
 const deletedPost = (id) => axios.delete(`${url}/${id}`)
+
 
 
 //Actions
