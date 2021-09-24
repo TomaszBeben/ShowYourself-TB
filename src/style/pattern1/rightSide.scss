@@ -8,6 +8,15 @@ $fontText: 1rem;
     margin-bottom: 5mm;
 }
 
+.pattern1--rightSide_description--container {
+    margin-top: 8mm;
+    margin-left: 5mm;
+    margin-right: 5mm;
+    font-family: $fontFamily;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
 .pattern1--rightSide_hobby--container {
     display: flex;
     flex-direction: row;

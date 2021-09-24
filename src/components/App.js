@@ -4,11 +4,11 @@ import { AuthProvider } from '../context/AuthContext'
 
 import Creator from './creator/cvCreator/Creator'
 import CvPreview from './creator/cvCreator/CvPreview'
-import ForgotPassword from './ForgotPassword'
-import Login from './Login'
-import Main from './Main'
-import PrivateRoute from './PrivateRoute'
-import Signup from './Signup'
+import ForgotPassword from './firebaseAuth/ForgotPassword'
+import Login from './firebaseAuth/Login'
+import Main from './main/Main'
+import PrivateRoute from './firebaseAuth/PrivateRoute'
+import Signup from './firebaseAuth/Signup'
 
 import { Route } from 'react-router-dom'
 

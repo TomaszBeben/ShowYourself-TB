@@ -35,6 +35,10 @@ export const paths = [
         label: 'Basics',
     },
     {
+        path: '/cvcreator/description',
+        label: 'Description',
+    },
+    {
         path: '/cvcreator/edu',
         label: 'Education',
     },

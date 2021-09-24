@@ -19,6 +19,7 @@ import { useAuth } from '../../../context/AuthContext'
 import { initialState } from './variables'
 
 import useStyles from './styles'
+import Description from './creatorForms/Description'
 
 const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
@@ -32,7 +33,8 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
         hobbys, setHobbys,
         links, setLinks,
         consent, setConsent,
-        currentUser
+        description, setDescription,
+        currentUser,
         } = useAuth()
 
     const dispatch = useDispatch()
@@ -109,6 +111,9 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
                     </Route>
                     <Route path='/cvcreator/consent' >
                         <Consents consent={consent} setConsent={setConsent} postData={postData} setPostData={setPostData} />
+                    </Route>
+                    <Route path='/cvcreator/description' >
+                        <Description description={description} setConsent={setDescription} postData={postData} setPostData={setPostData} />
                     </Route>
                     <Route path='/cvcreator/end' >
                         <h2>Click the button to save your CV</h2>

@@ -22,6 +22,7 @@ export const AuthProvider = ({ children }) => {
     const [hobbys, setHobbys] = useState([])
     const [links, setLinks] = useState([])
     const [consent, setConsent] = useState([])
+    const [description, setDescription] = useState([])
 
     const signup = (email, password) => {
         return auth.createUserWithEmailAndPassword(email, password)

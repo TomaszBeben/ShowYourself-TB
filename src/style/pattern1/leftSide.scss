@@ -4,12 +4,22 @@ $leftSideTextColor: white;
 $fontHeader: 1.1rem;
 $fontText: 1rem;
 .pattern1--leftSide_name {
-    color: white !important;
+    color: white;
     font-family: $fontFamily;
     font-weight: bold;
     font-size: 1.4rem;
     margin-top: 8mm;
     margin-left: 5mm;
+}
+
+.pattern1--leftSide_role {
+    color: $leftSideTextColor !important;
+    font-family: $fontFamily;
+    // font-weight: bold;
+    font-size: $fontHeader;
+    margin-top: 1mm;
+    margin-bottom: 1mm;
+    margin-left: 8mm;
 }
 
 .pattern1--leftSide_picture--container {

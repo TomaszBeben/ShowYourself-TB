@@ -1,8 +1,8 @@
 import React from 'react'
-import Footer from './creator/footer/Footer'
+import Footer from './footer/Footer'
 
-import Header from './creator/header/Header'
-import MainContent from './creator/main/MainContent'
+import Header from './header/Header'
+import MainContent from './main/MainContent'
 
 const Main = () => {
     return (

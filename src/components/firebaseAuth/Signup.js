@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { useAuth } from '../context/AuthContext'
-import Logo from './creator/header/Logo'
+import { useAuth } from '../../context/AuthContext'
+import Logo from '../main/header/Logo'
 
 const Signup = () => {
     const emailRef = useRef()

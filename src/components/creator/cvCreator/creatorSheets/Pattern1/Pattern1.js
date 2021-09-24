@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 // import PictureP1 from './PictureP1'
 import Basics from './BasicsP1'
+import Description from './DescriptionP1'
 import Education from './EducationP1'
 import WorkExperience from './WorkExperienceP1'
 import Skills from './SkillsP1'
@@ -32,6 +33,7 @@ const Pattern1 = () => {
                 <Links/>
             </div>
             <div className='pattern1--container_right'>
+                <Description/>
                 <WorkExperience/>
                 <Education/>
                 <Courses/>

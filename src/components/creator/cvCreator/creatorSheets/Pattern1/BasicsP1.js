@@ -8,6 +8,7 @@ const Basics = () => {
         <>
             <div style={{ backgroundColor: `${color}` }} className='pattern1--leftSide_darker--container'>
                 <p className='pattern1--leftSide_name'>{postData.name} {postData.surname}</p>
+                <p className='pattern1--leftSide_role'>{postData.role}</p>
             </div>
             {postData.file !== '' ?
                 <div className='pattern1--leftSide_picture--container'>
