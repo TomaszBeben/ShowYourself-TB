@@ -5,14 +5,14 @@ import CreatorView from './CreatorView'
 import CreatorNav from './CreatorNav'
 import { useDispatch } from 'react-redux'
 import { getPost } from '../../../api/index'
-import { Paper } from '@material-ui/core';
+import { Paper, makeStyles, Button } from '@material-ui/core';
 import useStyles from './styles'
 import { useAuth } from '../../../context/AuthContext'
+import MobileNavBar from './MobileNavBar'
 // import hash from 'hash.js'
 const Creator = () => {
-    const { postData, setPostData, currentUser } = useAuth()
     const classes = useStyles()
-
+    const { postData, setPostData, currentUser } = useAuth()
     const [currentId, setCurrentId] = useState(null)
     const dispatch = useDispatch()
 
@@ -31,6 +31,7 @@ const Creator = () => {
     }, [currentUser, postData.currentUser, setPostData])
 
 
+
 // import hash from 'hash.js'//console.log(hash.sha256().update('text').digest('hex'));
 //console.log(hash.sha256().update(currentUser.email).digest('hex')) //hash maila
 
@@ -43,6 +44,7 @@ const Creator = () => {
                 <div className={classes.formAndView}>
                     <CreatorForm postData={postData} setPostData={setPostData} setCurrentId={setCurrentId} currentId={currentId} />
                     <CreatorView postData={postData} setCurrentId={setCurrentId} currentId={currentId} />
+                    {/* <MobileNavBar/> */}
                 </div>
                 <CreatorNav setCurrentId={setCurrentId} />
             </div>

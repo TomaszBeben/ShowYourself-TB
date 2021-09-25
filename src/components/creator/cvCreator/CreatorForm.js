@@ -82,7 +82,7 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
     }
 
     return (
-        <Paper className={classes.paper}>
+        <Paper className={ classes.paper }>
             <form className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 <Switch>
                     <Route path='/cvcreator/basics' >

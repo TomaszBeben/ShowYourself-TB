@@ -9,7 +9,7 @@ const CreatorMenu = () => {
     const classes = useStyles()
 
     return (
-        <Paper className={classes.menuContainer}>
+        <Paper className={classes.menuContainer }>
             <div>
                 <Link to='/' style={{ textDecoration: 'none' }}>
                     <Button className={classes.buttonSubmit} variant="contained" size="large" fullWidth>home</Button>

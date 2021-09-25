@@ -8,15 +8,15 @@ import useStyles from './styles'
 
 
 const CreatorView = ({ postData }) => {
-const { color, setColor, sheetStyle, setSheetStyle } = useAuth()
+    const { color, setColor, sheetStyle, setSheetStyle } = useAuth()
 
     const classes = useStyles()
 
     return (
-        <div className={classes.viewContainer}>
-            <ViewHeader sheetStyle={sheetStyle} setSheetStyle={setSheetStyle} color={color} setColor={setColor}/>
-            <A4Size postData={postData} color={color} sheetStyle={setSheetStyle} />
-        </div >
+            <div className={classes.viewContainer}>
+                <ViewHeader sheetStyle={sheetStyle} setSheetStyle={setSheetStyle} color={color} setColor={setColor} />
+                <A4Size postData={postData} color={color} sheetStyle={setSheetStyle} />
+            </div >
     )
 }
 

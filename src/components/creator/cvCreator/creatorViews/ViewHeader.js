@@ -14,7 +14,7 @@ const ViewHeader = ({ color, setColor, sheetStyle, setSheetStyle }) => {
     return (
         <>
             <Paper className={classes.viewHeader}>
-                <div>
+                {/* <div> */}
                     <FormControl className={classes.select}>
                         <InputLabel>Style</InputLabel>
                         <Select
@@ -39,7 +39,6 @@ const ViewHeader = ({ color, setColor, sheetStyle, setSheetStyle }) => {
                             ))}
                         </Select>
                     </FormControl>
-                    <div>
                         <Button
                             className={classes.buttonSubmit} variant="contained" size="large"
                             onClick={() => { console.log('style: ' + sheetStyle); console.log('color: ' + color); }}>
@@ -51,15 +50,14 @@ const ViewHeader = ({ color, setColor, sheetStyle, setSheetStyle }) => {
                             Cv Preview
                         </Button>
                     </Link>
-                    </div>
-                </div>
-                <div>
+                {/* </div> */}
+                {/* <div>
                     <Button
                         className={classes.buttonSubmit} variant="contained" size="large"
                         onClick={() => { console.log('kiedys bedzie pobieranie :)'); }} >
                         Pobierz
                     </Button>
-                </div>
+                </div> */}
             </Paper>
 
         </>

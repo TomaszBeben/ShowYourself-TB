@@ -9,9 +9,11 @@ const A4Size = ({ postData }) => {
     const classes = useStyles()
     return (
         <>
-            <Paper className={classes.A4Paper} >
-                <CurrentCv postData={postData}/>
-            </Paper>
+            <div className={classes.breakpointHide}>
+                <Paper className={classes.A4Paper} >
+                    <CurrentCv postData={postData} />
+                </Paper>
+            </div>
         </>
 
     )
