@@ -24,7 +24,7 @@ const Skills = ({ skills, setSkills, postData, setPostData }) => {
                     className={`buttonAccept ${classes.buttonSubmit}`}
                     variant="contained" size="large" type='button'
                     onClick={addSkill}>
-                    dodaj
+                    Add
                 </Button>
                 <div>
                     {skills.map((elem, index) => (

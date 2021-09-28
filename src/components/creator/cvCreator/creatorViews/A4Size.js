@@ -1,18 +1,20 @@
 import React from 'react'
-import useStyles from '../styles'
+import creatorViewStyles from '../styles/creatorViewStyles'
 import { Paper } from '@material-ui/core';
 import CurrentCv from '../CurrentCv';
 
 
 
 const A4Size = ({ postData }) => {
-    const classes = useStyles()
+    const classes = creatorViewStyles()
     return (
         <>
             <div className={classes.breakpointHide}>
-                <Paper className={classes.A4Paper} >
-                    <CurrentCv postData={postData} />
-                </Paper>
+                <div className={classes.sizingView}>
+                    <Paper className={classes.A4Paper} >
+                        <CurrentCv postData={postData} />
+                    </Paper>
+                </div>
             </div>
         </>
 

@@ -24,7 +24,7 @@ const Hobby = ({ hobbys, setHobbys, postData, setPostData }) => {
                     className={`buttonAccept ${classes.buttonSubmit}`}
                     variant="contained" size="large" type='button'
                     onClick={addSkill}>
-                    dodaj
+                    Add
                 </Button>
                 <div>
                     {hobbys.map((elem, index) => (

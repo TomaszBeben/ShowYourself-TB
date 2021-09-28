@@ -37,7 +37,7 @@ const Courses = ({ courses, setCourses, postData, setPostData }) => {
                     className={`buttonAccept ${classes.buttonSubmit}`}
                     variant="contained" size="large" type='button'
                     onClick={addSkill}>
-                    dodaj
+                    Add
                 </Button>
                 <div>
                     {courses.map((elem, index) => (

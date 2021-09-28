@@ -28,7 +28,7 @@ const Languages = ({ languages, setLanguages, postData, setPostData }) => {
                     className={`buttonAccept ${classes.buttonSubmit}`}
                     variant="contained" size="large" type='button'
                     onClick={addSkill}>
-                    dodaj
+                    Add
                 </Button>
                 <div>
                     {languages.map((elem, index) => (

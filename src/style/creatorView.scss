@@ -3,3 +3,15 @@
     min-height: 29.7cm;
     background-color: white;
 }
+
+.testest {
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    // transform: translate(100px);
+    // transition-duration: 2s;
+    left: -50px;
+    transition-property: transform;
+    transition-duration: 5s;
+    transform: translate(50px);
+}

@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Paper, Button } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import useStyles from './styles'
+import creatorNavStyles from './styles/creatorNavStyles'
 
 
 import { deletePost } from '../../../api'
@@ -14,7 +14,7 @@ const CreatorNav = ({ setCurrentId }) => {
 
     const dispatch = useDispatch()
     const posts = useSelector((state) => state.posts)
-    const classes = useStyles()
+    const classes = creatorNavStyles()
     // console.log(posts);
 
     const cvcontainer = {

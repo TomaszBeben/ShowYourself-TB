@@ -4,13 +4,13 @@ import A4Size from './creatorViews/A4Size'
 import ViewHeader from './creatorViews/ViewHeader'
 import { useAuth } from '../../../context/AuthContext'
 
-import useStyles from './styles'
+import creatorViewStyles from './styles/creatorViewStyles'
 
 
 const CreatorView = ({ postData }) => {
     const { color, setColor, sheetStyle, setSheetStyle } = useAuth()
 
-    const classes = useStyles()
+    const classes = creatorViewStyles()
 
     return (
             <div className={classes.viewContainer}>

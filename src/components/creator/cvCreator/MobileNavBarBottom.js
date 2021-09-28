@@ -1,16 +1,16 @@
 import React from 'react'
 import { Paper } from '@material-ui/core';
-import useStyles from './styles'
+import mobileNavStyles from './styles/mobileNavStyles'
 
-const MobileNavBar = ({hideElem}) => {
-    const classes = useStyles()
+const MobileNavBarBottom = () => {
+    const classes = mobileNavStyles()
     return (
         <div>
             <Paper className={classes.viewHeader}>
-                
+                text
             </Paper>
         </div>
     )
 }
 
-export default MobileNavBar
+export default MobileNavBarBottom

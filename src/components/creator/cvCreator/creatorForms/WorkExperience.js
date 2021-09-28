@@ -40,7 +40,7 @@ const WorkExperience = ({ work, setWork, postData, setPostData }) => {
                     className={`buttonAccept ${classes.buttonSubmit}`}
                     variant="contained" size="large" type='button'
                     onClick={addElement}>
-                    dodaj
+                    ADD
                 </Button>
                 <div>
                     {work.map((elem, index) => (

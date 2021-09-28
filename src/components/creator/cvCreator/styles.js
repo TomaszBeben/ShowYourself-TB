@@ -9,103 +9,97 @@ export default makeStyles((theme) => ({
     },
   },
 
-  mainContainer: {
-    // [theme.breakpoints.down('sm')]: {
-    //   position: 'relative'
-    // },
-    maxWidth: '100vw',
-    maxHeigth: '100vh',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    backgroundColor: '#bac2cf'
-  },
+  // mainContainer: {
+  //   maxWidth: '100vw',
+  //   maxHeigth: '100vh',
+  //   display: 'flex',
+  //   flexDirection: 'row',
+  //   justifyContent: 'center',
+  //   backgroundColor: '#bac2cf'
+  // },
 
   breakpointHide: {
     [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
   },
-  A4Paper: {
-    width: '21cm',
-    backgroundColor: 'white',
-  },
+  // A4Paper: {
+  //   width: '21cm',
+  //   backgroundColor: 'white',
+  // },
 
-  viewContainer: {
-    [theme.breakpoints.down('sm')]: {
-      width: '95vw',
-      // padding: padding,
-    },
-    width: '45vw',
-    overflow: 'auto',
-    maxHeight: '70vh',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-  },
+  // viewContainer: {
+  //   [theme.breakpoints.down('sm')]: {
+  //     width: '95vw',
+  //     // padding: padding,
+  //   },
+  //   width: '45vw',
+  //   overflow: 'auto',
+  //   maxHeight: '70vh',
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  //   alignItems: 'center'
+  // },
 
-  viewHeader: {
-    [theme.breakpoints.down('sm')]: {
-      maxWidth: '100vw',
-      minWidth: '90vw',
-    },
-    minHeight: '15vh',
-    margin: `${margin} 0vh`,
-    minWidth: '45vw',
-    maxWidth: '21cm',
-    backgroundColor: 'white',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
+  // viewHeader: {
+  //   [theme.breakpoints.down('sm')]: {
+  //     maxWidth: '100vw',
+  //     minWidth: '90vw',
+  //   },
+  //   minHeight: '15vh',
+  //   margin: `${margin} 0vh`,
+  //   minWidth: '45vw',
+  //   maxWidth: '21cm',
+  //   backgroundColor: 'white',
+  //   display: 'flex',
+  //   flexDirection: 'row',
+  //   justifyContent: 'space-around',
+  //   alignItems: 'center',
+  //   marginLeft: 'auto',
+  //   marginRight: 'auto',
+  // },
 
-  formAndView: {
-    display: 'flex',
-    flexDirection: 'row',
-    [theme.breakpoints.down('sm')]: {
-      width: '100vw',
-      height: '100vh',
-      justifyContent: 'center',
-      alignItems: 'center',
-      flexDirection: 'column-reverse',
-    },
-  },
-  menuContainer: {
-    [theme.breakpoints.down('sm')]: {
-      margin: 'auto',
-      // display: 'none',
-      position: 'absolute',
-      width: '75vw',
-      height: '100vh',
-      left: '0px',
-      zIndex: 5
-    },
-    padding: padding,
-    margin: margin,
-    height: '95vh',
-    width: '13vw',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-  },
-  navContainer: {
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
-    },
-    padding: padding,
-    margin: margin,
-    height: '25vh',
-    maxWidth: '83vw',
-    display: 'flex',
-    flexDirection: 'row',
-    overflow: 'auto'
-  },
-
-  formContainer: {},
-
+  // formAndView: {
+  //   display: 'flex',
+  //   flexDirection: 'row',
+  //   [theme.breakpoints.down('sm')]: {
+  //     width: '100vw',
+  //     height: '100vh',
+  //     justifyContent: 'center',
+  //     alignItems: 'center',
+  //     flexDirection: 'column-reverse',
+  //   },
+  // },
+  // menuContainer: {
+  //   [theme.breakpoints.down('sm')]: {
+  //     margin: 'auto',
+  //     // display: 'none',
+  //     position: 'absolute',
+  //     width: '75vw',
+  //     height: '100vh',
+  //     left: '0px',
+  //     zIndex: 5
+  //   },
+  //   padding: padding,
+  //   margin: margin,
+  //   height: '95vh',
+  //   width: '13vw',
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  //   justifyContent: 'space-around',
+  // },
+  // navContainer: {
+  //   [theme.breakpoints.down('sm')]: {
+  //     display: 'none',
+  //   },
+  //   padding: padding,
+  //   margin: margin,
+  //   height: '25vh',
+  //   maxWidth: '83vw',
+  //   display: 'flex',
+  //   flexDirection: 'row',
+  //   overflow: 'auto'
+  // },
 
   paper: {
     [theme.breakpoints.down('sm')]: {
@@ -126,9 +120,9 @@ export default makeStyles((theme) => ({
     justifyContent: 'center',
   },
 
-  select: {
-    margin: '0px 10px'
-  },
+  // select: {
+  //   margin: '0px 10px'
+  // },
 
   fileInput: {
     width: '97%',

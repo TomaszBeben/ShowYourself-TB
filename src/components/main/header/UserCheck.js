@@ -27,7 +27,6 @@ const UserCheck = () => {
     }
 
     useEffect(() => {
-        // if (currentUser !== null) {
         if (currentUser) {
             setUser(currentUser.email)
             setINOrOut('Log Out')

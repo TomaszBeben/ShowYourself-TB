@@ -18,7 +18,7 @@ import { createPost, updatePost } from '../../../api/index'
 import { useAuth } from '../../../context/AuthContext'
 import { initialState } from './variables'
 
-import useStyles from './styles'
+import creatorFormStyles from './styles/creatorFormStyles'
 import Description from './creatorForms/Description'
 
 const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
@@ -38,7 +38,7 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
         } = useAuth()
 
     const dispatch = useDispatch()
-    const classes = useStyles()
+    const classes = creatorFormStyles()
 
     useEffect(() => {
         if (post) {

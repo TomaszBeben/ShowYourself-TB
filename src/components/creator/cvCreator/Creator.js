@@ -5,13 +5,14 @@ import CreatorView from './CreatorView'
 import CreatorNav from './CreatorNav'
 import { useDispatch } from 'react-redux'
 import { getPost } from '../../../api/index'
-import { Paper, makeStyles, Button } from '@material-ui/core';
-import useStyles from './styles'
+import { Paper } from '@material-ui/core';
+import creatorStyles from './styles/creatorStyles'
 import { useAuth } from '../../../context/AuthContext'
-import MobileNavBar from './MobileNavBar'
+import MobileNavBarTop from './MobileNavBarTop'
+import MobileNavBarBottom from './MobileNavBarBottom'
 // import hash from 'hash.js'
 const Creator = () => {
-    const classes = useStyles()
+    const classes = creatorStyles()
     const { postData, setPostData, currentUser } = useAuth()
     const [currentId, setCurrentId] = useState(null)
     const dispatch = useDispatch()
@@ -34,17 +35,18 @@ const Creator = () => {
 
 // import hash from 'hash.js'//console.log(hash.sha256().update('text').digest('hex'));
 //console.log(hash.sha256().update(currentUser.email).digest('hex')) //hash maila
-
+    const[hideMobileMenu, setHideMobileMenu] = useState(classes.breakpointHide)
 
     return (
 
         <Paper className={classes.mainContainer}>
             <CreatorMenu />
-            <div className={classes.mainCreator}>
+            <div>
                 <div className={classes.formAndView}>
+                    {/* <MobileNavBarBottom/> */}
                     <CreatorForm postData={postData} setPostData={setPostData} setCurrentId={setCurrentId} currentId={currentId} />
                     <CreatorView postData={postData} setCurrentId={setCurrentId} currentId={currentId} />
-                    {/* <MobileNavBar/> */}
+                    <MobileNavBarTop hideMobileMenu={hideMobileMenu}/>
                 </div>
                 <CreatorNav setCurrentId={setCurrentId} />
             </div>

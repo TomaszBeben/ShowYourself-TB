@@ -6,10 +6,10 @@ import Select from '@material-ui/core/Select';
 import { Link } from 'react-router-dom'
 
 import { Button, Paper } from '@material-ui/core';
-import useStyles from '../styles'
+import creatorViewStyles from '../styles/creatorViewStyles'
 
 const ViewHeader = ({ color, setColor, sheetStyle, setSheetStyle }) => {
-    const classes = useStyles()
+    const classes = creatorViewStyles()
 
     return (
         <>
@@ -50,14 +50,6 @@ const ViewHeader = ({ color, setColor, sheetStyle, setSheetStyle }) => {
                             Cv Preview
                         </Button>
                     </Link>
-                {/* </div> */}
-                {/* <div>
-                    <Button
-                        className={classes.buttonSubmit} variant="contained" size="large"
-                        onClick={() => { console.log('kiedys bedzie pobieranie :)'); }} >
-                        Pobierz
-                    </Button>
-                </div> */}
             </Paper>
 
         </>
