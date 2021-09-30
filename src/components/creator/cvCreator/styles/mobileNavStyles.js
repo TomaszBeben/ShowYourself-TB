@@ -9,6 +9,12 @@ export default makeStyles((theme) => ({
         },
     },
 
+    breakpointHide: {
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        }
+    },
+
     topBar: {
         [theme.breakpoints.down('sm')]: {
             width: '100vw',
@@ -22,5 +28,19 @@ export default makeStyles((theme) => ({
         },
         display: 'none',
     },
+
+    // bottomBar: {
+    //     [theme.breakpoints.down('sm')]: {
+    //         width: '100vw',
+    //         height: '5vh',
+    //         position: 'fixed',
+    //         top: '0',
+    //         right: '0',
+    //         backgroundColor: 'white',
+    //         display: 'flex',
+    //         justifyContent: 'space-between'
+    //     },
+    //     display: 'none',
+    // },
 
 }));

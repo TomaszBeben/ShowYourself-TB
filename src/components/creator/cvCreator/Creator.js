@@ -13,7 +13,7 @@ import MobileNavBarBottom from './MobileNavBarBottom'
 // import hash from 'hash.js'
 const Creator = () => {
     const classes = creatorStyles()
-    const { postData, setPostData, currentUser } = useAuth()
+    const { postData, setPostData, currentUser, setHideMobileMenu, } = useAuth()
     const [currentId, setCurrentId] = useState(null)
     const dispatch = useDispatch()
 
@@ -35,10 +35,9 @@ const Creator = () => {
 
 // import hash from 'hash.js'//console.log(hash.sha256().update('text').digest('hex'));
 //console.log(hash.sha256().update(currentUser.email).digest('hex')) //hash maila
-    const[hideMobileMenu, setHideMobileMenu] = useState(classes.breakpointHide)
+
 
     return (
-
         <Paper className={classes.mainContainer}>
             <CreatorMenu />
             <div>
@@ -46,7 +45,7 @@ const Creator = () => {
                     {/* <MobileNavBarBottom/> */}
                     <CreatorForm postData={postData} setPostData={setPostData} setCurrentId={setCurrentId} currentId={currentId} />
                     <CreatorView postData={postData} setCurrentId={setCurrentId} currentId={currentId} />
-                    <MobileNavBarTop hideMobileMenu={hideMobileMenu}/>
+                    <MobileNavBarTop />
                 </div>
                 <CreatorNav setCurrentId={setCurrentId} />
             </div>

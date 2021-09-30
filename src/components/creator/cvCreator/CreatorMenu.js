@@ -1,17 +1,18 @@
-import React, {useState} from 'react'
+import React from 'react'
+import { useAuth } from '../../../context/AuthContext'
 import { Link } from 'react-router-dom'
 import { paths } from './variables'
 
 import { Button, Paper } from '@material-ui/core'
 import creatorMenuStyles from './styles/creatorMenuStyles'
 
-const CreatorMenu = ({hideMobileMenu}) => {
+const CreatorMenu = () => {
+    const { hideMobileMenu, setHideMobileMenu} = useAuth()
     const classes = creatorMenuStyles()
-    // const[hideMobileMenu, setHideMobileMenu] = useState(classes.breakpointHide)
 
     return (
-        <Paper className={ `${classes.menuContainer} ${hideMobileMenu}` }>
-        {/* <Paper className={ `${classes.menuContainer}` }> */}
+        <Paper onClick={()=>{setHideMobileMenu('hideMobileMenu')}} className={ `${classes.menuContainer} ${hideMobileMenu}` }>
+            {/* <div onClick={()=>{setHideMobileMenu('hideMobileMenu')}}> */}
             <div>
                 <Link to='/' style={{ textDecoration: 'none' }}>
                     <Button className={classes.buttonSubmit} variant="contained" size="large" fullWidth>home</Button>
@@ -29,6 +30,7 @@ const CreatorMenu = ({hideMobileMenu}) => {
                     <Button className={classes.buttonSubmit} variant="contained" size="large" fullWidth>end</Button>
                 </Link>
             </div>
+            {/* </div> */}
         </Paper>
     )
 }

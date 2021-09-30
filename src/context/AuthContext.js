@@ -22,7 +22,9 @@ export const AuthProvider = ({ children }) => {
     const [hobbys, setHobbys] = useState([])
     const [links, setLinks] = useState([])
     const [consent, setConsent] = useState([])
-    const [description, setDescription] = useState([])
+    // const [description, setDescription] = useState([])
+
+    const [hideMobileMenu, setHideMobileMenu] = useState('hideMobileMenu')
 
     const signup = (email, password) => {
         return auth.createUserWithEmailAndPassword(email, password)
@@ -65,10 +67,6 @@ export const AuthProvider = ({ children }) => {
         }
     }, [])
 
-    // if (currentUser !== null || undefined || '') {
-    //     console.log(currentUser.email);
-    // } else { console.log('currentUser.email- nie istnieje'); }
-
     const value = {
         skills, setSkills,
         education, setEducation,
@@ -81,6 +79,7 @@ export const AuthProvider = ({ children }) => {
         postData, setPostData,
         sheetStyle, setSheetStyle,
         color, setColor,
+        hideMobileMenu, setHideMobileMenu,
         /////////////
         currentUser,
         login,

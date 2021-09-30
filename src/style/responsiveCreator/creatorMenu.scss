@@ -3,3 +3,9 @@
     width: '10vw';
     background-color: yellow;
 }
+
+.hideMobileMenu {
+    @media (max-width: 959.95px) {
+        display: none !important;
+    }
+}
