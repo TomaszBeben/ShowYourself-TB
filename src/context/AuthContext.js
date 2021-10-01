@@ -25,6 +25,7 @@ export const AuthProvider = ({ children }) => {
     // const [description, setDescription] = useState([])
 
     const [hideMobileMenu, setHideMobileMenu] = useState('hideMobileMenu')
+    const [hideMobileNav, setHideMobileNav] = useState('hideMobileMenu')
 
     const signup = (email, password) => {
         return auth.createUserWithEmailAndPassword(email, password)
@@ -80,6 +81,7 @@ export const AuthProvider = ({ children }) => {
         sheetStyle, setSheetStyle,
         color, setColor,
         hideMobileMenu, setHideMobileMenu,
+        hideMobileNav, setHideMobileNav,
         /////////////
         currentUser,
         login,

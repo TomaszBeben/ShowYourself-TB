@@ -10,8 +10,18 @@ export default makeStyles((theme) => ({
   },
   navContainer: {
     [theme.breakpoints.down('sm')]: {
+      // margin: 'auto',
+      position: 'absolute',
+      width: '25vw',
+      height: '100vh',
+      right: '0',
+      top: '0',
+      zIndex: 5,
+      padding: padding,
+      margin: '0',
       display: 'none',
     },
+
     padding: padding,
     margin: margin,
     height: '20vh',

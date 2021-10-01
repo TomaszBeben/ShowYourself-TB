@@ -42,7 +42,7 @@ const Creator = () => {
             <CreatorMenu />
             <div>
                 <div className={classes.formAndView}>
-                    {/* <MobileNavBarBottom/> */}
+                    <MobileNavBarBottom/>
                     <CreatorForm postData={postData} setPostData={setPostData} setCurrentId={setCurrentId} currentId={currentId} />
                     <CreatorView postData={postData} setCurrentId={setCurrentId} currentId={currentId} />
                     <MobileNavBarTop />

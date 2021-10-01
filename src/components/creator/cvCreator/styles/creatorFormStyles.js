@@ -12,7 +12,7 @@ export default makeStyles((theme) => ({
   paper: {
     [theme.breakpoints.down('sm')]: {
       width: '95vw',
-      minHeight: '75vh',
+      minHeight: '65vh',
       maxHeight: '75vh',
       margin: 0,
     },
