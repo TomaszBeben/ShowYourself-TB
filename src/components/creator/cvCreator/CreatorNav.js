@@ -1,4 +1,5 @@
 import React from 'react'
+import { useAuth } from '../../../context/AuthContext'
 import { CircularProgress } from '@material-ui/core'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -12,17 +13,18 @@ import { deletePost } from '../../../api'
 
 const CreatorNav = ({ setCurrentId }) => {
 
+    const { hideMobileNav, setHideMobileNav} = useAuth()
     const dispatch = useDispatch()
     const posts = useSelector((state) => state.posts)
     const classes = creatorNavStyles()
-    // console.log(posts);
+
 
     const cvcontainer = {
         display: 'flex',
         margin: '1rem'
     }
     return (
-        <Paper className={classes.navContainer}>
+        <Paper onClick={()=>{setHideMobileNav('hideMobileMenu')}} className={`${classes.navContainer} ${hideMobileNav}`}>
             {!posts.length ? <CircularProgress /> : (
                 <div>
                     {posts.map((post, index) => (

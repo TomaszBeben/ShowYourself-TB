@@ -13,7 +13,7 @@ import MobileNavBarBottom from './MobileNavBarBottom'
 // import hash from 'hash.js'
 const Creator = () => {
     const classes = creatorStyles()
-    const { postData, setPostData, currentUser, setHideMobileMenu, } = useAuth()
+    const { postData, setPostData, currentUser } = useAuth()
     const [currentId, setCurrentId] = useState(null)
     const dispatch = useDispatch()
 

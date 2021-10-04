@@ -5,9 +5,8 @@ import { useAuth } from '../../../context/AuthContext'
 
 const MobileNavBarBottom = () => {
     const classes = mobileNavStyles()
-    const {hideMobileNav, setHideMobileNav } = useAuth()
+    const { setHideMobileNav } = useAuth()
 
-    const toggle = () => hideMobileNav === 'hideMobileMenu' ? setHideMobileNav('') : setHideMobileNav('hideMobileMenu')
     return (
         <div >
             <div className={classes.bottomBar}>
@@ -24,7 +23,7 @@ const MobileNavBarBottom = () => {
                         </a>
                 </div>
                 </div>
-                <div onClick={setHideMobileNav('')} style={{ marginLeft: '1rem', marginRight: '1rem', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                <div onClick={()=>{setHideMobileNav('')}} style={{ marginLeft: '1rem', marginRight: '1rem', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                     <AlignHorizontalRightRoundedIcon />
                 </div>
             </div>

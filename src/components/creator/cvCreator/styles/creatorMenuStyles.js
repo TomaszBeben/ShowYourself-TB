@@ -18,7 +18,7 @@ export default makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             margin: 'auto',
             position: 'absolute',
-            width: '75vw',
+            width: '70vw',
             height: '100vh',
             left: '0',
             zIndex: 5,

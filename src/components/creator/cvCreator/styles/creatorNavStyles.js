@@ -12,14 +12,13 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       // margin: 'auto',
       position: 'absolute',
-      width: '25vw',
+      width: '30vw',
       height: '100vh',
       right: '0',
       top: '0',
       zIndex: 5,
       padding: padding,
       margin: '0',
-      display: 'none',
     },
 
     padding: padding,

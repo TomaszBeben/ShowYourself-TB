@@ -12,7 +12,6 @@ const CreatorMenu = () => {
 
     return (
         <Paper onClick={()=>{setHideMobileMenu('hideMobileMenu')}} className={ `${classes.menuContainer} ${hideMobileMenu}` }>
-            {/* <div onClick={()=>{setHideMobileMenu('hideMobileMenu')}}> */}
             <div>
                 <Link to='/' style={{ textDecoration: 'none' }}>
                     <Button className={classes.buttonSubmit} variant="contained" size="large" fullWidth>home</Button>
@@ -30,7 +29,6 @@ const CreatorMenu = () => {
                     <Button className={classes.buttonSubmit} variant="contained" size="large" fullWidth>end</Button>
                 </Link>
             </div>
-            {/* </div> */}
         </Paper>
     )
 }

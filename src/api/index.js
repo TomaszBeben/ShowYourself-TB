@@ -5,7 +5,7 @@ import { FETCH_ALL, CREATE, UPDATE, DELETE, RESET} from '../constants/actionType
 //API's
 
 const currentUser = localStorage.getItem('currentUser')
-console.log(currentUser);
+// console.log(currentUser);
 // const fetchPosts = () => axios.get(url)
 // const sendPost = (newPost) => axios.post(url, newPost)
 const fetchPosts = () => axios.get(`${url}/${currentUser}`)
