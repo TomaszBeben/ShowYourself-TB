@@ -9,6 +9,9 @@
 
 .scaling {
     transform: scale(0.8) translate(0, -10%);
+    @media (max-width: 650px) {
+        zoom: 0.6;
+    }
 }
 
 .cvPreview-header {

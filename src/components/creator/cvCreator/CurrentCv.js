@@ -30,7 +30,7 @@ const CurrentCv = forwardRef(({ postData }, ref) => {
     }
 
     return (
-        <div ref={ref}>
+        <div className='123123123' ref={ref}>
             {render(sheetStyle)}
         </div>
     )

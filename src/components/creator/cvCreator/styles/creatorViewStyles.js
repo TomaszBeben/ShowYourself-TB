@@ -22,6 +22,9 @@ export default makeStyles((theme) => ({
   A4Paper: {
     width: '21cm',
     backgroundColor: 'white',
+    [theme.breakpoints.down('sm')]: {
+      zoom: '0.5',
+    },
   },
 
   viewContainer: {
