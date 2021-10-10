@@ -1,15 +1,18 @@
 $min-height: 290mm;
-.pattern1--container_main {
+.pattern2--container_main {
     display: flex;
+    position: relative;
     flex-direction: row;
+    width: 210mm;
+    min-height: $min-height;
 }
 
-.pattern1--container_left {
+.pattern2--container_left {
     width: 70mm;
     min-height: $min-height;
 }
 
-.pattern1--container_right {
+.pattern2--container_right {
     position: relative;
     width: 140mm;
     min-height: $min-height;

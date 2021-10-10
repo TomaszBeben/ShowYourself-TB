@@ -1,0 +1,26 @@
+.fractal--top__container {
+    width: 210mm;
+    max-height: 50vh;
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.fractal--bottom__container {
+    width: 210mm;
+    max-height: 50vh;
+    position: absolute;
+    bottom: 0px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.fractals {
+    overflow: hidden;
+    position: relative;
+    width: 70mm;
+    height: 70mm;
+    border: 1px solid black;
+    transform: rotate(2deg);
+    opacity: 0.6;
+}
