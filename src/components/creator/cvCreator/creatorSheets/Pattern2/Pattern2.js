@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 // import PictureP2 from './PictureP2'
-// import Basics from './BasicsP2'
+import Basics from './BasicsP2'
 // import Description from './DescriptionP2'
 // import Education from './EducationP2'
 // import WorkExperience from './WorkExperienceP2'
@@ -11,10 +11,12 @@ import React, { useState, useRef, useEffect } from 'react'
 // import Links from './LinksP2'
 // import Consent from './ConsentsP2'
 
-import { useAuth } from '../../../../../context/AuthContext'
+// import { useAuth } from '../../../../../context/AuthContext'
+import Fractals from './Fractals';
+import PictureP2 from './PictureP2';
 
 const Pattern2 = () => {
-    const { color } = useAuth();
+    // const { color } = useAuth();
     const [height, setHeight] = useState('297mm')
 
     const ref = useRef()
@@ -31,34 +33,12 @@ const Pattern2 = () => {
 
     return (
         <div ref={ref} style={{ backgroundColor: `white`, minHeight: height }} className='pattern2--container_main'>
-            <div className='fractal--top__container'>
-                {elem.map((fractal) => (
-                    <div
-                        style={{
-                            top: `calc(-25mm - (68mm * ${fractal}))`,
-                            left: `calc(-60mm + (36mm * ${fractal}))`,
-                            transform: `rotate(calc(5deg + (2deg * ${fractal})))`,
-                            backgroundColor: `${color}`
-                        }}
-                        key={fractal}
-                        className={`fractals`}>
-                    </div>
-                ))}
+            <Fractals/>
+            <div className='pattern2--container_cv'>
+                <Basics/>
+                <PictureP2/>
             </div>
-            <div className='fractal--bottom__container'>
-            {elem.map((fractal) => (
-                    <div
-                        style={{
-                            top: `calc(80mm - (68mm * ${fractal}))`,
-                            left: `calc(-60mm + (36mm * ${fractal}))`,
-                            transform: `rotate(calc(5deg + (2deg * ${fractal})))`,
-                            backgroundColor: `${color}`
-                        }}
-                        key={fractal}
-                        className={`fractals`}>
-                    </div>
-                ))}
-            </div>
+            
         </div>
     )
 }

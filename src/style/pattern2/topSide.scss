@@ -1,0 +1,60 @@
+$fontFamily: 'Montserrat',
+sans-serif;
+.pattern2--container_basics {
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+    left: 70mm;
+    top: 5mm;
+    max-width: 120mm;
+    color: white;
+}
+
+.pattern2--basics_name {
+    font-size: 10mm;
+    font-weight: bold;
+}
+
+.pattern2--basics_role {
+    margin-top: 2mm;
+    margin-bottom: 2mm;
+    margin-left: 10mm;
+    font-size: 4mm;
+}
+
+.pattern2--contact_elem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1mm;
+}
+
+.pattern2--contact_elem--icon {
+    width: 10mm;
+}
+
+.pattern2--container_photo {
+    // position: absolute;
+    width: 70mm;
+    height: 70mm;
+    margin-top: 5mm;
+    margin-bottom: 5mm;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.pattern2--container_photo--border_outside {
+    width: 50mm;
+    height: 70mm;
+    border: 1px solid black;
+    position: absolute;
+    z-index: 3;
+}
+
+.pattern2--picture {
+    width: auto;
+    height: 100%;
+}

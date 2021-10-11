@@ -2,9 +2,17 @@ $min-height: 290mm;
 .pattern2--container_main {
     display: flex;
     position: relative;
-    flex-direction: row;
+    // flex-direction: row;
     width: 210mm;
     min-height: $min-height;
+}
+
+.pattern2--container_cv {
+    width: 100%;
+}
+
+.pattern2--container_basics {
+    width: 100%;
 }
 
 .pattern2--container_left {
