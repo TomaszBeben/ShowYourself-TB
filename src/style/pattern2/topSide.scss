@@ -34,27 +34,24 @@ sans-serif;
 }
 
 .pattern2--container_photo {
-    // position: absolute;
     width: 70mm;
     height: 70mm;
     margin-top: 5mm;
-    margin-bottom: 5mm;
+    // margin-bottom: 5mm;
     display: flex;
     justify-content: center;
-    overflow: hidden;
-    background-color: white;
-    border: 1px solid black;
+    // overflow: hidden;
 }
 
 .pattern2--container_photo--border_outside {
-    width: 50mm;
-    height: 70mm;
-    border: 1px solid black;
-    position: absolute;
+    // width: 50mm;
+    // height: 70mm;
+    // position: absolute;
     z-index: 3;
 }
 
 .pattern2--picture {
-    width: auto;
-    height: 100%;
+    width: 50mm;
+    height: 60mm;
+    object-fit: cover;
 }

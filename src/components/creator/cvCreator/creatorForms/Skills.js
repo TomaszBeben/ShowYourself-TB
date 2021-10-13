@@ -15,7 +15,7 @@ const Skills = ({ skills, setSkills, postData, setPostData }) => {
     }
 
     return (
-        <>
+        <div>
             <div className='skills'>
                 <TextField type="text" label='skill'
                     value={singleSkill.skill || ''}
@@ -40,7 +40,7 @@ const Skills = ({ skills, setSkills, postData, setPostData }) => {
                     ))}
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

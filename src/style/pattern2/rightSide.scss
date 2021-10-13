@@ -1,70 +1,68 @@
 $fontFamily: 'Montserrat',
 sans-serif;
-$fontHeader: 1.1rem;
-$fontText: 1rem;
-.pattern1--rightSide--container {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 5mm;
+.pattern2--middleSection_container--right {
+    width: 140mm;
+    padding-left: 10mm;
+    border: 1px solid black;
 }
 
-.pattern1--rightSide_description--container {
-    margin-top: 8mm;
-    margin-left: 5mm;
-    margin-right: 5mm;
-    font-family: $fontFamily;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-.pattern1--rightSide_hobby--container {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 1mm;
-}
-
-.pattern1--rightSide_text--header {
-    font-family: $fontFamily;
-    font-weight: bold;
-    font-size: $fontHeader;
-    margin-top: 1mm;
-    margin-bottom: 5mm;
-    margin-left: 5mm;
-}
-
-.pattern1--rightSide_text--header_upscore {
-    border-bottom: 1px solid black;
-    width: 136mm;
-    margin-top: 5mm;
-    margin-left: 2mm;
-}
-
-.pattern1--rightSide_text {
-    font-family: $fontFamily;
-    font-size: $fontText;
-    margin-left: 5mm;
-    margin-bottom: 2mm;
-}
-
-.pattern1--rightSide_text_bold {
-    font-weight: bold;
-}
-
-.pattern1--rightSide_date {
-    margin-left: 3mm;
-    margin-top: 2mm;
-    width: 35mm;
-    // border: 1px solid black;
-}
-
-.pattern1--rightSide_consent--container {
+// $fontHeader: 1.1rem;
+// $fontText: 1rem;
+// .pattern1--rightSide--container {
+//     display: flex;
+//     flex-direction: row;
+//     margin-bottom: 5mm;
+// }
+// .pattern1--rightSide_description--container {
+//     margin-top: 8mm;
+//     margin-left: 5mm;
+//     margin-right: 5mm;
+//     font-family: $fontFamily;
+//     font-size: 0.8rem;
+//     font-weight: bold;
+// }
+// .pattern1--rightSide_hobby--container {
+//     display: flex;
+//     flex-direction: row;
+//     margin-bottom: 1mm;
+// }
+// .pattern1--rightSide_text--header {
+//     font-family: $fontFamily;
+//     font-weight: bold;
+//     font-size: $fontHeader;
+//     margin-top: 1mm;
+//     margin-bottom: 5mm;
+//     margin-left: 5mm;
+// }
+// .pattern1--rightSide_text--header_upscore {
+//     border-bottom: 1px solid black;
+//     width: 136mm;
+//     margin-top: 5mm;
+//     margin-left: 2mm;
+// }
+// .pattern1--rightSide_text {
+//     font-family: $fontFamily;
+//     font-size: $fontText;
+//     margin-left: 5mm;
+//     margin-bottom: 2mm;
+// }
+// .pattern1--rightSide_text_bold {
+//     font-weight: bold;
+// }
+// .pattern1--rightSide_date {
+//     margin-left: 3mm;
+//     margin-top: 2mm;
+//     width: 35mm;
+//     // border: 1px solid black;
+// }
+.pattern2--rightSide_consent--container {
     position: absolute;
-    bottom: 3mm;
+    bottom: 19mm;
     margin-left: 2mm;
     margin-right: 2mm;
 }
 
-.pattern1--rightSide_consent {
+.pattern2--rightSide_consent {
     font-size: 0.6rem;
     font-family: $fontFamily;
     filter: opacity(0.5);

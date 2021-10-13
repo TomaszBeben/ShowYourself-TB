@@ -5,9 +5,9 @@ import { useAuth } from '../../../../../context/AuthContext'
 const Consent = () => {
     const { postData } = useAuth()
     return (
-        <>
-          <p>{postData.consent}</p>
-        </>
+        <div className='pattern2--rightSide_consent--container'>
+          <p className='pattern2--rightSide_consent'>{postData.consent}</p>
+        </div>
     )
 }
 

@@ -3,16 +3,22 @@ import { useAuth } from '../../../../../context/AuthContext'
 //Creator View Folder
 
 const PictureP2 = () => {
-    const { postData } = useAuth()
+    const { postData, color } = useAuth()
     return (
-        <div className='pattern2--container_photo'>
-            <div className='pattern2--container_photo--border_outside'>
-                
-                    {/* {postData.file ? <img className='pattern2--picture' alt='' src={postData.file}/> : null} */}
-                
-            </div>
-            
-        </div>
+        <>
+            {
+                postData.file ?
+                    <div className='pattern2--container_photo'>
+                        <div className='pattern2--container_photo--border_outside'>
+                            <img
+                            style={{ border:`5px outset ${color}` }}
+                            className='pattern2--picture'
+                            alt=''
+                            src={postData.file} />
+                        </div>
+                    </div> : null
+            }
+        </>
     )
 }
 

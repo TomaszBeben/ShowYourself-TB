@@ -5,8 +5,8 @@ const DescriptionP2 = () => {
     const { postData } = useAuth()
     return (
         <>
-        <div className='pattern1--rightSide_description--container'>
-          <p className='pattern1--rightSide_description'>{postData.description}</p>
+        <div className='pattern2--leftSide_description--container'>
+          <p className='pattern2--leftSide_description'>{postData.description}</p>
         </div>
     </>
     )

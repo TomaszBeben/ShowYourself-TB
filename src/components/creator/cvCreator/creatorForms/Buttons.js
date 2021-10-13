@@ -11,16 +11,16 @@ const Buttons = ({ deleteElement, editElement, moveUp, moveDown }) => {
     return (
         <>
             <Button>
-                <EditIcon onClick={editElement} className={`materialUI--edit_button ${classes.button}`} fontSize='medium' />
+                <EditIcon onClick={editElement} className={`materialUI--edit_button ${classes.button}`} size='medium' />
             </Button>
             <Button>
-                <DeleteForeverIcon onClick={deleteElement} className={`materialUI--delete_button ${classes.button}`} fontSize='medium' />
+                <DeleteForeverIcon onClick={deleteElement} className={`materialUI--delete_button ${classes.button}`} size='medium' />
             </Button>
             <Button>
-                <KeyboardArrowUpIcon onClick={moveUp} className={`materialUI--up_button ${classes.button}`} fontSize='medium' />
+                <KeyboardArrowUpIcon onClick={moveUp} className={`materialUI--up_button ${classes.button}`} size='medium' />
             </Button>
             <Button>
-                <KeyboardArrowDownIcon onClick={moveDown} className={`materialUI--down_button ${classes.button}`} fontSize='medium' />
+                <KeyboardArrowDownIcon onClick={moveDown} className={`materialUI--down_button ${classes.button}`} size='medium' />
             </Button>
         </>
     )

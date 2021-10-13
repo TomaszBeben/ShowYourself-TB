@@ -6,7 +6,7 @@ import CakeIcon from '@mui/icons-material/Cake';
 //Creator View Folder
 
 const Basics = () => {
-    const { postData, color } = useAuth()
+    const { postData } = useAuth()
     return (
         <div className='pattern2--container_basics'>
             <div className='pattern2--basics_name--container'>

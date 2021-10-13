@@ -52,6 +52,7 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
             setLinks(post.links)
         }
     }, [post, setPostData, setCourses, setEducation, setHobbys, setLanguages, setLinks, setSkills, setWork])
+
     const handleSubmit = (e) => {
         e.preventDefault()
         setPostData({
@@ -83,7 +84,10 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
 
     return (
         <Paper className={ classes.paper }>
-            <form className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
+            <form
+            onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+            className={`${classes.root} ${classes.form}`}
+            onSubmit={handleSubmit}>
                 <Switch>
                     <Route path='/cvcreator/basics' >
                         <Basics postData={postData} setPostData={setPostData} />
