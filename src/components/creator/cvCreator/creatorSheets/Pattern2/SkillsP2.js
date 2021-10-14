@@ -3,15 +3,32 @@ import { useAuth } from '../../../../../context/AuthContext'
 //Creator View Folder
 
 const Skills = () => {
-    const { skills } = useAuth()
+    const { skills, color } = useAuth()
 
     return (
         <>
-         {skills.map((elem, index) => (
+        <div className='pattern2--leftSide_section--container'>
+                {skills.length !== 0 ?
+                    <div className='pattern2--leftSide_elem--header_container'>
+                        <span style={{ backgroundColor: `${color}` }} className='pattern2--leftSide_elem--header'>
+                            <span>Skills</span>
+                        </span>
+                        <div
+                            style={{ backgroundColor: `${color}` }}
+                            className='pattern2--leftSide_elem--header_square'></div>
+                    </div>
+                    : null}
+                {skills.map((elem, index) => (
+                    <div key={index} className='pattern2--leftSide_skills--main' >
+                        <span>{elem.skill}</span>
+                    </div>
+                ))}
+            </div>
+         {/* {skills.map((elem, index) => (
                         <div key={index} >
                             <h1>{elem.skill}</h1>
                         </div>
-                    ))}
+                    ))} */}
         </>
     )
 }

@@ -6,7 +6,7 @@ const DescriptionP2 = () => {
     return (
         <>
         <div className='pattern2--leftSide_description--container'>
-          <p className='pattern2--leftSide_description'>{postData.description}</p>
+          <p className='pattern2--leftSide_description'> {postData.description} </p>
         </div>
     </>
     )

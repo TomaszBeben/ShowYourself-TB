@@ -6,18 +6,38 @@ const WorkExperience = () => {
     const { work } = useAuth()
 
     return (
-        <>
+        <div className='pattern2--rightSide_section--container'>
+            {work.length !== 0 ?
+                    <div className='pattern2--leftSide_elem--header_container'>
+                        <span className='pattern2--rightSide_elem--header'>
+                            <span>Experience</span>
+                        </span>
+                        <div
+                            className='pattern2--rightSide_elem--header_square'></div>
+                    </div>
+                    : null}
             {work.map((elem, index) => (
-                        <div key={index} >
-                            <h1>{elem.position}</h1>
-                            <h1>{elem.company}</h1>
-                            <h1>{elem.location}</h1>
-                            <h1>{elem.start}</h1>
-                            <h1>{elem.end}</h1>
-                            <h1>{elem.description}</h1>
-                        </div>
-                    ))}
-        </>
+                <div key={index} className='pattern2--rightSide--container' >
+                    <div className='pattern2--rightSide_date'>
+                        <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>{elem.start}</p>
+                        {elem.end === undefined
+                            ? <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>-Present</p>
+                            : null
+                        }
+                        <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>
+                            {elem.end === undefined || '' ? null : `-${elem.end}`}
+                        </p>
+                    </div>
+                    <div className='pattern2--rightSide_content'>
+                        <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>{elem.position}</p>
+                        <p className='pattern2--rightSide_text'>{elem.company}</p>
+                        <p className='pattern2--rightSide_text'>{elem.description}</p>
+                        <p className='pattern2--rightSide_text'>{elem.location}</p>
+                    </div>
+
+                </div>
+            ))}
+        </div>
     )
 }
 

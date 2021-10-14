@@ -1,5 +1,6 @@
 $fontFamily: 'Montserrat',
 sans-serif;
+$color: white;
 .pattern2--container_basics {
     width: 100%;
     position: absolute;
@@ -11,11 +12,13 @@ sans-serif;
 }
 
 .pattern2--basics_name {
+    color: $color;
     font-size: 10mm;
     font-weight: bold;
 }
 
 .pattern2--basics_role {
+    color: $color;
     margin-top: 2mm;
     margin-bottom: 2mm;
     margin-left: 10mm;
@@ -23,6 +26,7 @@ sans-serif;
 }
 
 .pattern2--contact_elem {
+    color: $color;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -30,6 +34,7 @@ sans-serif;
 }
 
 .pattern2--contact_elem--icon {
+    color: $color;
     width: 10mm;
 }
 

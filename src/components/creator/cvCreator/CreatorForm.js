@@ -71,6 +71,18 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
         } else {
             dispatch(createPost(postData))
         }
+        // setPostData(initialState(currentUser))
+        // setCourses([])
+        // setEducation([])
+        // setHobbys([])
+        // setLanguages([])
+        // setLinks([])
+        // setSkills([])
+        // setWork([])
+        // setCurrentId(null)
+    }
+
+    const newCv = () =>{ 
         setPostData(initialState(currentUser))
         setCourses([])
         setEducation([])
@@ -136,6 +148,11 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
                                 })
                             }}>
                             Submit
+                        </Button>
+                        <Button
+                            className={classes.buttonSubmit} variant="contained" size="large" type="submit" fullWidth
+                            onClick={() => {newCv()}}>
+                            NEW CV
                         </Button>
                     </Route>
                 </Switch>
