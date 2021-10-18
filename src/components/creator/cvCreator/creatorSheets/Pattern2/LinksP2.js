@@ -24,7 +24,7 @@ const Links = () => {
                         <span>{elem.description}</span>
                         <Link
                             className='pattern2--leftSide_links--link'
-                            // color='inherit'
+                            color={`${color}`}
                             href={`${elem.link}`}
                             underline='none' >
                             {elem.link}

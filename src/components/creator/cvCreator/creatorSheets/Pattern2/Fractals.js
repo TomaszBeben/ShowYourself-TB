@@ -28,7 +28,7 @@ const Fractals = () => {
             {elem.map((fractal) => (
                     <div
                         style={{
-                            top: `calc(80mm - (68mm * ${fractal}))`,
+                            top: `calc(5mm - (68mm * ${fractal}))`,
                             left: `calc(-60mm + (36mm * ${fractal}))`,
                             transform: `rotate(calc(5deg + (2deg * ${fractal})))`,
                             backgroundColor: `${color}`

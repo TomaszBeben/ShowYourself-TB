@@ -12,6 +12,7 @@ const CreatorMenu = () => {
 
     return (
         <Paper onClick={()=>{setHideMobileMenu('hideMobileMenu')}} className={ `${classes.menuContainer} ${hideMobileMenu}` }>
+            <div className={ `${classes.menuInvisibleDiv} ${hideMobileMenu}` }></div>
             <div>
                 <Link to='/' style={{ textDecoration: 'none' }}>
                     <Button className={classes.buttonSubmit} variant="contained" size="large" fullWidth>home</Button>

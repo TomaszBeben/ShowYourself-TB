@@ -29,7 +29,7 @@ const WorkExperience = () => {
                         </p>
                     </div>
                     <div className='pattern2--rightSide_content'>
-                        <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>{elem.position}</p>
+                        <p className='pattern2--rightSide_text'>{elem.position}</p>
                         <p className='pattern2--rightSide_text'>{elem.company}</p>
                         <p className='pattern2--rightSide_text'>{elem.description}</p>
                         <p className='pattern2--rightSide_text'>{elem.location}</p>

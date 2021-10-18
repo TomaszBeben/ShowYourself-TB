@@ -21,17 +21,19 @@ const CreatorNav = ({ setCurrentId }) => {
 
     const cvcontainer = {
         display: 'flex',
+        flexDirection: 'row',
         margin: '1rem'
     }
     return (
         <Paper onClick={()=>{setHideMobileNav('hideMobileMenu')}} className={`${classes.navContainer} ${hideMobileNav}`}>
+            <div className={`${classes.navInvisibleDiv} ${hideMobileNav}`}></div>
             {!posts.length ? <CircularProgress /> : (
                 <div>
                     {posts.map((post, index) => (
                         <div key={post._id} style={cvcontainer} >
                             <div style={{margin: '5px'}}>{index + 1}.</div>
                             <div>
-                                <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', }}>
+                                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
                                     <div>
                                         {!post.file ? '' : <img src={post.file} alt='' style={{ width: '50px', height: '50px', borderRadius: '50%' }} />}
                                     </div>

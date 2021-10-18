@@ -1,4 +1,5 @@
 .pattern2--middleSection_container--main {
+    font-Family: 'Montserrat', sans-serif !important;
     // border: 1px solid black;
     max-width: 210mm;
     word-wrap: break-word;
@@ -8,4 +9,5 @@
     // margin-top: -8mm;
     min-height: 236mm;
     margin-top: -22mm;
+    z-index: 2;
 }

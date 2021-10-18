@@ -38,4 +38,8 @@ export const colorOptions = [
         label: 'yellow',
         value: '#F8D210',
     },
+    {
+        label: 'purple',
+        value: '#4F0088',
+    },
 ]

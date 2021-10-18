@@ -2,7 +2,7 @@ $min-height: 290mm;
 $fontFamily: 'Montserrat',
 sans-serif;
 .pattern2--container_main {
-    font-family: $fontFamily;
+    font-family: $fontFamily !important;
     display: flex;
     position: relative;
     // flex-direction: row;

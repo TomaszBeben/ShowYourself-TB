@@ -8,17 +8,32 @@ export default makeStyles((theme) => ({
     '& .MuiTextField-root': {
     },
   },
+  navInvisibleDiv:{
+    [theme.breakpoints.down('sm')]: {
+      // margin: 'auto',
+      position: 'fixed',
+      width: '65vw',
+      height: '100vh',
+      left: '0',
+      top: '0',
+      zIndex: 5,
+      padding: padding,
+      margin: '0',
+    }
+  },
+
   navContainer: {
     [theme.breakpoints.down('sm')]: {
       // margin: 'auto',
       position: 'absolute',
-      width: '30vw',
+      width: '35vw',
       height: '100vh',
       right: '0',
       top: '0',
       zIndex: 5,
       padding: padding,
       margin: '0',
+      flexDirection: 'row'
     },
 
     padding: padding,
@@ -26,7 +41,7 @@ export default makeStyles((theme) => ({
     height: '20vh',
     maxWidth: '83vw',
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     overflow: 'auto'
   },
 }));

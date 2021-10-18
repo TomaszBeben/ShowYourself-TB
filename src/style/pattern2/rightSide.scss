@@ -14,8 +14,11 @@ sans-serif;
     display: flex;
     align-items: center;
     padding-left: 10mm;
-    font-size: 1.2rem;
     background-color: grey;
+}
+
+.pattern2--rightSide_section--container {
+    z-index: 3;
 }
 
 .pattern2--rightSide_elem--header_square {
@@ -31,7 +34,7 @@ sans-serif;
 }
 
 .pattern2--rightSide_content {
-    margin-top: 5mm;
+    margin-top: 2mm;
 }
 
 .pattern2--rightSide_date {
@@ -42,6 +45,7 @@ sans-serif;
 
 .pattern2--rightSide_text {
     font-family: $fontFamily;
+    font-size: 0.9rem;
     margin-left: 5mm;
     margin-bottom: 2mm;
 }

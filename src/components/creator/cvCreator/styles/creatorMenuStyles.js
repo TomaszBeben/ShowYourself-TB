@@ -14,6 +14,18 @@ export default makeStyles((theme) => ({
         }
     },
 
+    menuInvisibleDiv: {
+        [theme.breakpoints.down('sm')]: {
+            margin: 'auto',
+            position: 'fixed',
+            width: '30vw',
+            height: '100vh',
+            right: '0',
+            zIndex: 5,
+            // display: 'none',
+        },
+    },
+
     menuContainer: {
         [theme.breakpoints.down('sm')]: {
             margin: 'auto',

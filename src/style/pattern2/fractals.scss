@@ -1,6 +1,6 @@
 .fractal--top__container {
     width: 210mm;
-    max-height: 35vh;
+    max-height: 100mm;
     position: absolute;
     overflow: hidden;
     z-index: 2;
@@ -8,11 +8,11 @@
 
 .fractal--bottom__container {
     width: 210mm;
-    max-height: 50vh;
+    height: 21mm;
     position: absolute;
     bottom: 0px;
     overflow: hidden;
-    z-index: 0;
+    z-index: -0;
 }
 
 .fractals {
