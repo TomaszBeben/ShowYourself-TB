@@ -42,6 +42,7 @@ const Education = ({ education, setEducation, postData, setPostData }) => {
                     onClick={addSkill}>
                     Add
                 </Button>
+                <div className='creatorView--spaceDiv'></div>
                 <div>
                     {education.map((elem, index) => (
                         <div key={index} >

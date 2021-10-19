@@ -39,6 +39,7 @@ const Courses = ({ courses, setCourses, postData, setPostData }) => {
                     onClick={addSkill}>
                     Add
                 </Button>
+                <div className='creatorView--spaceDiv'></div>
                 <div>
                     {courses.map((elem, index) => (
                         <div key={index} >
@@ -51,8 +52,7 @@ const Courses = ({ courses, setCourses, postData, setPostData }) => {
                                 deleteElement={() => { deleteElement(courses, setCourses, index) }}
                                 editElement={() => { editElement(courses, setSingleCourse, index); deleteElement(courses, setCourses, index) }}
                                 moveUp={() => { moveElement(courses, setCourses, index, index - 1) }}
-                                moveDown={() => { moveElement(courses, setCourses, index, index + 1) }}
-                            />
+                                moveDown={() => { moveElement(courses, setCourses, index, index + 1) }}/>
                         </div>
                     ))}
                 </div>

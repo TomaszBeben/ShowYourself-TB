@@ -42,6 +42,7 @@ const WorkExperience = ({ work, setWork, postData, setPostData }) => {
                     onClick={addElement}>
                     ADD
                 </Button>
+                <div className='creatorView--spaceDiv'></div>
                 <div>
                     {work.map((elem, index) => (
                         <div key={index} >

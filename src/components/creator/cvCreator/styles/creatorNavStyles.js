@@ -24,7 +24,6 @@ export default makeStyles((theme) => ({
 
   navContainer: {
     [theme.breakpoints.down('sm')]: {
-      // margin: 'auto',
       position: 'absolute',
       width: '35vw',
       height: '100vh',
@@ -33,15 +32,21 @@ export default makeStyles((theme) => ({
       zIndex: 5,
       padding: padding,
       margin: '0',
-      flexDirection: 'row'
     },
 
     padding: padding,
     margin: margin,
     height: '20vh',
     maxWidth: '83vw',
-    display: 'flex',
-    flexDirection: 'column',
     overflow: 'auto'
   },
+
+  // navContainerDirection: {
+  //   [theme.breakpoints.down('sm')]: {
+  //     display: 'flex',
+  //     flexDirection: 'owr'
+  //   },
+  //   display: 'flex',
+  //   flexDirection: 'row',
+  // },
 }));

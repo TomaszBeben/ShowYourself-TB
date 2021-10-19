@@ -26,6 +26,7 @@ const Hobby = ({ hobbys, setHobbys, postData, setPostData }) => {
                     onClick={addSkill}>
                     Add
                 </Button>
+                <div className='creatorView--spaceDiv'></div>
                 <div>
                     {hobbys.map((elem, index) => (
                         <div key={index} >

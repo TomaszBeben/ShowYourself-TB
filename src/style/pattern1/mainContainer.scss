@@ -2,6 +2,7 @@ $min-height: 290mm;
 .pattern1--container_main {
     display: flex;
     flex-direction: row;
+    word-wrap: break-word;
 }
 
 .pattern1--container_left {

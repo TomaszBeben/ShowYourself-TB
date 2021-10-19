@@ -30,6 +30,7 @@ const Languages = ({ languages, setLanguages, postData, setPostData }) => {
                     onClick={addSkill}>
                     Add
                 </Button>
+                <div className='creatorView--spaceDiv'></div>
                 <div>
                     {languages.map((elem, index) => (
                         <div key={index} >

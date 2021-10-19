@@ -31,7 +31,7 @@ const CreatorNav = ({ setCurrentId }) => {
                 <div>
                     {posts.map((post, index) => (
                         <div key={post._id} style={cvcontainer} >
-                            <div style={{margin: '5px'}}>{index + 1}.</div>
+                            <div>{index + 1}.</div>
                             <div>
                                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
                                     <div>

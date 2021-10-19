@@ -30,6 +30,7 @@ const Links = ({ links, setLinks, postData, setPostData }) => {
                     onClick={addSkill}>
                     Add
                 </Button>
+                <div className='creatorView--spaceDiv'></div>
                 <div>
                     {links.map((elem, index) => (
                         <div key={index} >
