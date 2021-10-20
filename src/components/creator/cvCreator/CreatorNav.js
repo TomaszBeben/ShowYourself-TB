@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAuth } from '../../../context/AuthContext'
-import { CircularProgress } from '@material-ui/core'
+import NavLoading from './NavLoading';
+// import { CircularProgress } from '@material-ui/core'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { Paper, Button } from '@material-ui/core';
@@ -18,24 +19,16 @@ const CreatorNav = ({ setCurrentId }) => {
     const posts = useSelector((state) => state.posts)
     const classes = creatorNavStyles()
 
-
-    const cvcontainer = {
-        display: 'flex',
-        flexDirection: 'row',
-        margin: '1rem'
-    }
     return (
         <Paper onClick={()=>{setHideMobileNav('hideMobileMenu')}} className={`${classes.navContainer} ${hideMobileNav}`}>
             <div className={`${classes.navInvisibleDiv} ${hideMobileNav}`}></div>
-            {!posts.length ? <CircularProgress /> : (
-                <div>
+            {!posts.length ? <NavLoading /> : (
+                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
                     {posts.map((post, index) => (
-                        <div key={post._id} style={cvcontainer} >
-                            <div>{index + 1}.</div>
-                            <div>
-                                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
+                        <div key={post._id} >
+                                <div>
                                     <div>
-                                        {!post.file ? '' : <img src={post.file} alt='' style={{ width: '50px', height: '50px', borderRadius: '50%' }} />}
+                                        {!post.file ? '' : <img src={post.file} alt='' className={classes.navImgFile} />}
                                     </div>
                                     <div>
                                         <p>{post.name}</p>
@@ -53,7 +46,6 @@ const CreatorNav = ({ setCurrentId }) => {
                                 }}>
                                     <DeleteForeverIcon fontSize="small" />
                                 </Button>
-                            </div>
                         </div>
                     ))}
                 </div>

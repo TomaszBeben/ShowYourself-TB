@@ -41,7 +41,7 @@ $square: 5mm;
     color: black;
 }
 
-.pattern2--leftSide_links--main {
+.pattern2--leftSide_text--main {
     padding-left: 5mm;
     margin-top: 2mm;
     display: flex;
@@ -52,13 +52,6 @@ $square: 5mm;
     padding-left: 3mm;
     font-size: 0.9rem;
     font-family: $fontFamily !important;
-}
-
-.pattern2--leftSide_skills--main {
-    padding-left: 5mm;
-    margin-top: 2mm;
-    display: flex;
-    flex-direction: column;
 }
 
 .pattern2--leftSide_description--container {

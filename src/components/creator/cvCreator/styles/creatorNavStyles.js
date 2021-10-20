@@ -8,7 +8,7 @@ export default makeStyles((theme) => ({
     '& .MuiTextField-root': {
     },
   },
-  navInvisibleDiv:{
+  navInvisibleDiv: {
     [theme.breakpoints.down('sm')]: {
       // margin: 'auto',
       position: 'fixed',
@@ -39,6 +39,12 @@ export default makeStyles((theme) => ({
     height: '20vh',
     maxWidth: '83vw',
     overflow: 'auto'
+  },
+
+  navImgFile: {
+    width: '50px',
+    height: '50px',
+    borderRadius: '50%',
   },
 
   // navContainerDirection: {

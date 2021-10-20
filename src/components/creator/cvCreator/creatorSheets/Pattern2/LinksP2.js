@@ -20,8 +20,11 @@ const Links = () => {
                     </div>
                     : null}
                 {links.map((elem, index) => (
-                    <div key={index} className='pattern2--leftSide_links--main' >
-                        <span>{elem.description}</span>
+                    <div key={index} className='pattern2--leftSide_text--main' >
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                            <div style={{width:'2mm', height: '2mm', background: color, marginRight: '1mm' }}></div>
+                            <span>{elem.description}</span>
+                        </div>
                         <Link
                             className='pattern2--leftSide_links--link'
                             color={`${color}`}
