@@ -45,12 +45,22 @@ $square: 5mm;
     padding-left: 5mm;
     margin-top: 2mm;
     display: flex;
+    overflow-wrap: break-word;
     flex-direction: column;
+}
+
+.pattern2--leftSide_links--description {
+    margin-left: 5mm;
+    margin-bottom: 1mm;
+    font-size: 0.9rem;
+    font-weight: normal;
+    font-family: $fontFamily !important;
 }
 
 .pattern2--leftSide_links--link {
     padding-left: 3mm;
     font-size: 0.9rem;
+    max-width: 47mm;
     font-family: $fontFamily !important;
 }
 

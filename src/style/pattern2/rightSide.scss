@@ -35,12 +35,14 @@ sans-serif;
 
 .pattern2--rightSide_content {
     margin-top: 2mm;
+    margin-left: 0;
+    max-width: 100mm;
 }
 
 .pattern2--rightSide_date {
-    margin-left: 10mm;
+    // margin-left: 5mm;
     margin-top: 2mm;
-    width: 35mm;
+    width: 40mm;
 }
 
 .pattern2--rightSide_text {
@@ -48,6 +50,13 @@ sans-serif;
     font-size: 0.9rem;
     margin-left: 5mm;
     margin-bottom: 2mm;
+}
+
+.pattern2--rightSide_text-descryption {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-weight: normal;
+    font-size: 0.8rem;
 }
 
 .pattern2--rightSide_consent--container {

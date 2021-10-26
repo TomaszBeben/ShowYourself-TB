@@ -11,7 +11,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState('')
     const [loading, setLoading] = useState(true)
-    const [sheetStyle, setSheetStyle] = useState('style 1')
+    const [sheetStyle, setSheetStyle] = useState('style 2')
     const [color, setColor] = useState('#000C66')
     const [postData, setPostData] = useState(initialState(currentUser))
     const [skills, setSkills] = useState([])

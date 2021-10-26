@@ -16,22 +16,23 @@ const Links = () => {
                         </span>
                         <div
                             style={{ backgroundColor: `${color}` }}
-                            className='pattern2--leftSide_elem--header_square'></div>
+                            className='pattern2--leftSide_elem--header_square'>
+                        </div>
                     </div>
                     : null}
                 {links.map((elem, index) => (
                     <div key={index} className='pattern2--leftSide_text--main' >
-                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                            <div style={{width:'2mm', height: '2mm', background: color, marginRight: '1mm' }}></div>
-                            <span>{elem.description}</span>
-                        </div>
-                        <Link
+                        <div style={{ display: 'flex', flexDirection: 'row' }}>
+                            <div style={{ width: '2mm', height: '2mm', background: color, marginRight: '1mm' }}></div>
+                            <Link
                             className='pattern2--leftSide_links--link'
                             color={`${color}`}
                             href={`${elem.link}`}
                             underline='none' >
                             {elem.link}
                         </Link>
+                        </div>
+                        <h1 className='pattern2--leftSide_links--description'>{elem.description}</h1>
                     </div>
                 ))}
             </div>

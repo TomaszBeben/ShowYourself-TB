@@ -4,6 +4,7 @@ import useStyles from '../styles'
 import Buttons from './Buttons'
 import { deleteElement, editElement, moveElement } from './functions'
 
+
 const Education = ({ education, setEducation, postData, setPostData }) => {
     const [singleEducation, setSingleEducation] = useState({})
     const classes = useStyles()
@@ -11,7 +12,8 @@ const Education = ({ education, setEducation, postData, setPostData }) => {
     const addSkill = () => {
         setEducation(education => [...education, singleEducation])
         setPostData({ ...postData, education: education })
-        setSingleEducation({ ...singleEducation, degree: '', school: '', city: '', start: '', end: '', description: '' })
+        console.log(singleEducation.description);
+        setSingleEducation({ ...singleEducation, degree: '', school: '', city: '', start: '', end: '', description: [] })
     }
 
     return (
@@ -32,7 +34,7 @@ const Education = ({ education, setEducation, postData, setPostData }) => {
             <TextField fullWidth type="date" label='end' InputLabelProps={{ shrink: true }}
                 value={singleEducation.end || ''}
                 onChange={(e) => setSingleEducation({ ...singleEducation, end: e.target.value })} />
-            <TextField fullWidth type="text" label='description'
+            <TextField multiline fullWidth type="text" label='description'
                 value={singleEducation.description || ''}
                 onChange={(e) => setSingleEducation({ ...singleEducation, description: e.target.value })} />
             <div>
@@ -40,7 +42,8 @@ const Education = ({ education, setEducation, postData, setPostData }) => {
                     className={`buttonAccept ${classes.buttonSubmit}`}
                     variant="contained" size="large" type='button'
                     onClick={addSkill}>
-                    Add
+                    
+                    Add your education
                 </Button>
                 <div className='creatorView--spaceDiv'></div>
                 <div>
@@ -51,7 +54,7 @@ const Education = ({ education, setEducation, postData, setPostData }) => {
                             <h1>{elem.city}</h1>
                             <h1>{elem.start}</h1>
                             <h1>{elem.end}</h1>
-                            <h1>{elem.description}</h1>
+                            <p>{elem.description}</p>
                             <Buttons
                                 deleteElement={() => { deleteElement(education, setEducation, index) }}
                                 editElement={() => { editElement(education, setSingleEducation, index); deleteElement(education, setEducation, index) }}

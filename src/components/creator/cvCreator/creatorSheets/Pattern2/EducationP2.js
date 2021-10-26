@@ -7,8 +7,8 @@ const Education = () => {
 
     return (
         <>
-        <div className='pattern2--rightSide_section--container'>
-            {education.length !== 0 ?
+            <div className='pattern2--rightSide_section--container'>
+                {education.length !== 0 ?
                     <div className='pattern2--leftSide_elem--header_container'>
                         <span className='pattern2--rightSide_elem--header'>
                             <span>Education</span>
@@ -17,28 +17,33 @@ const Education = () => {
                             className='pattern2--rightSide_elem--header_square'></div>
                     </div>
                     : null}
-            {education.map((elem, index) => (
-                <div key={index} className='pattern2--rightSide--container' >
-                    <div className='pattern2--rightSide_date'>
-                        <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>{elem.start}</p>
-                        {elem.end === undefined
-                            ? <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>-Present</p>
-                            : null
-                        }
-                        <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>
-                            {elem.end === undefined || '' ? null : `-${elem.end}`}
-                        </p>
-                    </div>
-                    <div className='pattern2--rightSide_content'>
-                        <p className='pattern2--rightSide_text'>{elem.degree}</p>
-                        <p className='pattern2--rightSide_text'>{elem.school}</p>
-                        <p className='pattern2--rightSide_text'>{elem.location}</p>
-                        <p className='pattern2--rightSide_text'>{elem.description}</p>
-                    </div>
+                {education.map((elem, index) => (
+                    <div key={index} className='pattern2--rightSide--container' >
+                        <div className='pattern2--rightSide_date'>
+                            <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>{elem.start}</p>
+                            {elem.end === ''
+                                ? <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>-Present</p>
+                                : <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>
+                                    {elem.end === undefined || '' ? null : `-${elem.end}`}
+                                </p>}
+                            {/* {elem.end === undefined || '' || null
+                                ? <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>-Present</p>
+                                : null
+                            } */}
+                            {/* <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>
+                                {elem.end === undefined || '' ? null : `${elem.end}`}
+                            </p> */}
+                        </div>
+                        <div className='pattern2--rightSide_content'>
+                            <p className='pattern2--rightSide_text'>{elem.degree}</p>
+                            <p className='pattern2--rightSide_text'>{elem.school}</p>
+                            <p className='pattern2--rightSide_text'>{elem.location}</p>
+                            <p className='pattern2--rightSide_text'>{elem.description}</p>
+                        </div>
 
-                </div>
-            ))}
-        </div>
+                    </div>
+                ))}
+            </div>
         </>
     )
 }

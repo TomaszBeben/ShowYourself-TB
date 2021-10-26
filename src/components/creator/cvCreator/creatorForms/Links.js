@@ -20,7 +20,7 @@ const Links = ({ links, setLinks, postData, setPostData }) => {
             <TextField fullWidth type="text" label='link'
                 value={singleLink.link || ''}
                 onChange={(e) => setSingleLinks({ ...singleLink, link: e.target.value })} />
-            <TextField fullWidth type="text" label='description'
+            <TextField multiline fullWidth type="text" label='description'
                 value={singleLink.description || ''}
                 onChange={(e) => setSingleLinks({ ...singleLink, description: e.target.value })} />
             <div>

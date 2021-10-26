@@ -42,7 +42,7 @@ const ViewHeader = ({ color, setColor, sheetStyle, setSheetStyle }) => {
                         <Button
                             className={classes.buttonSubmit} variant="contained" size="large"
                             onClick={() => { console.log('style: ' + sheetStyle); console.log('color: ' + color); }}>
-                            Check
+                            [][][][]
                         </Button>
                     <Link to='/cvpreview'>
                         <Button

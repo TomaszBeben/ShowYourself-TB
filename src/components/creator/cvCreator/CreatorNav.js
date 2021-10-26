@@ -14,38 +14,40 @@ import { deletePost } from '../../../api'
 
 const CreatorNav = ({ setCurrentId }) => {
 
-    const { hideMobileNav, setHideMobileNav} = useAuth()
+    const { hideMobileNav, setHideMobileNav } = useAuth()
     const dispatch = useDispatch()
     const posts = useSelector((state) => state.posts)
     const classes = creatorNavStyles()
 
     return (
-        <Paper onClick={()=>{setHideMobileNav('hideMobileMenu')}} className={`${classes.navContainer} ${hideMobileNav}`}>
+        <Paper onClick={() => { setHideMobileNav('hideMobileMenu') }} className={`${classes.navContainer} ${hideMobileNav}`}>
             <div className={`${classes.navInvisibleDiv} ${hideMobileNav}`}></div>
             {!posts.length ? <NavLoading /> : (
-                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
-                    {posts.map((post, index) => (
-                        <div key={post._id} >
+                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                    {posts.map((post) => (
+                        <div key={post._id} style={{ display: 'flex', flexDirection: 'row', marginLeft: '3rem' }}>
+                            <div style={{ display: 'flex', flexDirection: 'row', maxWidth: '200px', }}>
                                 <div>
-                                    <div>
-                                        {!post.file ? '' : <img src={post.file} alt='' className={classes.navImgFile} />}
-                                    </div>
+                                    {!post.file ? '' : <img src={post.file} alt='' className={classes.navImgFile} />}
+                                </div>
+                                <div style={{ display: 'flex', flexDirection: 'column' }}>
                                     <div>
                                         <p>{post.name}</p>
                                         <p>{post.surname}</p>
                                     </div>
+                                    <Button onClick={() => setCurrentId(post._id)} >
+                                        <EditIcon fontSize="small" />
+                                    </Button>
+                                    <Button onClick={() => {
+                                        if (window.confirm('Are you sure you want to delete this post?')) {
+                                            dispatch(deletePost(post._id))
+                                            console.log('Post Deleted!');
+                                        }
+                                    }}>
+                                        <DeleteForeverIcon fontSize="small" />
+                                    </Button>
                                 </div>
-                                <Button onClick={() => setCurrentId(post._id)} >
-                                    <EditIcon fontSize="small" />
-                                </Button>
-                                <Button onClick={() => {
-                                    if (window.confirm('Are you sure you want to delete this post?')) {
-                                        dispatch(deletePost(post._id))
-                                        console.log('Post Deleted!');
-                                    }
-                                }}>
-                                    <DeleteForeverIcon fontSize="small" />
-                                </Button>
+                            </div>
                         </div>
                     ))}
                 </div>

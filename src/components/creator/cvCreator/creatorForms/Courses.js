@@ -29,7 +29,7 @@ const Courses = ({ courses, setCourses, postData, setPostData }) => {
             <TextField fullWidth type="date" label='end' InputLabelProps={{ shrink: true }}
                 value={singleCourse.end || ''}
                 onChange={(e) => setSingleCourse({ ...singleCourse, end: e.target.value })} />
-            <TextField fullWidth type="text" label='description'
+            <TextField multiline fullWidth type="text" label='description'
                 value={singleCourse.description || ''}
                 onChange={(e) => setSingleCourse({ ...singleCourse, description: e.target.value })} />
             <div>

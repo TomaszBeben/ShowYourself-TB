@@ -35,7 +35,7 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
         consent, setConsent,
         description, setDescription,
         currentUser,
-        } = useAuth()
+    } = useAuth()
 
     const dispatch = useDispatch()
     const classes = creatorFormStyles()
@@ -82,7 +82,7 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
         // setCurrentId(null)
     }
 
-    const newCv = () =>{ 
+    const newCv = () => {
         setPostData(initialState(currentUser))
         setCourses([])
         setEducation([])
@@ -95,11 +95,17 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
     }
 
     return (
-        <Paper className={ classes.paper }>
+        <Paper className={classes.paper}>
             <form
-            onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
-            className={`${classes.root} ${classes.form}`}
-            onSubmit={handleSubmit}>
+                onKeyPress={(e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        return null
+                    } else {
+                        e.key === 'Enter' && e.preventDefault()
+                    }
+                }}
+                className={`${classes.root} ${classes.form}`}
+                onSubmit={handleSubmit}>
                 <Switch>
                     <Route path='/cvcreator/basics' >
                         <Basics postData={postData} setPostData={setPostData} />
@@ -151,7 +157,7 @@ const CreatorForm = ({ currentId, setCurrentId, postData, setPostData }) => {
                         </Button>
                         <Button
                             className={classes.buttonSubmit} variant="contained" size="large" type="submit" fullWidth
-                            onClick={() => {newCv()}}>
+                            onClick={() => { newCv() }}>
                             NEW CV
                         </Button>
                     </Route>

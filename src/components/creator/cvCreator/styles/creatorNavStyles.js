@@ -42,9 +42,10 @@ export default makeStyles((theme) => ({
   },
 
   navImgFile: {
-    width: '50px',
-    height: '50px',
-    borderRadius: '50%',
+    width: '10vw',
+    height: '15vh',
+    objectFit: 'cover'
+    // borderRadius: '50%',
   },
 
   // navContainerDirection: {

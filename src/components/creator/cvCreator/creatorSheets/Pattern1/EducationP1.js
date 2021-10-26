@@ -28,12 +28,11 @@ const Education = () => {
                     <div className='pattern1--rightSide_content'>
                         <p className='pattern1--rightSide_text pattern1--rightSide_text_bold'>{elem.degree}</p>
                         <p className='pattern1--rightSide_text pattern1--rightSide_text_bold'>{elem.school}</p>
+                        {/* {elem.description.map((elem, i)=>(
+                            <p key={i} className='pattern1--rightSide_text'>{elem}</p>
+                        ))} */}
                         <p className='pattern1--rightSide_text'>{elem.description}</p>
                     </div>
-                    {/* <p>{elem.degree}</p>
-                    <p>{elem.school}</p>
-                    <p>{elem.city}</p>
-                    <p>{elem.description}</p> */}
                 </div>
             ))}
         </>
