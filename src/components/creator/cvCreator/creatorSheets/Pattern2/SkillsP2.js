@@ -22,7 +22,7 @@ const Skills = () => {
                     <div key={index} className='pattern2--leftSide_text--main' >
                         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                             <div style={{width:'2mm', height: '2mm', background: color, marginRight: '1mm' }}></div>
-                            <span>{elem.skill}</span>
+                            <h1>{elem.skill}</h1>
                         </div>
                     </div>
                 ))}

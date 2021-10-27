@@ -21,13 +21,11 @@ const Courses = () => {
                     <div key={index} className='pattern2--rightSide--container' >
                         <div className='pattern2--rightSide_date'>
                             <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>{elem.start}</p>
-                            {elem.end === undefined
+                            {elem.end === ''
                                 ? <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>-Present</p>
-                                : null
-                            }
-                            <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>
-                                {elem.end === undefined || '' ? null : `-${elem.end}`}
-                            </p>
+                                : <p className='pattern2--rightSide_text pattern2--rightSide_text_bold'>
+                                    {elem.end === undefined || '' ? null : `-${elem.end}`}
+                                </p>}
                         </div>
                         <div className='pattern2--rightSide_content'>
                             <p className='pattern2--rightSide_text'>{elem.organizer}</p>

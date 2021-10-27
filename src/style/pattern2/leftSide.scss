@@ -22,7 +22,7 @@ $square: 5mm;
 
 .pattern2--leftSide_elem--header {
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     height: 7mm;
     width: 65mm;
     display: flex;
@@ -43,29 +43,29 @@ $square: 5mm;
 
 .pattern2--leftSide_text--main {
     padding-left: 5mm;
-    margin-top: 2mm;
+    margin-top: 1mm;
     display: flex;
     overflow-wrap: break-word;
     flex-direction: column;
+    font-size: 0.8rem;
 }
 
 .pattern2--leftSide_links--description {
-    margin-left: 5mm;
-    margin-bottom: 1mm;
-    font-size: 0.9rem;
-    font-weight: normal;
+    margin-top: 1mm;
+    margin-left: 7mm;
+    font-size: 0.8rem;
     font-family: $fontFamily !important;
 }
 
 .pattern2--leftSide_links--link {
     padding-left: 3mm;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     max-width: 47mm;
     font-family: $fontFamily !important;
 }
 
 .pattern2--leftSide_description--container {
     font-family: $fontFamily !important;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     padding-left: 5mm;
 }
