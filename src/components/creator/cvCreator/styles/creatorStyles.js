@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-// const margin = '1vh';
-// const padding = '10px';
+const margin = '1vh';
+const padding = '10px';
 
 export default makeStyles((theme) => ({
   root: {
@@ -31,5 +31,15 @@ export default makeStyles((theme) => ({
       flexDirection: 'column-reverse',
     },
   },
+
+  buttonSubmit: {
+    padding: '3px',
+    marginBottom: margin,
+    marginTop: margin,
+    textDecoration: 'none',
+    '&:hover': {
+      background: 'linear-gradient(180deg, rgba(5, 99, 8, 1) 0%, rgba(19, 148, 11, 1) 100%)'
+    }
+  }
 
 }));

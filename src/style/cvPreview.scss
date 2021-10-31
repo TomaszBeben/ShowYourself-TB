@@ -15,8 +15,12 @@
 }
 
 .cvPreview-header {
+    margin-top: 1rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    min-width: 210mm;
 }
 
 .cvPreview-header-element {

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { useAuth } from '../../../context/AuthContext'
 import { useHistory } from 'react-router-dom'
+import { Button } from '@material-ui/core';
+import useStyles from '../../creator/cvCreator/styles/creatorStyles'
 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const UserCheck = () => {
 
+    const classes = useStyles()
     const [error, setError] = useState('')
     const { currentUser, logout } = useAuth()
 
@@ -44,9 +47,9 @@ const UserCheck = () => {
                     {error !== '' ? window.alert(error) : null}
                 </div>
                 <div>
-                    <button className='main-page__header--user--auth-button' onClick={handleLogout}>
+                    <Button variant="contained" className={classes.buttonSubmit} onClick={handleLogout}>
                         {inOrOut}
-                    </button>
+                    </Button>
                     {/* <Link to="/test" >
                         <button>TEST</button>
                     </Link> */}

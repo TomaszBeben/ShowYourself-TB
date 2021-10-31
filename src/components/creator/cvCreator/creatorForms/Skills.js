@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Buttons from './Buttons'
-import { Button, TextField } from '@material-ui/core'
+import { Button, TextField, Paper } from '@material-ui/core'
 import { deleteElement, editElement, moveElement } from './functions'
 import useStyles from '../styles'
 
@@ -29,7 +29,7 @@ const Skills = ({ skills, setSkills, postData, setPostData }) => {
                 <div className='creatorView--spaceDiv'></div>
                 <div>
                     {skills.map((elem, index) => (
-                        <div key={index} >
+                        <Paper className={classes.mapElem} elevation={24} key={index} >
                             <h1>{elem.skill}</h1>
                             <Buttons
                                 deleteElement={() => { deleteElement(skills, setSkills, index) }}
@@ -37,7 +37,7 @@ const Skills = ({ skills, setSkills, postData, setPostData }) => {
                                 moveUp={() => { moveElement(skills, setSkills, index, index - 1) }}
                                 moveDown={() => { moveElement(skills, setSkills, index, index + 1) }}
                             />
-                        </div>
+                        </Paper>
                     ))}
                 </div>
             </div>

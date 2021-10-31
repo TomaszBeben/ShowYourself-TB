@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TextField, Typography, Button } from '@material-ui/core'
+import { TextField, Typography, Button, Paper } from '@material-ui/core'
 import useStyles from '../styles'
 import Buttons from './Buttons'
 import { deleteElement, editElement, moveElement } from './functions'
@@ -33,7 +33,7 @@ const Links = ({ links, setLinks, postData, setPostData }) => {
                 <div className='creatorView--spaceDiv'></div>
                 <div>
                     {links.map((elem, index) => (
-                        <div key={index} >
+                        <Paper className={classes.mapElem} elevation={24} key={index} >
                             <h1>{elem.link}</h1>
                             <h1>{elem.degree}</h1>
                             <Buttons
@@ -42,7 +42,7 @@ const Links = ({ links, setLinks, postData, setPostData }) => {
                                 moveUp={() => { moveElement(links, setLinks, index, index - 1) }}
                                 moveDown={() => { moveElement(links, setLinks, index, index + 1) }}
                             />
-                        </div>
+                        </Paper>
                     ))}
                 </div>
             </div>

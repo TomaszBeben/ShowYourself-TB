@@ -1,6 +1,6 @@
 $fontFamily: 'Montserrat',
 sans-serif;
-$fontHeader: 1.1rem;
+$fontHeader: 1rem;
 $fontText: 1rem;
 .pattern1--rightSide--container {
     display: flex;
@@ -50,10 +50,14 @@ $fontText: 1rem;
     font-weight: bold;
 }
 
+.pattern1--rightSide_content {
+    max-width: 90mm;
+}
+
 .pattern1--rightSide_date {
     margin-left: 3mm;
     margin-top: 2mm;
-    width: 35mm;
+    width: 40mm;
     // border: 1px solid black;
 }
 

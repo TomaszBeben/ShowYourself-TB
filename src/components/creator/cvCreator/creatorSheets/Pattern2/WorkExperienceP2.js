@@ -4,7 +4,6 @@ import { useAuth } from '../../../../../context/AuthContext'
 
 const WorkExperience = () => {
     const { work } = useAuth()
-    console.log(work);
 
     return (
         <div className='pattern2--rightSide_section--container'>

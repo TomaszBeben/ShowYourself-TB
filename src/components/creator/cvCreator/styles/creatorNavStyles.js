@@ -48,6 +48,23 @@ export default makeStyles((theme) => ({
     // borderRadius: '50%',
   },
 
+  elemDirection: {
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
+    display: 'flex',
+    flexDirection: 'row',
+  },
+
+  elemContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginLeft: '2rem',
+    marginBottom: '3rem',
+  }
+
+
+
   // navContainerDirection: {
   //   [theme.breakpoints.down('sm')]: {
   //     display: 'flex',

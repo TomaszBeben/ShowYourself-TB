@@ -23,9 +23,9 @@ const CreatorNav = ({ setCurrentId }) => {
         <Paper onClick={() => { setHideMobileNav('hideMobileMenu') }} className={`${classes.navContainer} ${hideMobileNav}`}>
             <div className={`${classes.navInvisibleDiv} ${hideMobileNav}`}></div>
             {!posts.length ? <NavLoading /> : (
-                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                <div className={classes.elemDirection}>
                     {posts.map((post) => (
-                        <div key={post._id} style={{ display: 'flex', flexDirection: 'row', marginLeft: '3rem' }}>
+                        <Paper elevation={24} key={post._id} className={classes.elemContainer}>
                             <div style={{ display: 'flex', flexDirection: 'row', maxWidth: '200px', }}>
                                 <div>
                                     {!post.file ? '' : <img src={post.file} alt='' className={classes.navImgFile} />}
@@ -48,7 +48,7 @@ const CreatorNav = ({ setCurrentId }) => {
                                     </Button>
                                 </div>
                             </div>
-                        </div>
+                        </Paper>
                     ))}
                 </div>
             )}

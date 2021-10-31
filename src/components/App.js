@@ -1,3 +1,4 @@
+/* eslint-disable react/no-direct-mutation-state */
 import React from 'react'
 // import hash from 'hash.js'//console.log(hash.sha256().update('text').digest('hex'));
 import { AuthProvider } from '../context/AuthContext'
