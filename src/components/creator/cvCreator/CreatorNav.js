@@ -26,7 +26,7 @@ const CreatorNav = ({ setCurrentId }) => {
                 <div className={classes.elemDirection}>
                     {posts.map((post) => (
                         <Paper elevation={24} key={post._id} className={classes.elemContainer}>
-                            <div style={{ display: 'flex', flexDirection: 'row', maxWidth: '200px', }}>
+                            <div style={{ display: 'flex', flexDirection: 'row', maxWidth: '250px', }}>
                                 <div>
                                     {!post.file ? '' : <img src={post.file} alt='' className={classes.navImgFile} />}
                                 </div>

@@ -1,6 +1,8 @@
 $fontFamily: 'Montserrat',
 sans-serif;
 $square: 5mm;
+$hederSize: 1rem;
+$textSize: 0.8rem;
 .pattern2--middleSection_container--left {
     padding-top: 15mm;
     width: 70mm;
@@ -22,7 +24,7 @@ $square: 5mm;
 
 .pattern2--leftSide_elem--header {
     color: white;
-    font-size: 1rem;
+    font-size: $hederSize;
     height: 7mm;
     width: 65mm;
     display: flex;
@@ -47,25 +49,26 @@ $square: 5mm;
     display: flex;
     overflow-wrap: break-word;
     flex-direction: column;
-    font-size: 0.8rem;
+    font-size: $textSize;
 }
 
 .pattern2--leftSide_links--description {
     margin-top: 1mm;
     margin-left: 7mm;
-    font-size: 0.8rem;
+    font-size: $textSize;
     font-family: $fontFamily !important;
+    color: black;
 }
 
 .pattern2--leftSide_links--link {
-    padding-left: 3mm;
-    font-size: 0.8rem;
-    max-width: 47mm;
+    font-size: $textSize;
+    font-weight: normal;
+    max-width: 60mm;
     font-family: $fontFamily !important;
 }
 
 .pattern2--leftSide_description--container {
     font-family: $fontFamily !important;
-    font-size: 0.8rem;
+    font-size: $textSize;
     padding-left: 5mm;
 }

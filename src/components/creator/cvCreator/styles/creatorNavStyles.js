@@ -60,7 +60,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     marginLeft: '2rem',
-    marginBottom: '3rem',
+    marginBottom: '1rem',
   }
 
 
