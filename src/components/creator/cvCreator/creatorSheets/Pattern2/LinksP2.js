@@ -24,16 +24,16 @@ const Links = () => {
                     <a href={elem.link} key={index} className='pattern2--leftSide_text--main' >
                         <div style={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
                             <div style={{ width: '2mm', height: '2mm', background: color, marginRight: '1mm' }}></div>
-                            <Link
-                                variant='a'
-                                className='pattern2--leftSide_links--link'
-                                color={`${color}`}
-                                href={`${elem.link}`}
-                                underline='none' >
-                                {elem.link}
-                            </Link>
+                            <h1 className='pattern2--leftSide_links--description'>{elem.description}</h1>
                         </div>
-                        <h1 className='pattern2--leftSide_links--description'>{elem.description}</h1>
+                        <Link
+                            variant='a'
+                            className='pattern2--leftSide_links--link'
+                            color={`${color}`}
+                            href={`${elem.link}`}
+                            underline='none' >
+                            {elem.link}
+                        </Link>
                     </a>
                 ))}
             </div>

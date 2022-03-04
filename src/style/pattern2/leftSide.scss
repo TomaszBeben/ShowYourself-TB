@@ -53,8 +53,8 @@ $textSize: 0.8rem;
 }
 
 .pattern2--leftSide_links--description {
-    margin-top: 1mm;
-    margin-left: 7mm;
+    // margin-top: 1mm;
+    margin-left: 1mm;
     font-size: $textSize;
     font-family: $fontFamily !important;
     color: black;
@@ -64,6 +64,8 @@ $textSize: 0.8rem;
     font-size: $textSize;
     font-weight: normal;
     max-width: 60mm;
+    margin-top: 1mm !important;
+    margin-left: 4mm !important;
     font-family: $fontFamily !important;
 }
 
